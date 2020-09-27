@@ -7,6 +7,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.static('static'))
 
+//The routes for the different pages
+
 app.get('/',function(req, res) {
     res.sendFile(path.join(__dirname, '/static/html/index.html'));
 });
@@ -17,6 +19,10 @@ app.get('/search',function(req, res) {
 
 app.get('/FailedSearch',function(req, res) {
     res.sendFile(path.join(__dirname, '/static/html/FailedSearch.html'));
+});
+
+app.get('/profile',function(req, res) {
+    res.sendFile(path.join(__dirname, '/static/html/profilepage.html'));
 });
 
 
