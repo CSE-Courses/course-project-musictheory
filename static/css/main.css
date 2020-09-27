@@ -40,7 +40,7 @@ body {
 }
 
 .header {
-  background-image: url('musictheorylogo1.png');
+  background-image: url('../images/musictheorylogo1.png');
   background-size: cover;
   background-position: center;
   position: relative;
