@@ -25,5 +25,7 @@ app.get('/profile',function(req, res) {
     res.sendFile(path.join(__dirname, '/static/html/profilepage.html'));
 });
 
-
+app.get('/bday.mp3',function(req, res) {
+    res.sendFile(path.join(__dirname, 'bday.mp3'));
+});
 app.listen(3000);
