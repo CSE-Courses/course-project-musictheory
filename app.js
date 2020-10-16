@@ -7,6 +7,11 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.static('static'))
 
+
+
+
+
+
 //The routes for the different pages
 
 app.get('/',function(req, res) {
