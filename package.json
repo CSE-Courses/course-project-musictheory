@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/UB-CSE/course-project-musictheory#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "howler": "^2.2.0"
   }
 }
