@@ -1,0 +1,17 @@
+Guide for Task Testing
+
+As of right now there are two documents in this folder which can be used to test the front end of our website.
+
+These files are MT-Tests.side and Selenium IDE - MT-Tests_.html.
+
+1. MT-Tests.side
+
+The .side folder can be open using the Selenium IDE browser extension which can be found here : https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd?hl=en
+
+As far as we know the extension is only available on Google Chrome.
+
+After installation you can open the file with the tests inside and test the website on localhost:3000 after using the command "node app.js". To free the port afterwards you can use the command "fuser -k -n tcp 3000".
+
+2. If you don't want to use the extension, you can simply open the html file which already has all of the results of the tests.
+
+

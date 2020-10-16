@@ -1,0 +1,2818 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)chrome-extension://mooikfkahbdckldjjndioackbalphokd/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="react-tooltip">.__react_component_tooltip{border-radius:3px;display:inline-block;font-size:13px;left:-999em;opacity:0;padding:8px 21px;position:fixed;pointer-events:none;transition:opacity 0.3s ease-out;top:-999em;visibility:hidden;z-index:999}.__react_component_tooltip.allow_hover,.__react_component_tooltip.allow_click{pointer-events:auto}.__react_component_tooltip:before,.__react_component_tooltip:after{content:"";width:0;height:0;position:absolute}.__react_component_tooltip.show{opacity:0.9;margin-top:0px;margin-left:0px;visibility:visible}.__react_component_tooltip.type-dark{color:#fff;background-color:#222}.__react_component_tooltip.type-dark.place-top:after{border-top-color:#222;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-dark.place-bottom:after{border-bottom-color:#222;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-dark.place-left:after{border-left-color:#222;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-dark.place-right:after{border-right-color:#222;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-dark.border{border:1px solid #fff}.__react_component_tooltip.type-dark.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-dark.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-dark.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-dark.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-success{color:#fff;background-color:#8DC572}.__react_component_tooltip.type-success.place-top:after{border-top-color:#8DC572;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-success.place-bottom:after{border-bottom-color:#8DC572;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-success.place-left:after{border-left-color:#8DC572;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-success.place-right:after{border-right-color:#8DC572;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-success.border{border:1px solid #fff}.__react_component_tooltip.type-success.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-success.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-success.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-success.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-warning{color:#fff;background-color:#F0AD4E}.__react_component_tooltip.type-warning.place-top:after{border-top-color:#F0AD4E;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-warning.place-bottom:after{border-bottom-color:#F0AD4E;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-warning.place-left:after{border-left-color:#F0AD4E;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-warning.place-right:after{border-right-color:#F0AD4E;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-warning.border{border:1px solid #fff}.__react_component_tooltip.type-warning.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-warning.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-warning.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-warning.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-error{color:#fff;background-color:#BE6464}.__react_component_tooltip.type-error.place-top:after{border-top-color:#BE6464;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-error.place-bottom:after{border-bottom-color:#BE6464;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-error.place-left:after{border-left-color:#BE6464;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-error.place-right:after{border-right-color:#BE6464;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-error.border{border:1px solid #fff}.__react_component_tooltip.type-error.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-error.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-error.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-error.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-info{color:#fff;background-color:#337AB7}.__react_component_tooltip.type-info.place-top:after{border-top-color:#337AB7;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-info.place-bottom:after{border-bottom-color:#337AB7;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-info.place-left:after{border-left-color:#337AB7;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-info.place-right:after{border-right-color:#337AB7;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-info.border{border:1px solid #fff}.__react_component_tooltip.type-info.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-info.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-info.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-info.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-light{color:#222;background-color:#fff}.__react_component_tooltip.type-light.place-top:after{border-top-color:#fff;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-light.place-bottom:after{border-bottom-color:#fff;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-light.place-left:after{border-left-color:#fff;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-light.place-right:after{border-right-color:#fff;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-light.border{border:1px solid #222}.__react_component_tooltip.type-light.border.place-top:before{border-top:8px solid #222}.__react_component_tooltip.type-light.border.place-bottom:before{border-bottom:8px solid #222}.__react_component_tooltip.type-light.border.place-left:before{border-left:8px solid #222}.__react_component_tooltip.type-light.border.place-right:before{border-right:8px solid #222}.__react_component_tooltip.place-top{margin-top:-10px}.__react_component_tooltip.place-top:before{border-left:10px solid transparent;border-right:10px solid transparent;bottom:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-top:after{border-left:8px solid transparent;border-right:8px solid transparent;bottom:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-bottom{margin-top:10px}.__react_component_tooltip.place-bottom:before{border-left:10px solid transparent;border-right:10px solid transparent;top:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-bottom:after{border-left:8px solid transparent;border-right:8px solid transparent;top:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-left{margin-left:-10px}.__react_component_tooltip.place-left:before{border-top:6px solid transparent;border-bottom:6px solid transparent;right:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-left:after{border-top:5px solid transparent;border-bottom:5px solid transparent;right:-6px;top:50%;margin-top:-4px}.__react_component_tooltip.place-right{margin-left:10px}.__react_component_tooltip.place-right:before{border-top:6px solid transparent;border-bottom:6px solid transparent;left:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-right:after{border-top:5px solid transparent;border-bottom:5px solid transparent;left:-6px;top:50%;margin-top:-4px}.__react_component_tooltip .multi-line{display:block;padding:2px 0px;text-align:center}</style><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Selenium IDE - MT-Tests*</title><style type="text/css">.se-tooltip {
+  cursor: pointer !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  margin-top: 5px !important;
+  opacity: 0 !important;
+  visibility: initial !important;
+  -webkit-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  -o-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.se-tooltip.show {
+  opacity: 1 !important;
+}
+
+.se-tooltip::before {
+  content: none !important;
+}
+
+.se-tooltip::after {
+  content: none !important;
+}
+
+.se-tooltip > p {
+  margin: 0;
+  padding: 7px;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  color: #505050;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  -o-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.se-tooltip.show > p {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+</style><style type="text/css">.state-banner {
+  border: 1px solid #cecece;
+  border-radius: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  position: fixed;
+  top: 6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 25px;
+  z-index: 100;
+}
+
+.background-pause {
+  background: #fffcc5;
+  max-width: 200px;
+}
+
+.background-controlled {
+  background: #b4d6fa;
+  max-width: 300px;
+}
+
+.state-banner .state-toolbar {
+  text-align: center;
+  height: inherit;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.state-banner .state-toolbar > span {
+  padding: 0 5px;
+}
+
+@media only screen and (max-width: 620px) {
+  .background-controlled {
+    max-width: 35%;
+    padding: 5px 15px 5px 15px;
+    height: auto;
+    display: inline-block;
+  }
+  .state-banner .state-toolbar > span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    text-align: initial;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .background-controlled {
+    max-width: 25%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .background-controlled {
+    width: 10px;
+    right: -15%;
+  }
+  .state-banner .state-toolbar > span {
+    padding: 0;
+  }
+}
+</style><style type="text/css">.btn-action {
+  color: #505050;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 1px 0;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  border-style: none;
+  font-size: 22px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.btn-action:hover {
+  color: #40a6ff;
+}
+
+.btn-action:focus {
+  -webkit-box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+          box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+}
+
+.btn-action.no-focus:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-action:active {
+  color: #656565;
+}
+
+.btn-action:disabled {
+  color: #a9a9a9;
+}
+
+.btn-action.active {
+  background-color: #e3f2ff;
+}
+</style><style type="text/css">.file-input {
+  height: 24px;
+}
+
+.file-input > input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  top: -1000px;
+  left: -1000px;
+}
+
+.file-input > label {
+  width: 22px;
+  height: 22px;
+  border: 1px solid transparent;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.file-input > input:focus ~ label {
+  -webkit-box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+          box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+  outline: var(--selected-border-color) 1px solid;
+}
+
+.file-input > label > i {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 0;
+}
+</style><style type="text/css">.btn-action.pulse {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  3% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  6% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  9% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  3% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  6% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  9% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+</style><style type="text/css">.menu.content {
+  position: absolute;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  outline: none;
+  padding: 10px 0;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.menu.content.closed {
+  opacity: 0;
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+}
+</style><style type="text/css">.menu.content .buttons li a {
+  display: block;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.menu.content .buttons li a:hover {
+  background-color: #f3f3f3;
+}
+
+.menu.content .buttons li a .label {
+  float: right;
+  color: #929292;
+}
+
+.menu.content .buttons li hr {
+  margin-left: 20px;
+}
+</style><style type="text/css">.header {
+  border-bottom: 1px solid #cecece;
+  padding: 7px 7px 7px 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.header > div:first-child {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.header .title {
+  display: inline-block;
+  border: 1px transparent solid;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 17px;
+  min-height: 17px;
+  padding: 3px 26px 3px 6px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 143px;
+}
+
+.header .title ~ i {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: -20px;
+  visibility: hidden;
+}
+
+.header:hover .title {
+  border-color: #f3f3f3;
+}
+
+.header .title:focus {
+  cursor: initial;
+}
+
+.header:hover .title ~ i {
+  visibility: visible;
+}
+
+.header:focus-within .title ~ i {
+  visibility: hidden;
+}
+
+.header.changed .title::after {
+  content: '*';
+}
+
+.header .title:focus::after {
+  content: ' ';
+}
+
+.header .buttons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.header .buttons > *:not(:last-child) {
+  margin-left: 10px;
+}
+
+.header .buttons > *:last-child {
+  margin-left: 4px;
+}
+
+.header .title-prefix {
+  font-weight: bold;
+  padding-left: 6px;
+}
+</style><style type="text/css">.tabbar.vertical {
+  margin-bottom: 29px;
+}
+
+.tabbar.vertical > div {
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 29px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #f3f3f3;
+  overflow-y: hidden;
+  -webkit-transition: max-height 80ms linear;
+  -o-transition: max-height 80ms linear;
+  transition: max-height 80ms linear;
+}
+
+.tabbar.vertical ul li {
+  display: block;
+}
+
+.tabbar.vertical a {
+  color: #505050;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  padding: 0;
+}
+
+.tabbar.vertical a > span {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px 5px;
+  margin: 2px 5px;
+  border: 1px solid transparent;
+}
+
+.tabbar.vertical a:hover {
+  color: #0c0c0c;
+  background-color: #f3f3f3;
+}
+
+.tabbar.vertical a:focus {
+  background-color: #f3f3f3;
+}
+
+.tabbar.vertical a:focus > span {
+  -webkit-box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+          box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.7);
+}
+
+.tabbar.vertical a > span::after {
+  font-family: 'selenium-ide', sans-serif !important;
+  color: rgb(163, 163, 163);
+  font-size: 14px;
+  margin: auto 3px auto 5px;
+  height: 14px;
+  content: '\E918';
+}
+
+.tabbar.vertical a:hover > span::after {
+  color: #0c0c0c;
+}
+</style><style type="text/css">.search {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  margin: 6px;
+  display: block;
+  font-size: 11px;
+}
+
+.search ~ label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 8px;
+  margin: auto 0;
+  font-size: 18px;
+  height: 18px;
+  color: #656565;
+}
+</style><style type="text/css">.test > .stack-item:not(.name) {
+  display: block;
+}
+
+.test > .stack-item:not(.name) > span {
+  display: inline-block;
+  -webkit-transform: scaleY(-1) rotate(270deg);
+      -ms-transform: scaleY(-1) rotate(270deg);
+          transform: scaleY(-1) rotate(270deg);
+}
+</style><style type="text/css">.menu.content .buttons li a {
+  display: block;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.menu.content .buttons li a:hover {
+  background-color: #f3f3f3;
+}
+
+.menu.content .buttons li a .label {
+  float: right;
+  color: #929292;
+}
+
+.menu.content .buttons li hr {
+  margin-left: 20px;
+}
+</style><style type="text/css">.test {
+  font-size: 13px;
+  line-height: 24px;
+  background-color: #fff;
+}
+
+.test .name {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 11px;
+}
+
+.test .name > span {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.test .name > button {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+  margin: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.test:hover .name > button {
+  opacity: 1;
+}
+
+.test > a {
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.test > a:hover {
+  background-color: var(--hover-color);
+}
+
+.test > a.selected {
+  background-color: var(--selected-color);
+}
+
+.test > a.executing {
+  background-color: #e3f2ff;
+}
+
+.test.paused > a.executing {
+  background-color: #fffcc5;
+}
+
+.test.paused:focus > a.selected.executing {
+  border-top: 1px solid #d3d622;
+  border-bottom: 1px solid #d3d622;
+}
+
+.test.changed .name > span::after {
+  content: '*';
+}
+</style><style type="text/css">.tests {
+  max-height: 100%;
+  min-width: 100%;
+  overflow-y: auto;
+  -webkit-transition: max-height 300ms linear;
+  -o-transition: max-height 300ms linear;
+  transition: max-height 300ms linear;
+  list-style: none;
+  display: table;
+}
+
+.tests_div {
+  overflow-x: auto;
+  -webkit-transition: max-height 300ms linear;
+  -o-transition: max-height 300ms linear;
+  transition: max-height 300ms linear;
+  max-height: 0;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.tests_div.active {
+  max-height: 100%;
+  -webkit-transition: max-height 300ms linear;
+  -o-transition: max-height 300ms linear;
+  transition: max-height 300ms linear;
+}
+
+.tests.active {
+  max-height: 100%;
+}
+
+.tests li {
+  margin: 7px 0;
+  display: block;
+}
+</style><style type="text/css">.project {
+  padding-left: 7px;
+  margin-left: 2px;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project > a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px transparent solid;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  min-width: 0;
+}
+
+.project > a .title {
+  padding: 0 6px;
+  font-size: 14px;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.project > a .title.changed::after {
+  content: '*';
+}
+
+.project > a .si-caret {
+  font-size: 10px;
+  color: #505050;
+  display: inline-block;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+
+.project > a.active .si-caret {
+  color: #40a6ff;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.project button {
+  opacity: 0;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.project:hover button {
+  opacity: 1;
+}
+
+.projects .test > button {
+  font-size: 18px;
+}
+
+.projects .tests {
+  overflow-y: hidden;
+}
+</style><style type="text/css">.projects {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.projects li {
+  margin: 5px 0;
+}
+
+.projects .tests .test .name {
+  padding-left: 30px;
+}
+</style><style type="text/css">.no-session {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.no-session span {
+  margin: auto;
+}
+</style><style type="text/css">.progress {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #e8e8e8;
+  border: 0;
+  max-width: 160px;
+}
+
+.progress::-webkit-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e8e8e8;
+}
+
+.progress::-webkit-progress-value {
+  border-radius: 4px;
+  background-color: #159b41;
+}
+
+.progress.has-error::-webkit-progress-value {
+  background-color: #df0006;
+}
+
+.progress::-moz-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #159b41;
+}
+
+.progress.has-error::-moz-progress-bar {
+  background-color: #df0006;
+}
+</style><style type="text/css">.runs {
+  padding: 15px 10px 0 10px;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+.runs .status {
+  padding: 10px 0 15px 0;
+}
+
+.runs .status > span {
+  margin: 0 8px;
+}
+
+.runs .right {
+  float: right;
+}
+
+.runs .left {
+  float: left;
+}
+</style><style type="text/css">aside.test-cases {
+  min-width: 170px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-transition: min-width 80ms ease-in-out;
+  -o-transition: min-width 80ms ease-in-out;
+  transition: min-width 80ms ease-in-out;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+aside.test-cases h3 {
+  padding: 15px;
+  margin: 0;
+}
+
+aside.test-cases .tabbar ~ .content,
+aside.test-cases .tabbar ~ ul {
+  max-height: initial;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+</style><style type="text/css">.btn-action[class*='si-gauge-'] {
+  position: relative;
+  width: 40px;
+  text-align: left;
+  padding-left: 4px;
+}
+
+.btn-action[class*='si-gauge-'] i {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  position: absolute;
+  font-size: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 10px;
+}
+</style><style type="text/css">.record {
+  padding-right: 5px;
+}
+
+.si-record {
+  color: #b00000;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.si-record:hover {
+  color: #de2a00;
+}
+
+.si-record.active::before {
+  -webkit-animation: fadeIn 500ms infinite alternate;
+          animation: fadeIn 500ms infinite alternate;
+  background: red;
+  width: 8px;
+  height: 8px;
+  display: block;
+  margin: auto;
+  content: '';
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+}
+</style><style type="text/css">.rc-slider {
+  position: relative;
+  height: 14px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  -ms-touch-action: none;
+      touch-action: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: #e9e9e9;
+  height: 4px;
+  border-radius: 6px;
+}
+.rc-slider-track {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  border-radius: 6px;
+  background-color: #abe2fb;
+}
+.rc-slider-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  margin-top: -5px;
+  cursor: grab;
+  border-radius: 50%;
+  border: solid 2px #96dbfa;
+  background-color: #fff;
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
+}
+.rc-slider-handle:focus {
+  border-color: #57c5f7;
+  -webkit-box-shadow: 0 0 0 5px #96dbfa;
+          box-shadow: 0 0 0 5px #96dbfa;
+  outline: none;
+}
+.rc-slider-handle-click-focused:focus {
+  border-color: #96dbfa;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+.rc-slider-handle:hover {
+  border-color: #57c5f7;
+}
+.rc-slider-handle:active {
+  border-color: #57c5f7;
+  -webkit-box-shadow: 0 0 5px #57c5f7;
+          box-shadow: 0 0 5px #57c5f7;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+.rc-slider-mark {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+}
+.rc-slider-mark-text {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+.rc-slider-mark-text-active {
+  color: #666;
+}
+.rc-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+.rc-slider-dot {
+  position: absolute;
+  bottom: -2px;
+  margin-left: -4px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #e9e9e9;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.rc-slider-dot-active {
+  border-color: #96dbfa;
+}
+.rc-slider-dot-reverse {
+  margin-left: 0;
+  margin-right: -4px;
+}
+.rc-slider-disabled {
+  background-color: #e9e9e9;
+}
+.rc-slider-disabled .rc-slider-track {
+  background-color: #ccc;
+}
+.rc-slider-disabled .rc-slider-handle,
+.rc-slider-disabled .rc-slider-dot {
+  border-color: #ccc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #fff;
+  cursor: not-allowed;
+}
+.rc-slider-disabled .rc-slider-mark-text,
+.rc-slider-disabled .rc-slider-dot {
+  cursor: not-allowed !important;
+}
+.rc-slider-vertical {
+  width: 14px;
+  height: 100%;
+  padding: 0 5px;
+}
+.rc-slider-vertical .rc-slider-rail {
+  height: 100%;
+  width: 4px;
+}
+.rc-slider-vertical .rc-slider-track {
+  left: 5px;
+  bottom: 0;
+  width: 4px;
+}
+.rc-slider-vertical .rc-slider-handle {
+  margin-left: -5px;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+}
+.rc-slider-vertical .rc-slider-mark {
+  top: 0;
+  left: 18px;
+  height: 100%;
+}
+.rc-slider-vertical .rc-slider-step {
+  height: 100%;
+  width: 4px;
+}
+.rc-slider-vertical .rc-slider-dot {
+  left: 2px;
+  margin-bottom: -4px;
+}
+.rc-slider-vertical .rc-slider-dot:first-child {
+  margin-bottom: -4px;
+}
+.rc-slider-vertical .rc-slider-dot:last-child {
+  margin-bottom: -4px;
+}
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: block !important;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-slider-tooltip-zoom-down-leave {
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: block !important;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active,
+.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active {
+  -webkit-animation-name: rcSliderTooltipZoomDownIn;
+          animation-name: rcSliderTooltipZoomDownIn;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active {
+  -webkit-animation-name: rcSliderTooltipZoomDownOut;
+          animation-name: rcSliderTooltipZoomDownOut;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.rc-slider-tooltip-zoom-down-leave {
+  -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+@-webkit-keyframes rcSliderTooltipZoomDownIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  100% {
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@keyframes rcSliderTooltipZoomDownIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  100% {
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes rcSliderTooltipZoomDownOut {
+  0% {
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+@keyframes rcSliderTooltipZoomDownOut {
+  0% {
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+.rc-slider-tooltip {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: visible;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider-tooltip * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider-tooltip-hidden {
+  display: none;
+}
+.rc-slider-tooltip-placement-top {
+  padding: 4px 0 8px 0;
+}
+.rc-slider-tooltip-inner {
+  padding: 6px 2px;
+  min-width: 24px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #6c6c6c;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 4px #d9d9d9;
+          box-shadow: 0 0 4px #d9d9d9;
+}
+.rc-slider-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow {
+  bottom: 4px;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px 4px 0;
+  border-top-color: #6c6c6c;
+}
+</style><style type="text/css">.speed-gauge {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow-x: hidden;
+}
+
+.speed-gauge span {
+  font-size: 11px;
+}
+
+.rc-slider {
+  margin: 8px 0;
+  height: 150px;
+}
+
+.rc-slider-rail {
+  background-color: #d8d8d8;
+}
+
+.rc-slider-handle {
+  background: #fff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.17);
+}
+
+.rc-slider-handle:focus {
+  -webkit-box-shadow: 0 0 5px #57c5f7;
+          box-shadow: 0 0 5px #57c5f7;
+}
+</style><style type="text/css">.toolbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 2px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.toolbar > button {
+  margin: 2px 7px;
+}
+
+.toolbar > .flexer {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.toolbar > .sep {
+  border-left: 1px solid #f3f3f3;
+  height: 22px;
+  padding-right: 4px;
+}
+</style><style type="text/css">.url > div {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.url > div > * {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  margin: 6px 8px;
+}
+</style><style type="text/css">.test-table tr {
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+.test-table td {
+  font-size: 12px;
+}
+
+.test-table tbody tr {
+  cursor: pointer;
+  outline: 0;
+}
+
+.test-table tbody tr td {
+  border-top: 1px solid transparent;
+  border-collapse: separate;
+  word-break: break-all;
+}
+
+.test-table tr td:not(:last-child) {
+  -ms-flex: 0% 1 1;
+      flex: 0% 1 1;
+}
+
+.test-table tbody tr:hover {
+  background-color: var(--hover-color);
+}
+
+.test-table td .index {
+  display: inline-block;
+  word-break: keep-all;
+}
+
+.test-table tr .command {
+  font-style: italic;
+}
+
+.test-table tbody tr.selected {
+  background-color: var(--selected-color);
+}
+
+.test-table tbody tr.selected td {
+  border-top: 1px solid var(--selected-border-color);
+}
+
+.test-table tbody tr.selected:focus {
+  background-color: var(--active-color);
+}
+
+.test-table tbody tr.pending {
+  background-color: #e3f2ff;
+}
+
+.test-table.paused tbody tr.pending {
+  background-color: #fffcc5;
+}
+
+.test-table tbody tr.passed td {
+  color: #008425;
+}
+
+.test-table tbody tr.undetermined td,
+.test-table tbody tr.awaiting td {
+  color: #d49b2c;
+}
+
+.test-table tbody tr.failed td {
+  color: #e80600;
+}
+
+.test-table tbody tr td:first-child {
+  position: relative;
+  -ms-flex: initial;
+      flex: initial;
+  padding: 5px;
+  border-right: 1px #cecece solid;
+  padding-left: 0;
+  width: 42px;
+}
+
+.test-table tbody tr.fatal td:not(:first-child) {
+  color: #e80600;
+  font-weight: bold;
+}
+
+.test-table tbody tr:not(.selected):not(:focus) td:first-child {
+  padding-top: 6px;
+  border-top: none;
+}
+
+.test-table tbody tr td:first-child a.break-toggle {
+  display: block;
+}
+
+.test-table tbody tr td:first-child span.index {
+  color: #8b8b8b;
+  line-height: 16px;
+  width: 22px;
+  text-align: right;
+}
+
+.test-table tbody tr td:first-child .arrow {
+  position: absolute;
+  margin: auto 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.test-table tbody tr.break-point td:first-child .index {
+  background-color: #40a6ff;
+  color: white;
+}
+
+.test-table.paused tbody tr.selected.pending:focus td {
+  border-top: 1px solid #d3d622;
+}
+
+.test-table.breakpoints-disabled tbody tr.break-point td:first-child .index {
+  background-color: rgba(64, 166, 255, 0.5);
+}
+
+.test-table tbody tr.break-point td:first-child .arrow {
+  border-left-color: #40a6ff;
+}
+
+.test-table.breakpoints-disabled tbody tr.break-point td:first-child .arrow {
+  border-left-color: rgba(64, 166, 255, 0.5);
+}
+
+.test-table tbody tr td:first-child span.comment-icon {
+  float: right;
+}
+
+.test-table .cell__hidden {
+  display: none;
+}
+
+.test-table tr:hover .comment {
+  display: none;
+}
+
+.test-table tr:not(:hover) .cell__alternate {
+  display: none;
+}
+
+.test-table td.buttons {
+  width: 22px;
+}
+
+.test-table tr .buttons {
+  padding: 0;
+  margin: 0;
+}
+
+.test-table tr .buttons > * {
+  min-height: 24px;
+  opacity: 0;
+  height: 100%;
+}
+
+.test-table tr .buttons button {
+  width: 22px;
+  font-size: 20px;
+  height: 100%;
+  margin: auto 0;
+}
+
+.test-table tr:hover .buttons > * {
+  opacity: 1;
+}
+
+.test-table tr .buttons > .active {
+  opacity: 1;
+}
+</style><style type="text/css">.test-table {
+  border-bottom: 1px #cecece solid;
+}
+
+.test-table-body {
+  overflow-y: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.test-table table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.test-table td,
+.test-table th {
+  padding: 5px 10px;
+}
+
+.test-table th {
+  position: relative;
+  font-size: 13px;
+  text-align: left;
+  -ms-flex: 0% 1 1;
+      flex: 0% 1 1;
+}
+
+.test-table th:first-child {
+  margin-left: 47px;
+}
+
+.test-table th:last-child {
+  margin-right: 22px;
+}
+
+.test-table th:not(:last-child)::after {
+  content: '';
+  height: 10px;
+  width: 1px;
+  background-color: #cecece;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+}
+
+.test-table .filler {
+  border-right: 1px #cecece solid;
+  width: 37px;
+  padding: 5px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+</style><style type="text/css">.form-input {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-input > label {
+  font-size: 13px;
+  width: 85px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.form-input > *:last-child {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  margin: 5px 0;
+}
+</style><style type="text/css">.target-input .code > pre {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  max-width: 180px;
+  white-space: pre-wrap;
+}
+</style><style type="text/css">.btn {
+  color: #000;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  margin: 5px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-transform: capitalize;
+  -webkit-box-shadow: inset -1px 1px 1px 0 transparent;
+          box-shadow: inset -1px 1px 1px 0 transparent;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.btn:hover {
+  color: #333;
+}
+
+.btn:active {
+  background-color: #eee;
+  -webkit-box-shadow: inset -1px 1px 1px 0 #cacaca;
+          box-shadow: inset -1px 1px 1px 0 #cacaca;
+}
+
+.btn:disabled {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.btn.icon {
+  font-size: 22px;
+  border: 1px solid #dcdcdc;
+  background-color: white;
+  padding: 5px 8px;
+  border-radius: 2px;
+}
+
+.btn.icon:active {
+  -webkit-box-shadow: inset -1px 1px 1px 0 #ececec;
+          box-shadow: inset -1px 1px 1px 0 #ececec;
+}
+
+.btn.icon:hover:not(:disabled) {
+  color: #539adf;
+}
+
+.btn.icon.active {
+  background-color: #e3f2ff;
+}
+
+.btn.icon.active:active {
+  -webkit-box-shadow: inset -1px 1px 1px 0 #cacaca;
+          box-shadow: inset -1px 1px 1px 0 #cacaca;
+}
+
+.btn.primary {
+  color: #fff;
+  background-color: #6fc8ea;
+}
+
+.btn.primary:hover {
+  background-color: #58b7dc;
+}
+
+.btn.primary:active {
+  background-color: #67c9ef;
+  -webkit-box-shadow: inset -1px 1px 1px 0 #53a4c3;
+          box-shadow: inset -1px 1px 1px 0 #53a4c3;
+}
+
+.btn.primary:disabled {
+  background-color: #92d9f5;
+}
+
+.btn.secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.btn.danger {
+  color: #fff;
+  background-color: #ff6b6b;
+}
+
+.btn.danger:hover {
+  background-color: #e2373f;
+}
+
+.btn.danger:active {
+  background-color: #f3535a;
+  -webkit-box-shadow: inset -1px 1px 1px 0 #a72d43;
+          box-shadow: inset -1px 1px 1px 0 #a72d43;
+}
+</style><style type="text/css">.si-info-badge-1 {
+  color: #fff;
+}
+
+.si-info-badge-2 {
+  color: #40a6ff;
+}
+
+.si-info-badge-3 {
+  color: #fff;
+}
+</style><style type="text/css">.command-form {
+  margin: 15px 8px;
+}
+
+.command-form form > * {
+  max-width: 480px;
+}
+
+.command-form .form-input:first-child > div {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.command-form .form-input:first-child > div span {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.command-form input,
+.command-form textarea {
+  font-size: 13px;
+  padding: 4px 5px;
+}
+
+.command-form textarea {
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.command-form .target {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.command-form .target > *:first-child {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.command-form .target button {
+  margin: 0;
+  padding: 2px 4px;
+  margin-left: 5px;
+}
+
+.command-form .target button img {
+  height: 19px;
+}
+
+.command-form input[type='submit'] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+}
+
+.command-form .new-window-button {
+  position: relative;
+}
+
+.command-form .info-badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  font-size: 14px;
+}
+</style><style type="text/css">.editor {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.editor .toolbar {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.editor .test-table-body {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+</style><style type="text/css">.tabbar {
+  background-color: #f3f3f3;
+  padding: 0 5px;
+  position: relative;
+}
+
+.tabbar ul li {
+  display: inline-block;
+}
+
+.tabbar ul li.buttons {
+  float: right;
+}
+
+.tabbar a {
+  display: block;
+  padding: 7px 10px 5px 10px;
+  text-align: center;
+}
+
+.tabbar a:hover {
+  background-color: #e5e5e5;
+}
+
+.tabbar a:focus {
+  background-color: #e5e5e5;
+}
+
+.tabbar .underline {
+  height: 2px;
+  background-color: #40a6ff;
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1);
+  -o-transition: transform 150ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1);
+  position: absolute;
+  bottom: 0;
+}
+
+.tabbar .unread::after {
+  content: '';
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  margin: 2px 8px;
+  background-color: #40a6ff;
+  border-radius: 50%;
+}
+</style><style type="text/css">@keyframes spin {
+  0%,
+  50%,
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+  }
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0%,
+  50%,
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+  }
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+  margin: 0 5px;
+  border: 2px solid;
+  border-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.1);
+  -webkit-animation: spin 0.8s infinite linear;
+  animation: spin 0.8s infinite linear;
+}
+</style><style type="text/css">.log {
+  padding: 5px 7px 5px 10px;
+}
+
+.log .index {
+  display: inline-block;
+  width: 20px;
+}
+
+.log .timestamp {
+  font-weight: normal;
+  color: #5b5b5b;
+}
+
+.log.notice {
+  font-weight: bold;
+}
+
+.log.warn {
+  color: #dc9914;
+}
+
+.log.error {
+  color: #e80600;
+}
+
+.log .message {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.log .shim {
+  -ms-flex-positive: 1000;
+      flex-grow: 1000;
+}
+
+.log .message::after {
+  padding: 0 5px;
+}
+
+.log.success.notice {
+  color: #23843d;
+}
+
+.log.failure.notice {
+  color: #e80600;
+}
+
+.log .log-overview {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.log.success .message .status {
+  color: #23843d;
+}
+
+.log.undetermined .message .status,
+.log.awaiting .message .status {
+  color: #da920e;
+}
+
+.log.failure .message .status {
+  color: #e80600;
+}
+
+.log .details {
+  padding-left: 20px;
+}
+
+.log.failure .details {
+  color: #e80600;
+}
+
+.log a:hover {
+  text-decoration: underline;
+}
+
+.log:hover {
+  background-color: var(--hover-color);
+}
+</style><style type="text/css">.logs {
+  color: #5b5b5b;
+  width: 100%;
+}
+</style><style type="text/css">.command-reference {
+  padding: 0 7px 0 7px;
+}
+
+.command-reference .signature {
+  font-weight: bold;
+}
+
+.command-reference .name {
+  padding-right: 2px;
+}
+
+.command-reference .argument {
+  padding-left: 15px;
+}
+
+.command-reference .description {
+  padding-top: 5px;
+}
+
+.command-reference .arguments {
+  padding-top: 15px;
+  padding-bottom: 3px;
+}
+</style><style type="text/css">footer.console {
+  border-top: 1px #cecece solid;
+  margin-top: -1px;
+}
+
+.console .viewport {
+  padding: 7px 3px 0 3px;
+  font-size: 12px;
+  overflow-y: auto;
+}
+</style><style type="text/css">.modal-content {
+  min-width: 300px;
+  max-width: 65%;
+  margin: 100px auto 0 auto;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal {
+  color: #4d4d4d;
+  background: white;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  opacity: 0;
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 287ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 191ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.modal.stripped {
+  border: 0;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.modal input {
+  color: #4d4d4d;
+}
+
+.modal .right {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .right .btn {
+  margin-right: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+}
+</style><style type="text/css">.dialog {
+  min-width: 300px;
+  color: #505050;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.dialog .dialog__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex: 0 0 75px;
+      flex: 0 0 75px;
+  border-radius: 2px 2px 0 0;
+}
+
+.dialog.dialog--info .dialog__header {
+  background-color: #106ebe;
+}
+
+.dialog.dialog--warn .dialog__header {
+  background-color: #ff5f7b;
+}
+
+.dialog .dialog__cover-image {
+  padding-right: 15px;
+}
+
+.dialog .dialog__title {
+  color: #fff;
+}
+
+.dialog .dialog__title h2 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.dialog .dialog__contents {
+  padding: 20px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.dialog .dialog__contents form {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.dialog .dialog__contents form > div:first-child {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.dialog .dialog__footer {
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.dialog p {
+  font-size: 14px;
+  line-height: 19px;
+}
+</style><style type="text/css">input[type='checkbox'].checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type='checkbox'].checkbox + label {
+  display: block;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.form-input input[type='checkbox'].checkbox + label {
+  width: auto;
+}
+
+input[type='checkbox'].checkbox + label span {
+  display: inline-block;
+  background-color: #fff;
+  color: #40a6ff;
+  text-align: center;
+  line-height: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  margin: -2px 10px 0 0;
+  vertical-align: top;
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px transparent;
+          box-shadow: inset 0 0 1px 1px transparent;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+input[type='checkbox'].checkbox:focus + label span {
+  outline: var(--selected-border-color) 1px solid;
+}
+
+input[type='checkbox'].checkbox:disabled + label span {
+  color: rgba(128, 128, 128, 0.6);
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  cursor: not-allowed;
+}
+
+input[type='checkbox'].checkbox:not(:disabled) + label:active span {
+  background-color: #fdfdfd;
+  -webkit-box-shadow: inset 0 0 1px 1px #ececec;
+          box-shadow: inset 0 0 1px 1px #ececec;
+}
+
+input[type='checkbox'].checkbox + label > div {
+  display: inline-block;
+  width: 85px;
+}
+</style><style type="text/css">.test-selector .search {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.test-selector .tests {
+  height: 250px;
+  overflow: auto;
+  max-height: initial;
+  padding: 0;
+}
+</style><style type="text/css">.import-dialog ul {
+  padding: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+  margin: 5px 0;
+}
+
+.import-dialog .dropzone {
+  display: flow-root;
+  background-color: rgba(163, 163, 163, 0.11);
+}
+
+.import-dialog .dropzone.accept {
+  background-color: #e3f2ff;
+}
+
+.import-dialog .dropzone.reject {
+  background-color: rgba(206, 0, 0, 0.11);
+}
+
+.import-dialog .dropzone > div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: 6px;
+  height: 160px;
+  border-width: 1px;
+  border-color: #505050;
+  border-style: dashed;
+  border-radius: 3px;
+}
+
+.import-dialog .dropzone .file-icon {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.import-dialog .dropzone .file-icon > img {
+  margin: 15px;
+}
+
+.import-dialog .dropzone .file-icon > p {
+  margin: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.import-dialog ul li {
+  padding: 2px 0;
+  word-break: break-word;
+}
+
+.import-dialog ul li::before {
+  content: '\2713';
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  color: #40a6ff;
+  opacity: 0;
+}
+
+.import-dialog ul li.accepted::before {
+  opacity: 1;
+}
+</style><style type="text/css">.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  color: #727272;
+  margin: 7px 0;
+}
+
+.markdown p {
+  margin: 5px 0;
+}
+
+.markdown ol {
+  margin: 3px 0;
+  padding: 0 0 0 30px;
+}
+
+.markdown ol li {
+  margin: 3px 0;
+}
+
+.markdown a,
+.markdown a:visited {
+  color: #40a6ff;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown code {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+}
+</style><style type="text/css">.suite-settings-dialog {
+  min-width: 350px;
+}
+</style><style type="text/css">.labelled-input {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 20px 0;
+}
+
+.labelled-input > input {
+  font-size: 12px;
+  line-height: 17px;
+  padding: 5px;
+}
+
+.labelled-input > label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 1px 0 2px 0;
+  color: rgba(0, 0, 0, 0.55);
+}
+</style><style type="text/css">.rename-dialog .message::before {
+  content: '*';
+}
+
+.rename-dialog .more-icon {
+  font-size: 16px;
+  vertical-align: middle;
+}
+</style><style type="text/css">.welcome-dialog {
+  list-style: none;
+}
+
+.welcome-dialog .welcome-dialog__title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.welcome-dialog .welcome-dialog__subtitle {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.welcome-dialog .welcome-dialog__options {
+  position: relative;
+  padding: 8px 0;
+}
+
+.welcome-dialog a,
+.welcome-dialog a:visited,
+.welcome-dialog .file-open label {
+  text-decoration: none;
+  color: #48aaff;
+  cursor: pointer;
+}
+
+.welcome-dialog li {
+  line-height: 27px;
+}
+
+.welcome-dialog .file-open input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  top: -1000px;
+  left: -1000px;
+}
+</style><style type="text/css">.alert .dialog__main {
+  height: 100%;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.alert .dialog__footer {
+  padding-top: 20px;
+}
+</style><style type="text/css">.window-input {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.window-input > * {
+  margin: 0;
+}
+
+.window-input > .labelled-input {
+  margin: 0 0 0 5px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.new-window-dialog .labelled-input {
+  margin: 20px 0 0 0;
+}
+
+.new-window-dialog input[type='checkbox'].checkbox + label {
+  padding: 0;
+}
+
+.new-window-dialog .dialog__contents {
+  padding: 5px 20px 20px 20px;
+}
+
+.new-window-dialog .dialog__footer {
+  padding: 10px 0 0 0;
+}
+
+.new-window-dialog .message {
+  padding: 5px 0 0 0;
+  color: #ff5f7b;
+}
+</style><style type="text/css">.language-selector .search {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.language-selector .languages {
+  height: auto;
+  overflow: auto;
+  max-height: initial;
+  padding-bottom: 10px;
+}
+
+.languages .language {
+  cursor: pointer;
+  width: auto;
+  padding-top: 15px;
+}
+
+.languages .language label {
+  padding-left: 5px;
+}
+
+.languages .language input {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+</style><style type="text/css">::-moz-focus-inner {
+  border: 0;
+}
+
+:root {
+  --hover-color: #f3f3f3;
+  --active-color: #d8ebfb;
+  --selected-color: #e8f1f8;
+  --selected-border-color: #4d90fe;
+}
+
+html {
+  overflow: auto;
+}
+
+body {
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Arial, sans-serif !important;
+  font-size: 14px;
+  color: #505050;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: #505050;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #505050;
+}
+
+a.link {
+  color: #333;
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: initial;
+}
+
+input,
+textarea {
+  border: 1px #dcdcdc solid;
+  color: #3f3f3f;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 2px 5px;
+}
+
+textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+input:disabled,
+textarea:disabled {
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  cursor: not-allowed;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #a0a0a0;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #a0a0a0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0a0a0;
+}
+
+* {
+  outline: 0;
+}
+
+:focus {
+  outline: var(--selected-border-color) 1px solid;
+}
+
+hr {
+  background-color: #e5e5e5;
+  border: 0;
+  height: 1px;
+}
+
+form .form-contents {
+  margin: 10px 0;
+}
+
+code,
+.code {
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.dragging {
+  cursor: move !important;
+  cursor: -webkit-grabbing !important;
+  cursor: grabbing !important;
+}
+
+.passed {
+  color: #276533;
+}
+
+.failed {
+  color: #df0006;
+}
+
+.action-text,
+.btn {
+  text-transform: capitalize;
+}
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+</style><style type="text/css">@font-face {
+  font-family: 'selenium-ide';
+  src: url(/assets/media/selenium-ide.52b672fb.ttf) format('truetype'),
+    url(/assets/media/selenium-ide.18592ff3.svg#selenium-ide) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^='si-'],
+[class*=' si-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'selenium-ide', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.si-info-badge-1::before {
+  content: '\E900';
+}
+.si-info-badge-2::before {
+  content: '\E901';
+}
+.si-info-badge-3::before {
+  content: '\E902';
+}
+.si-open-tab::before {
+  content: '\E903';
+}
+.si-remove-comment::before {
+  content: '\E904';
+}
+.si-comment::before {
+  content: '\E925';
+}
+.si-new-project::before {
+  content: '\E91E';
+}
+.si-record {
+  position: relative;
+}
+.si-record::after,
+.si-record-circle::before {
+  content: '\E91F';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.si-record::before,
+.si-record-out::before {
+  content: '\E920';
+}
+.si-download::before {
+  content: '\E905';
+}
+.si-filter::before {
+  content: '\E915';
+}
+.si-disable-breakpoints::before {
+  content: '\E91B';
+}
+.si-break-exceptions::before {
+  content: '\E91C';
+}
+.si-stop::before {
+  content: '\E91D';
+}
+.si-open::before {
+  content: '\E906';
+}
+.si-pencil::before {
+  content: '\E919';
+}
+.si-step-down::before {
+  content: '\E917';
+}
+.si-caret-wide::before {
+  content: '\E918';
+}
+.si-gauge-1::before {
+  content: '\E90C';
+}
+.si-gauge-2::before {
+  content: '\E90E';
+}
+.si-gauge-3::before {
+  content: '\E912';
+}
+.si-gauge-4::before {
+  content: '\E913';
+}
+.si-gauge-5::before {
+  content: '\E914';
+}
+.si-gauge-12::before {
+  content: '\E91A';
+}
+.si-search::before {
+  content: '\E916';
+}
+.si-caret::before {
+  content: '\E907';
+}
+.si-check::before {
+  content: '\E910';
+}
+.si-add::before {
+  content: '\E90D';
+}
+.si-ic_arrow_down::before {
+  content: '\E908';
+}
+.si-clear::before {
+  content: '\E921';
+}
+.si-delete::before {
+  content: '\E909';
+}
+.si-step-into::before {
+  content: '\E90A';
+}
+.si-info::before {
+  content: '\E90B';
+}
+.si-more::before {
+  content: '\E911';
+}
+.si-play-all::before {
+  content: '\E90F';
+}
+.si-play::before {
+  content: '\E922';
+}
+.si-pause::before {
+  content: '\E923';
+}
+.si-remove::before {
+  content: '\E924';
+}
+.si-code::before {
+  content: '\E927';
+}
+.si-save::before {
+  content: '\E928';
+}
+.si-select::before {
+  content: '\E929';
+}
+</style><style type="text/css">.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: stretch;
+}
+
+.container .wrapper,
+.container footer {
+  height: 100%;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.container .wrapper .SplitPane.vertical {
+  height: initial !important;
+  position: initial !important;
+}
+
+.container .wrapper .Pane.vertical {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .wrapper .dragging .Pane.vertical {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.container footer .tabbar ~ div {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.container .content {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 0;
+}
+</style><style type="text/css">.Resizer {
+  background: #000;
+  opacity: 0.2;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.Resizer:hover {
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.Resizer.horizontal {
+  margin: -5px 0;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+  width: 100%;
+}
+
+.Resizer.horizontal:hover {
+  border-top: 5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.Resizer.vertical {
+  width: 11px;
+  margin: 0 -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+  cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+  border-left: 5px solid rgba(0, 0, 0, 0.5);
+  border-right: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.Resizer.disabled {
+  cursor: not-allowed;
+}
+
+.Resizer.disabled:hover {
+  border-color: transparent;
+}
+</style></head><body class=""><div id="root"><div class="container" style="min-height: 490px;"><div><div class="SplitPane  horizontal " style="display: flex; flex: 1 1 0%; height: 100%; position: initial; outline: none; overflow: hidden; user-select: text; bottom: 0px; flex-direction: column; min-height: 100%; top: 0px; width: 100%;"><div class="Pane horizontal Pane1  " style="flex: 0 0 auto; position: relative; outline: none; height: 474px; display: flex;"><div class="wrapper"><div></div><div class="header changed"><div><span class="title-prefix">Project: </span><div class="title" aria-label="Change the project name" role="textbox" contenteditable="true">MT-Tests</div><i class="si-pencil"></i></div><span class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Create new project &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+Shift+N&lt;/span&gt;&lt;/p&gt;" class="btn-action si-new-project" aria-label="Create new project" currentitem="false"></button><span class="file-input"><input id="d4f0a3d0-f78b-4b24-8ec0-052b663d330e" type="file"><label data-tip="&lt;p&gt;Open project &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+O&lt;/span&gt;&lt;/p&gt;" data-event="focusexternal mouseenter" data-event-off="blurexternal mouseleave" for="d4f0a3d0-f78b-4b24-8ec0-052b663d330e" currentitem="false"><i class="btn-action si-open"></i></label></span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Save project &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+S&lt;/span&gt;&lt;/p&gt;" data-place="left" class="btn-action si-save pulse" aria-label="Save project" currentitem="false"></button><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="0" aria-label="More options" class="btn-action si-more"></button></span></div><div class="content"><div class="SplitPane  vertical " style="display: flex; flex: 1 1 0%; height: 100%; position: absolute; outline: none; overflow: hidden; user-select: text; flex-direction: row; left: 0px; right: 0px;"><div class="Pane vertical Pane1  " style="flex: 0 0 auto; position: relative; outline: none; width: 180px;"><aside class="test-cases"><div class="tabbar vertical"><div><a href="chrome-extension://mooikfkahbdckldjjndioackbalphokd/index.html#" tabindex="0"><span>Tests</span></a><span class="buttons" style="margin-right: 5px;"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Add new test&lt;/p&gt;" aria-label="Add new test" class="btn-action si-add" currentitem="false"></button></span></div></div><div style="position: relative; display: flex; flex-shrink: 0;"><input class="search" type="search" placeholder="Search tests..." value=""><label class="si-search" style="display: block;"></label></div><div class="tests_div active"><ul class="tests"><li><div class="test selected" tabindex="0" role="Link" style="opacity: 1;"><a class="name passed selected"><span>Home : All Click Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li><li><div class="test" tabindex="-1" role="Link" style="opacity: 1;"><a class="name passed"><span>Home: Resize Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li><li><div class="test" tabindex="-1" role="Link" style="opacity: 1;"><a class="name passed"><span>Profile : All Click Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li><li><div class="test" tabindex="-1" role="Link" style="opacity: 1;"><a class="name passed"><span>Profile : Resize Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li><li><div class="test changed" tabindex="-1" role="Link" style="opacity: 1;"><a class="name passed"><span>Search : All Click Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li><li><div class="test" tabindex="-1" role="Link" style="opacity: 1;"><a class="name passed"><span>Search : Resize Test</span><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></a></div></li></ul></div></aside></div><span role="presentation" class="Resizer vertical "></span><div class="Pane vertical Pane2  " style="flex: 1 1 0%; position: relative; outline: none;"><main class="editor"><div class="toolbar"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Run all tests &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+Shift+R&lt;/span&gt;&lt;/p&gt;" aria-label="Run all tests" class="btn-action si-play-all" currentitem="true"></button><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Run current test &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+R&lt;/span&gt;&lt;/p&gt;" class="btn-action si-play" aria-label="" currentitem="false"></button><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Step over current command &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+&#39;&lt;/span&gt;&lt;/p&gt;" class="btn-action si-step-down" aria-label="" currentitem="false"></button><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Test execution speed&lt;/p&gt;" speed="5" class="btn-action si-gauge-5" aria-label="Test execution speed" currentitem="false"><i class="si-caret"></i></button><div class="flexer"></div><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Disable breakpoints &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+Y&lt;/span&gt;&lt;/p&gt;" class="btn-action si-disable-breakpoints" aria-label="Disable breakpoints" currentitem="false"></button><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Pause on exceptions&lt;/p&gt;" class="btn-action si-break-exceptions" aria-label="Pause on exceptions" currentitem="false"></button><div class="sep"></div><div class="record" data-tip="&lt;p&gt;Start recording &lt;span style=&quot;color: #929292;padding-left: 5px;&quot;&gt;Ctrl+U&lt;/span&gt;&lt;/p&gt;" data-event="focus mouseenter" data-event-off="blur mouseleave" currentitem="false"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" class="btn-action si-record" aria-label="Start recording"></button></div></div><div class="url"><div><div style="display: inline-block;"><span style="display: block; position: relative;"><input id="49519375-1bab-4aa2-9e82-d2dd1ba5e490" type="url" placeholder="Playback base URL" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" aria-label="Playback base URL" aria-haspopup="listbox" aria-controls="49519375-1bab-4aa2-9e82-d2dd1ba5e490_autocomplete_menu" value="http://localhost:3000" style="width: 100%; padding-right: 22px; box-sizing: border-box;"><label for="49519375-1bab-4aa2-9e82-d2dd1ba5e490" class="si-caret-wide" style="position: absolute; top: 0px; bottom: 0px; right: 5px; margin: auto 0px; font-size: 16px; height: 16px; color: rgb(163, 163, 163); cursor: pointer;"></label></span></div></div></div><div class="test-table test-table-header"><table><thead><tr><th><span>Command</span></th><th>Target</th><th>Value</th></tr></thead></table></div><div class="test-table test-table-body"><table><tbody><tr class="passed selected" tabindex="0" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">1</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>open</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">/</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">2</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>set window size</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">1050x718</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">3</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Search</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">4</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Home</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">5</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Playlist 1</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">6</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Playlist 2</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">7</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Playlist 3</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">8</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Playlist 4</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">9</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=The Black Market</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">10</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Horchata</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">11</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Real Friends ft. Ty Dolla $ign</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">12</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Strange Trails</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">13</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">css=.row:nth-child(4) .card-link</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">14</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Click here!</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">15</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">id=dropdown01</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">16</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">id=dropdown01</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">17</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Sign In</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">18</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>click</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);">linkText=Home</span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="passed" tabindex="-1" role="row" aria-label="Test information" draggable="true" style="opacity: 1;"><td><a class="break-toggle"><span class="code index">19</span><span class="arrow"></span></a></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span>close</td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" tabindex="-1" aria-label="More options" class="btn-action no-focus si-more"></button></td></tr><tr class="" tabindex="-1" role="row" aria-label="Test information" style="opacity: 1;"><td></td><td class="comment cell__hidden" colspan="3"><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 1; max-height: calc(1.2em);"></span></td><td class="command"><span class="command-indentation" style="padding-right: 0px;"></span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class=""><span style="display: -webkit-box; -webkit-box-orient: vertical; position: relative; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; padding: 0px; margin: 0px; -webkit-line-clamp: 3; max-height: calc(3.6em);"></span></td><td class="buttons"><div></div></td></tr></tbody></table><div class="filler"></div></div><div class="command-form"><form><div class="target"><div class="form-input"><label for="command">Command</label><div style="display: inline-block;"><span style="display: block; position: relative;"><input id="command" name="command" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" aria-haspopup="listbox" aria-controls="421f1e12-bd15-4176-9914-38af4109fe2a_autocomplete_menu" value="open" style="width: 100%; padding-right: 22px; box-sizing: border-box;" aria-activedescendant="421f1e12-bd15-4176-9914-38af4109fe2a_close"><label for="command" class="si-caret-wide" style="position: absolute; top: 0px; bottom: 0px; right: 5px; margin: auto 0px; font-size: 16px; height: 16px; color: rgb(163, 163, 163); cursor: pointer;"></label></span></div></div><span data-tip="&lt;p&gt;Enable/Disable command&lt;/p&gt;" data-event="focus mouseenter" data-event-off="blur mouseleave" currentitem="false"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" class="btn icon si-comment"></button></span><span data-tip="&lt;p&gt;Add new window configuration&lt;/p&gt;" data-event="focus mouseenter" data-event-off="blur mouseleave" currentitem="false"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" class="btn new-window-button icon si-open-tab"></button></span></div><div class="target"><div class="form-input"><label for="target">Target</label><input id="target" name="target" label="Target" type="text" value="/"></div><span data-tip="&lt;p&gt;Select target in page&lt;/p&gt;" data-event="focus mouseenter" data-event-off="blur mouseleave" currentitem="false"><button type="button" class="btn icon si-select" data-event="focus mouseenter" data-event-off="blur mouseleave" disabled=""></button></span><span data-tip="&lt;p&gt;Find target in page&lt;/p&gt;" data-event="focus mouseenter" data-event-off="blur mouseleave" currentitem="false"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" class="btn icon si-search" disabled=""></button></span></div><div class="form-input"><label for="value">Value</label><textarea rows="1" id="value" name="value" label="Value"></textarea></div><div class="form-input"><label for="comment">Description</label><input id="comment" name="comment" label="Description" type="text" value=""></div><input tabindex="-1" type="submit"></form></div></main></div></div></div></div></div><span role="presentation" class="Resizer horizontal "></span><div class="Pane horizontal Pane2  " style="flex: 1 1 0%; position: relative; outline: none;"><footer class="console" style="height: 182px;"><div class="tabbar"><ul><li style="width: 90px;"><a class="log" href="chrome-extension://mooikfkahbdckldjjndioackbalphokd/index.html#" role="tab" aria-controls="Log">Log</a></li><li style="width: 90px;"><a class="reference" href="chrome-extension://mooikfkahbdckldjjndioackbalphokd/index.html#" role="tab" aria-controls="Reference">Reference</a></li><li class="buttons" style="margin-right: 0px;"><button type="button" data-event="focus mouseenter" data-event-off="blur mouseleave" data-tip="&lt;p&gt;Clear log&lt;/p&gt;" class="btn-action si-clear" aria-label="Clear log" currentitem="false"></button></li></ul><div class="underline" style="transform: translateX(0px); width: 90px;"></div></div><div class="viewport"><div class="logs" id="Log"><ul><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Home : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:39" tabindex="0">03:47:39</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:40" tabindex="0">03:47:40</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:40" tabindex="0">03:47:40</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:40" tabindex="0">03:47:40</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:40" tabindex="0">03:47:40</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on linkText=Playlist 1<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:41" tabindex="0">03:47:41</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on linkText=Playlist 2<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:41" tabindex="0">03:47:41</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">click on linkText=Playlist 3<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:41" tabindex="0">03:47:41</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on linkText=Playlist 4<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:41" tabindex="0">03:47:41</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on linkText=The Black Market<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:41" tabindex="0">03:47:41</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on linkText=Horchata<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:42" tabindex="0">03:47:42</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">click on linkText=Real Friends ft. Ty Dolla $ign<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:42" tabindex="0">03:47:42</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">click on linkText=Strange Trails<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:42" tabindex="0">03:47:42</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=.row:nth-child(4) .card-link<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:42" tabindex="0">03:47:42</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on linkText=Click here!<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:43" tabindex="0">03:47:43</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on id=dropdown01<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:43" tabindex="0">03:47:43</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on id=dropdown01<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:43" tabindex="0">03:47:43</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:43" tabindex="0">03:47:43</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">18.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:43" tabindex="0">03:47:43</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">19.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Home : All Click Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Home: Resize Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on css=html<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:44" tabindex="0">03:47:44</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on css=body<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:45" tabindex="0">03:47:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:45" tabindex="0">03:47:45</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Home: Resize Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:45" tabindex="0">03:47:45</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Profile : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:45" tabindex="0">03:47:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:45" tabindex="0">03:47:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:46" tabindex="0">03:47:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:46" tabindex="0">03:47:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on id=save_changed<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:46" tabindex="0">03:47:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:47" tabindex="0">03:47:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:47" tabindex="0">03:47:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">doubleClick on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:47" tabindex="0">03:47:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on css=.btn-change-password &gt; label<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:47" tabindex="0">03:47:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on id=cancel<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:48" tabindex="0">03:47:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:48" tabindex="0">03:47:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">doubleClick on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:48" tabindex="0">03:47:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:48" tabindex="0">03:47:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=.btn-change-password &gt; label<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on id=save_new_password<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on linkText=PERSONAL PROFILE<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on linkText=PERSONAL PROFILE<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">click on css=.row &gt; .col-sm-12 &gt; .form-group:nth-child(1) &gt; .form-control:nth-child(2)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">18.</span><span class="message">click on css=.form-group &gt; .form-control:nth-child(1)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:49" tabindex="0">03:47:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">19.</span><span class="message">click on css=.filter-option<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:50" tabindex="0">03:47:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">20.</span><span class="message">click on linkText=+1 - US<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:50" tabindex="0">03:47:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">21.</span><span class="message">click on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:50" tabindex="0">03:47:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">22.</span><span class="message">click on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:50" tabindex="0">03:47:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">23.</span><span class="message">doubleClick on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:50" tabindex="0">03:47:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">24.</span><span class="message">click on linkText=Explore<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:51" tabindex="0">03:47:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">25.</span><span class="message">click on css=.nav-item:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:51" tabindex="0">03:47:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">26.</span><span class="message">click on linkText=Profile<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:51" tabindex="0">03:47:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">27.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:51" tabindex="0">03:47:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">28.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">29.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Profile : All Click Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Profile : Resize Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:52" tabindex="0">03:47:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:53" tabindex="0">03:47:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:53" tabindex="0">03:47:53</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Profile : Resize Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:53" tabindex="0">03:47:53</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Search : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:47:53" tabindex="0">03:47:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:54" tabindex="0">03:47:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:54" tabindex="0">03:47:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:54" tabindex="0">03:47:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:54" tabindex="0">03:47:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on linkText=Go back<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:55" tabindex="0">03:47:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:55" tabindex="0">03:47:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:55" tabindex="0">03:47:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on linkText=Profile<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:55" tabindex="0">03:47:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on linkText=Explore<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:55" tabindex="0">03:47:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:56" tabindex="0">03:47:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:56" tabindex="0">03:47:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">doubleClick on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:56" tabindex="0">03:47:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:56" tabindex="0">03:47:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on css=.overlay<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:57" tabindex="0">03:47:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on css=.overlay<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:57" tabindex="0">03:47:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on css=a:nth-child(5) &gt; img<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:57" tabindex="0">03:47:57</time></div></span></li><li class="log undetermined"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">click on css=a:nth-child(7) &gt; img<span class="status" tabindex="0"> Undetermined</span></span><span class="shim"></span><time class="timestamp" datetime="03:47:57" tabindex="0">03:47:57</time></div><div class="details" tabindex="0">Aborting...</div></span></li><li class="log failure notice"><span class="Linkify"><div class="log-overview"><span class="message">'Search : All Click Test' was aborted<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:29" tabindex="0">03:48:29</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Home : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:45" tabindex="0">03:48:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:45" tabindex="0">03:48:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:45" tabindex="0">03:48:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:45" tabindex="0">03:48:45</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:46" tabindex="0">03:48:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on linkText=Playlist 1<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:46" tabindex="0">03:48:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on linkText=Playlist 2<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:46" tabindex="0">03:48:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">click on linkText=Playlist 3<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:46" tabindex="0">03:48:46</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on linkText=Playlist 4<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:47" tabindex="0">03:48:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on linkText=The Black Market<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:47" tabindex="0">03:48:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on linkText=Horchata<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:47" tabindex="0">03:48:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">click on linkText=Real Friends ft. Ty Dolla $ign<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:47" tabindex="0">03:48:47</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">click on linkText=Strange Trails<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:48" tabindex="0">03:48:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=.row:nth-child(4) .card-link<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:48" tabindex="0">03:48:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on linkText=Click here!<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:48" tabindex="0">03:48:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on id=dropdown01<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:48" tabindex="0">03:48:48</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on id=dropdown01<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:49" tabindex="0">03:48:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:49" tabindex="0">03:48:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">18.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:49" tabindex="0">03:48:49</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">19.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Home : All Click Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Home: Resize Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on css=html<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:50" tabindex="0">03:48:50</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on css=body<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Home: Resize Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Profile : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:51" tabindex="0">03:48:51</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on id=save_changed<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:52" tabindex="0">03:48:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:52" tabindex="0">03:48:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:52" tabindex="0">03:48:52</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">doubleClick on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:53" tabindex="0">03:48:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on css=.btn-change-password &gt; label<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:53" tabindex="0">03:48:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on id=cancel<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:53" tabindex="0">03:48:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:53" tabindex="0">03:48:53</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">doubleClick on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:54" tabindex="0">03:48:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">click on css=.form-control:nth-child(3)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:54" tabindex="0">03:48:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=.btn-change-password &gt; label<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:54" tabindex="0">03:48:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on id=save_new_password<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:54" tabindex="0">03:48:54</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on linkText=PERSONAL PROFILE<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:55" tabindex="0">03:48:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on linkText=PERSONAL PROFILE<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:55" tabindex="0">03:48:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">click on css=.row &gt; .col-sm-12 &gt; .form-group:nth-child(1) &gt; .form-control:nth-child(2)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:55" tabindex="0">03:48:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">18.</span><span class="message">click on css=.form-group &gt; .form-control:nth-child(1)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:55" tabindex="0">03:48:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">19.</span><span class="message">click on css=.filter-option<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:55" tabindex="0">03:48:55</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">20.</span><span class="message">click on linkText=+1 - US<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:56" tabindex="0">03:48:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">21.</span><span class="message">click on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:56" tabindex="0">03:48:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">22.</span><span class="message">click on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:56" tabindex="0">03:48:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">23.</span><span class="message">doubleClick on css=.has-error &gt; .form-control<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:56" tabindex="0">03:48:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">24.</span><span class="message">click on linkText=Explore<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:56" tabindex="0">03:48:56</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">25.</span><span class="message">click on css=.nav-item:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:57" tabindex="0">03:48:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">26.</span><span class="message">click on linkText=Profile<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:57" tabindex="0">03:48:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">27.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:57" tabindex="0">03:48:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">28.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:57" tabindex="0">03:48:57</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">29.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Profile : All Click Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Profile : Resize Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Sign In<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:58" tabindex="0">03:48:58</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Profile : Resize Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Search : All Click Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:48:59" tabindex="0">03:48:59</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:00" tabindex="0">03:49:00</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">5.</span><span class="message">click on linkText=Go back<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:00" tabindex="0">03:49:00</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">6.</span><span class="message">click on linkText=Home<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:00" tabindex="0">03:49:00</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">7.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:01" tabindex="0">03:49:01</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">8.</span><span class="message">click on linkText=Profile<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:01" tabindex="0">03:49:01</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">9.</span><span class="message">click on linkText=Explore<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:01" tabindex="0">03:49:01</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">10.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:01" tabindex="0">03:49:01</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">11.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:02" tabindex="0">03:49:02</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">12.</span><span class="message">doubleClick on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:02" tabindex="0">03:49:02</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">13.</span><span class="message">click on css=div:nth-child(4)<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:02" tabindex="0">03:49:02</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">14.</span><span class="message">click on css=.overlay<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:02" tabindex="0">03:49:02</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">15.</span><span class="message">click on css=.overlay<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:03" tabindex="0">03:49:03</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">16.</span><span class="message">click on css=a:nth-child(5) &gt; img<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:03" tabindex="0">03:49:03</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">17.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:03" tabindex="0">03:49:03</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Search : All Click Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:49:03" tabindex="0">03:49:03</time></div></span></li><li class="log notice"><span class="Linkify"><div class="log-overview"><span class="message">Running 'Search : Resize Test'<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:49:03" tabindex="0">03:49:03</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">1.</span><span class="message">open on /<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:04" tabindex="0">03:49:04</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">2.</span><span class="message">setWindowSize on 1050x718<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:04" tabindex="0">03:49:04</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">3.</span><span class="message">click on linkText=Search<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:04" tabindex="0">03:49:04</time></div></span></li><li class="log success"><span class="Linkify"><div class="log-overview"><span class="index" tabindex="0">4.</span><span class="message">close<span class="status" tabindex="0"> OK</span></span><span class="shim"></span><time class="timestamp" datetime="03:49:04" tabindex="0">03:49:04</time></div></span></li><li class="log success notice"><span class="Linkify"><div class="log-overview"><span class="message">'Search : Resize Test' completed successfully<span class="status" tabindex="0"> </span></span><span class="shim"></span><time class="timestamp" datetime="03:49:04" tabindex="0">03:49:04</time></div></span></li></ul></div></div></footer></div></div><div></div><div class="__react_component_tooltip place-bottom type-dark se-tooltip" data-id="tooltip" style="left: 113px; top: 67px;"><p>Run all tests <span style="color: #929292;padding-left: 5px;">Ctrl+Shift+R</span></p></div></div></div></div><script type="text/javascript" src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/neo.js"></script><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div></body></html>
