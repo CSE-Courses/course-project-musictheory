@@ -25,7 +25,17 @@ app.get('/profile',function(req, res) {
     res.sendFile(path.join(__dirname, '/static/html/profilepage.html'));
 });
 
+app.get('/playlists',function(req, res) {
+    res.sendFile(path.join(__dirname, '/static/html/PlaylistPage.html'));
+});
+
+app.get('/playlists/runningtomontana',function(req, res) {
+    res.sendFile(path.join(__dirname, '/static/html/PlaylistTemplate.html'));
+});
+
+
 app.get('/bday.mp3',function(req, res) {
     res.sendFile(path.join(__dirname, 'bday.mp3'));
 });
+
 app.listen(3000);
