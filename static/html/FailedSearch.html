@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<title>Music Theory</title>
+  <title>Music Theory</title>
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/searchpage.css">
     <title>Music Theory Search Page</title>
     <meta charset="utf-8">
@@ -48,6 +50,25 @@
       <a class="navbar-brand" href="/profile">Sign In</a>
 
     </div>
+  </nav>
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+          Your browser dose not Support the audio Tag
+      </audio>
+  </div>
   </nav>
 
 <header class="page-header header container-fluid">

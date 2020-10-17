@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<title>Music Theory</title>
+  <title>Music Theory</title>
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/searchpage.css">
     <title>Music Theory Search Page</title>
     <meta charset="utf-8">
@@ -9,28 +11,64 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
 <body>
-<nav class="navbar navbar-expand-md">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MusicTheory
+    </a>
+    <!--D: Navbar now collapses into buttons when window is minimized-->
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/playlists">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Popular Songs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Hip Hop</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">See more...</a>
+          </div>
+        </li>
+      </ul>
 
-  <a class="navbar-brand" href="#">Music Theory</a>
-  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main-navigation">
-    <ul class="navbar-nav">
-	<li class="nav-item">
-        <a class="nav-link" href="homepage.html">Home</a>
-	</li>
-		<li class="nav-item">
-        <a class="nav-link" href="fill in here">Popular Songs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="fill in here">Playlists</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="fill in here">Profile</a>
-      </li>
-    </ul>
+      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <a class="navbar-brand" href="/profile">Sign In</a>
+
+    </div>
+  </nav>
+
+<nav class="navbar fixed-bottom navbar-light bg-dark">
+  <div class="col-1">
+    <h4 style="color: white; text-align: center;">Previous</h2>
   </div>
+  <div class="col-2">
+    <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+    <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+  </div>
+  <div class="col-1">
+    <h4 style="color: white; text-align: center;">Next</h2>
+  </div>
+  <div class="container-audio col-7">
+    <audio controls autoplay loop id="player">
+        <source src="" type="audio/mp3">
+        Your browser dose not Support the audio Tag
+    </audio>
+</div>
 </nav>
 
 <header class="page-header header container-fluid">
