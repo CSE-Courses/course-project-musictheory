@@ -1,0 +1,13 @@
+.container-audio {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #444;
+    margin: 5px auto;
+    overflow: hidden;
+}
+audio {
+  width:100%;
+}
