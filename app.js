@@ -33,6 +33,9 @@ app.get('/playlists/runningtomontana',function(req, res) {
     res.sendFile(path.join(__dirname, '/static/html/PlaylistTemplate.html'));
 });
 
+app.get('/signin',function(req, res) {
+    res.sendFile(path.join(__dirname, '/static/html/signin.html'));
+});
 
 app.get('/bday.mp3',function(req, res) {
     res.sendFile(path.join(__dirname, 'bday.mp3'));
