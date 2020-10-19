@@ -157,7 +157,7 @@ app.get('/profile',function(req,res){
 });
 
 app.get('/playlists',function(req,res){
-    res.render("Playlistpage.ejs")
+    res.render("PlaylistPage.ejs")
 });
 app.get('/playlists/runningtomontana',function(req,res){
     res.render("PlaylistTemplate.ejs")
