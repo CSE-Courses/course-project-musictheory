@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Music Theory</title>
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/searchpage.css">
+    <title>Music Theory Search Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MusicTheory
+    </a>
+    <!--D: Navbar now collapses into buttons when window is minimized-->
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/playlists">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Popular Songs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Hip Hop</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">See more...</a>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <a class="navbar-brand" href="/signin">Sign In</a>
+
+    </div>
+  </nav>
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+          Your browser dose not Support the audio Tag
+      </audio>
+  </div>
+  </nav>
+
+<header class="page-header header container-fluid">
+
+<div class="overlay">
+<br>
+<br>
+<form class="form-inline active-purple-3 active-purple-4">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input class="form-control form-control-sm ml-5 w-75" type="text" placeholder="Search Songs, Albums, Artists..."
+    aria-label="Search">
+</form>
+<DIV style="position:absolute; TOP:140px; LEFT:40%; WIDTH:400px; HEIGHT:25px; font-weight:bold; color:white; font-size:40px">Stay tuned for this part to work in Sprint 2 or 3 or 4:</DIV>
+
+<a style="position:absolute; TOP:400px; LEFT:40%; WIDTH:280px; HEIGHT:25px; font:utf-8; font-weight:bold; color:pink; font-size:20px" href="/search">Go back</a>
+</div>
+
+</header>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="../js/searchpage.js"></script>
+</body>
+</html>

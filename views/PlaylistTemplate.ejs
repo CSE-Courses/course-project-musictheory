@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+}
+
+td, th {
+  border: 0px solid #dddddd;
+  border-bottom: 1px solid #444444;
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  background-color: #333333;
+}
+
+</style>
+</head>
+<body style="background-color:#333333;">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MusicTheory
+    </a>
+    <!--D: Navbar now collapses into buttons when window is minimized-->
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/playlists">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Popular Songs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Hip Hop</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">See more...</a>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <a class="navbar-brand" href="/signin">Sign In</a>
+
+    </div>
+  </nav>
+
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+          Your browser dose not Support the audio Tag
+      </audio>
+  </div>
+  </nav>
+</body>
+  <br>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Vampire_Weekend_Horchata.jpg/220px-Vampire_Weekend_Horchata.jpg" style="float: left; margin-right: 20px;" />
+<p style="color:#E0BDFF; font-family:verdana;">PLAYLIST</p>
+<p style="color:#E0BDFF; font-family:verdana; font-size:30px">Running to Montana</p>
+<p style="color:#DCDCDC; font-family:verdana;">Tunes to listen to while driving</p>
+<p style="color:#DCDCDC; font-family:verdana;"></p>
+<p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
+<br>
+<table>
+  <tr>
+  	<th>Plus Button</th>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Clock Sign</th>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>Zac and Sara</td>
+    <td>Ben Folds</td>
+    <td>rockin' the suburbs</td>
+	<td>3:14</td>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>Horchata</td>
+    <td>Vampire Weekend</td>
+    <td>Contra</td>
+	<td>3:29</td>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>Cult of Personality</td>
+    <td>Living Colour</td>
+    <td>Super Hits</td>
+	<td>4:52</td>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>Cliffs of Dover</td>
+    <td>Eric Johnson</td>
+    <td>Ah Via Musicom</td>
+	<td>4:10</td>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>Immaterial</td>
+    <td>SOPHIE</td>
+    <td>Oil Of Every Pearl's Un-Insides</td>
+	<td>3:53</td>
+  </tr>
+  <tr>
+	<td><button>+</button></td>
+    <td>New Patek</td>
+    <td>Lil Uzi Vert</td>
+    <td>New Patek</td>
+	<td>5:43</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MusicTheory</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MusicTheory
+    </a>
+    <!--D: Navbar now collapses into buttons when window is minimized-->
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/playlists">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Popular Songs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Hip Hop</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">See more...</a>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <a class="navbar-brand" href="/signin">Sign In</a>
+
+    </div>
+  </nav>
+
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+          Your browser dose not Support the audio Tag
+      </audio>
+  </div>
+  </nav>
+</body>
+
+  <div class="jumbotron">
+    <h1>Welcome to MusicTheory!</h1>
+    <p>Our webapp aims to provide a comfortable music listening experience to everyone!</p>
+    <button onclick="playSong('aLiarsFuneral.mp3')">Play A song!</button>
+  </div>
+
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div>
+        <h1>Your Playlists</h1>
+      </div>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/41cc4b37210415.5738dba522f25.jpg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 1</h3></a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="http://images.8tracks.com/cover/i/008/648/695/large-5305.jpg?rect=0,83,500,500&q=98&fm=jpg&fit=max" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 2</h3></a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://i.pinimg.com/736x/a9/a4/08/a9a408e24aae6f7dfe0e42cf56d53619.jpg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 3</h3></a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/58df0840-9ad7-47cf-aeb2-fac355fb02f7/d96vs8t-17e32299-584d-40f7-a6fd-175ac7183828.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi81OGRmMDg0MC05YWQ3LTQ3Y2YtYWViMi1mYWMzNTVmYjAyZjcvZDk2dnM4dC0xN2UzMjI5OS01ODRkLTQwZjctYTZmZC0xNzVhYzcxODM4MjgucG5nIn1dXX0.y1UeX_teXA4lINCNbguNS0mPamkqkzhsjhs5ZTmBgqg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 4</h3></a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <h4 class="card-title">See more...</h3>
+              <a href="/playlists" class="card-link">Click here!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div>
+        <h1>Favorited Albums</h1>
+      </div>
+      <div class="card-deck">
+        <div class="card">
+
+          <img class="card-img-top" src= <%= album1 %> alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title"><%=alum1name%></h3></a>
+              <p class="card-text">Slipknot</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/The_life_of_pablo_alternate.jpg/220px-The_life_of_pablo_alternate.jpg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Real Friends ft. Ty Dolla $ign</h3></a>
+              <p class="card-text">Kanye West</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Vampire_Weekend_Horchata.jpg/220px-Vampire_Weekend_Horchata.jpg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">Horchata</h3></a>
+              <p class="card-text">Vampire Weekend</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
+          <div class="card-body text-center">
+            <a href="#" class="stretched-link"><h4 class="card-title">The Black Market</h3></a>
+              <p class="card-text">Rise Against</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <h4 class="card-title">See more...</h3>
+              <a href="#" class="card-link">Click here!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+  <div>They said to put easter eggs in.</div>
+  <div>To improve the user experience.</div>
+  <div>This will be covered by the music player,</div>
+  <div>but it helps keep the albums above it.</div>
+
+
+
+</html>
