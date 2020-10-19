@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const { response } = require('express');
-const port = 3000;
-var fs = require('fs');
+const PORT = process.env.PORT || '3000';
+
 const app = express();
+app.set("port", PORT);
+
 app.use(express.static(path.join(__dirname, 'client')));
 app.set('view engine', 'ejs');
 
@@ -179,4 +181,4 @@ app.get('/aLiarsFuneral.mp3',function(req, res) {
     res.sendFile(path.join(__dirname, 'aLiarsFuneral.mp3'));
 });
 
-app.listen(3000);
+app.listen(PORT);
