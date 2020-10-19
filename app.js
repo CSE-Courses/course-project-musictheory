@@ -25,24 +25,62 @@ mongoose.connect(uri, {
 
 
 
-// var TrackSchema = new mongoose.Schema({
-//     artist: String,
-//     duration: Number,
-//     name : String,
-//     id : String,
-//     preview_url: String,
-//     fileName: String
+var TrackSchema = new mongoose.Schema({
+    artist: String,
+    duration: Number,
+    name : String,
+    id : String,
+    preview_url: String,
+    fileName: String
+    
 
+});
+
+
+var track = mongoose.model("tarck", TrackSchema);    // Adding to Database
+// track.create({
+//     artist : "Slipknot",
+//     name: "funeral",
+//     fileName : "aLiarsFuneral.mp3"
+    
+
+// }, function(error,data){
+//     if(error){
+//         console.log("An error while adding to Collection");
+//         console.log(error);
+//     }else{
+//         console.log("Data added sucessfully");
+//         console.log(data);
+//     }
 // });
 
-// var AlbumSchema = new mongoose.Schema({
-//     name: String,
-//     type : String,
-//     artist: String,
-//     id : String,
-//     images : String, 
-//     uri : String   
 
+
+var AlbumSchema = new mongoose.Schema({
+    name: String,
+    type : String,
+    artist: String,
+    id : String,
+    images : String, 
+    uri : String   
+
+});
+
+var album = mongoose.model("album", AlbumSchema);    // Adding to Database
+// album.create({
+//     name : "a",
+//     artist: "Slipknot",
+//     images : "https://upload.wikimedia.org/wikipedia/en/1/18/Slipknot_-_We_Are_Not_Your_Kind.png"
+    
+
+// }, function(error,data){
+//     if(error){
+//         console.log("An error while adding to Collection");
+//         console.log(error);
+//     }else{
+//         console.log("Data added sucessfully");
+//         console.log(data);
+//     }
 // });
 
 // var ArtistSchema =  new mongoose.Schema({
@@ -51,6 +89,7 @@ mongoose.connect(uri, {
 //     type : String,
 //     uri: String 
 // });
+
 
 
  
@@ -71,24 +110,39 @@ mongoose.connect(uri, {
 //     }
 // });
 
-// artist.find({}, function(error,data){     //Retrieving data
-//     if(error){
-//         console.log("problem finding data");
-//     }else{
-//         console.log("Here is all the data");
-//         console.log(data);
-//     }
-// });
+
+album.findOne({ name: "all"}, function(error,data){     //Retrieving data
+    if(error){
+        console.log("problem finding data");
+    }else{
+        console.log("Here is all the data");
+        console.log(data);
+        da=data;
+    }
+});
+
 
 app.use(express.static(__dirname + '/views'));
 
 
-app.get('/',function(req,res){
-    const a = "https://i.redd.it/nymi0ev26kx41.jpg"; 
-    res.render("index.ejs",{
-        album1: a
 
+app.get('/',function(req,res){
+    album.findOne({ name: "We are not your kind"}, function(error,images){     //Retrieving data
+        if(error){
+            console.log("problem finding data");
+        }else{
+            
+
+            res.render("index.ejs",{
+                album1: images.images,
+                alum1name: images.name
+        
+            });
+        }
     });
+
+    
+
 });
 app.get('/search',function(req,res){
     res.render("searchpage.ejs")
@@ -116,8 +170,13 @@ app.get('/signin',function(req, res) {
 });
 
 
-app.get('/bday.mp3',function(req, res) {
-    res.sendFile(path.join(__dirname, 'bday.mp3'));
+// app.get('/bday.mp3',function(req, res) {
+//     res.sendFile(path.join(__dirname, 'bday.mp3'));
+// });
+
+
+app.get('/aLiarsFuneral.mp3',function(req, res) {
+    res.sendFile(path.join(__dirname, 'aLiarsFuneral.mp3'));
 });
 
 app.listen(3000);
