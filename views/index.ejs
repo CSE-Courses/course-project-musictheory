@@ -86,7 +86,8 @@
   <div class="jumbotron">
     <h1>Welcome to MusicTheory!</h1>
     <p>Our webapp aims to provide a comfortable music listening experience to everyone!</p>
-    <button onclick="playSong('aLiarsFuneral.mp3')">Play A song!</button>
+    <button id="myButton">Click me!</button>
+    <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button>
   </div>
 
   <div class="row">
@@ -140,10 +141,10 @@
       <div class="card-deck">
         <div class="card">
 
-          <img class="card-img-top" src= <%= album1 %> alt="Card image">
+          <img class="card-img-top" src= <%= album1%> alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title"><%=alum1name%></h3></a>
-              <p class="card-text">Slipknot</p>
+            <a href="#" class="stretched-link"><h4 class="card-title"><%= name%></h3></a>
+              <p class="card-text">Lord Huron</p>
           </div>
         </div>
         <div class="card">
