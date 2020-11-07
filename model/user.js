@@ -6,11 +6,11 @@ var UserSchema =  new Schema({
     username : String,
     password: String,
     email : String,
-    pfp: String, 
-    phonenumber: String,
+    //pfp: String, 
+    //phonenumber: String,
     //albums: [album]
 });
 
-const artist = mongoose.model("Artist", ArtistSchema);
+const User = mongoose.model("user", UserSchema);
 
-module.exports = artist;
+module.exports = User;
