@@ -98,5 +98,32 @@ app.post('/createaccount', function(req, res){
   })
 });
 
+app.post('/login', function(req, res){
+  response = {
+    email : req.body.loginemail,
+    passwordinfo : req.body.loginpassword
+  };
+
+  console.log(response); 
+
+  UserModel.findOne({email : response["email"]} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with that email") 
+    }
+    else{
+      bcrypt.compare(response['passwordinfo'] , existingUser.password, function(err, result){
+        if(result){
+          console.log('youve been authenticated!')
+          res.redirect('/')
+        }
+        else{
+          console.log('bad login!')
+          res.redirect('/signin')
+        }
+      }) 
+     
+    }
+  })
+})
 
 app.listen(port);
