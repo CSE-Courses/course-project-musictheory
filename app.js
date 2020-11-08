@@ -17,7 +17,8 @@ const hbs = require('hbs');
 app.set("views", path.join(__dirname,"/views/"));
 
 app.use(express.static(path.join(__dirname, 'client')));
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
 
 
 app.use('/search',searchRoutes);
@@ -26,6 +27,22 @@ app.use('/failedSearch',failedSearchRoutes);
 app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
 app.use('/profile',profileRoutes);
+
+
+
+app.use(express.static(__dirname + '/views'));
+
+app.get('/',function(req,res){
+    const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
+    const b = "Master of Puppets"
+      res.render("index.ejs",{
+          album1: a ,
+          name : b
+  
+      });
+  
+  });
+
 
 // -----------------SpotifyAPI --------------------------------------------------------------------
 
@@ -48,18 +65,19 @@ spotifyApi
     spotifyApi
     .searchArtists(artistName)
     .then(data => {
-      //console.log('The received data from the API: ', data.body.artists.items);
+      console.log('The received data from the API: ', data.body.artists.items);
       const {items} = data.body.artists;
-      //console.log(items[0].images);
-      res.render("artist-search-results", { artist: items })
-      // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
+      console.log(items[0].images);
+      res.render("artist-search-results.hbs", { artist: items })
+      
     })
     .catch(err => console.log('The error while searching artists occurred: ', err));
   });
   
   
   app.get("/albums/:artistId", (req, res) => {
-     const {artistId} = req.params;
+     const {artistId} = req.params
+     console.log(req.params)
   
      spotifyApi
     .getArtistAlbums(artistId)
@@ -87,21 +105,9 @@ spotifyApi
 
 
 
-// ----------------------------Dynamic Control------------------------------------------------------------------------
 
 
-app.use(express.static(__dirname + '/views'));
 
-app.get('/',function(req,res){
-    const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
-    const b = "Master of Puppets"
-      res.render("index.ejs",{
-          album1: a ,
-          name : b
-  
-      });
-  
-  });
 
 
 //-------------------------------------Database-------------------------------------------------------
