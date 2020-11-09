@@ -1,0 +1,25 @@
+
+<% artist.forEach(function(item, index){ %>
+<div >
+    
+    <%if(artist === undefined || item.images.length > 0) {%>
+        <div class="card">
+            
+            
+            <img class="card-img-top" img src= <%= item.images[0].url %> alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b><%= item.name %></b></h4>
+                
+                <a href="/albums/<%= item.id %>">View albums</a>
+                
+            </div>
+        </div>
+
+     <% } else{ %>
+    <img src = "https://i.pinimg.com/originals/26/86/b5/2686b53f79adc176a15320dbc57c58a3.jpg" style= "width:100%">
+    <% }%>
+    
+   
+    
+</div>
+<% }); %>

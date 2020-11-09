@@ -11,12 +11,6 @@ router.get('/',function(req,res){
 
 
 
-
-
-
-
-
-
 router.get('/bday.mp3',function(req, res) {
     res.sendFile(path.join(__dirname, 'bday.mp3'));
 });
