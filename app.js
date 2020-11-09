@@ -21,6 +21,7 @@ const failedSearchRoutes  = require('./routes/failedSearchRoutes');
 const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
 const profileRoutes  = require('./routes/profileRoutes');
+const playlistTemplateRoutes  = require('./routes/playlistTemplateRoutes');
 var { response } = require('express');
 const User = require('./model/user');
 const { log } = require('console');
@@ -38,6 +39,7 @@ app.use('/failedSearch',failedSearchRoutes);
 app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
 app.use('/profile',profileRoutes);
+app.use('/playlisttemplate',playlistTemplateRoutes);
 
 app.use(express.static(__dirname + '/views'));
 
