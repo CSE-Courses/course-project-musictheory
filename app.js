@@ -1,20 +1,134 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const { response } = require('express');
-const PORT = process.env.PORT || '3000';
-
+const bodyParser = require('body-parser')
+//const connection = require("./model");
+const mongoose =require('mongoose');
+const port = 3000;
 const app = express();
-app.set("port", PORT);
+
+//define the modules we use
+const bcrypt = require('bcrypt')
+const UserModel = require('./model/user')
+
+//initialize some of the modules we use
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+var { response } = require('express');
+const User = require('./model/user');
+const { log } = require('console');
+
+var SpotifyWebApi = require('spotify-web-api-node');
+const hbs = require('hbs');
+
+//routes for our pages
+const searchRoutes= require('./routes/searchRoutes');
+const playlistRoutes  = require('./routes/playlistRoutes');
+const failedSearchRoutes  = require('./routes/failedSearchRoutes');
+const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
+const signinRoutes  = require('./routes/signinRoutes');
+const profileRoutes  = require('./routes/profileRoutes');
+const playlistTemplateRoutes  = require('./routes/playlistTemplateRoutes');
+
+
+app.set("views", path.join(__dirname,"/views/"));
 
 app.use(express.static(path.join(__dirname, 'client')));
 app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
+
+//binding our routes to our URLs
+app.use('/search',searchRoutes);
+app.use('/playlists',playlistRoutes);
+app.use('/failedSearch',failedSearchRoutes);
+app.use('/searchPageGenre',searchPageGenreRoutes);
+app.use('/signin',signinRoutes);
+app.use('/profile',profileRoutes);
+app.use('/playlisttemplate',playlistTemplateRoutes);
 
 
 
-const mongoose = require("mongoose");
-const { stringify } = require('querystring');
+app.use(express.static(__dirname + '/views'));
+
+app.get('/',function(req,res){
+    const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
+    const b = "Master of Puppets"
+      res.render("index.ejs",{
+          album1: a ,
+          name : b
+  
+      });
+  
+  });
 
 
+// -----------------SpotifyAPI --------------------------------------------------------------------
+
+//scopes = ['user-read-private', 'user-read-email','playlist-modify-public','playlist-modify-private']
+
+var spotifyApi = new SpotifyWebApi({
+  clientId: '9343127d9efd4b1a92df981900ff6e5f',
+  clientSecret: '0e7a79851c7344a4b69dc0846d771063',
+  redirectUri: 'http://localhost:3000/'
+});
+
+spotifyApi
+  .clientCredentialsGrant()
+  .then(data => spotifyApi.setAccessToken(data.body['access_token']))
+  .catch(error => console.log('Something went wrong when retrieving an access token', error));
+
+
+  app.get("/artist-search", (req, res) => {
+    const { artistName } = req.query;
+    spotifyApi
+    .searchArtists(artistName)
+    .then(data => {
+      console.log('The received data from the API: ', data.body.artists.items);
+      const {items} = data.body.artists;
+      console.log(items[0].images);
+      res.render("artist-search-results.hbs", { artist: items })
+      
+    })
+    .catch(err => console.log('The error while searching artists occurred: ', err));
+  });
+  
+  
+  app.get("/albums/:artistId", (req, res) => {
+     const {artistId} = req.params
+     console.log(req.params)
+  
+     spotifyApi
+    .getArtistAlbums(artistId)
+    .then((data) => {
+      //const {album} = data.body;
+      const {items} = data.body
+      res.render("albums", {albums : items});
+        })
+  
+    .catch((err => console.log('The error while searching albums occurred: ', err))); 
+  
+  }); 
+  
+  app.get("/tracks/:albumId", (req,res) =>{
+  const {albumId} = req.params;
+  spotifyApi
+  .getAlbumTracks(albumId)
+    .then((data) => {
+    const {items} = data.body;
+    res.render("tracks", { tracks : items})
+    })
+    .catch((err => console.log('The error while searching tracks occurred: ', err))); 
+  })
+
+
+
+
+
+
+
+
+
+//-------------------------------------Database-------------------------------------------------------
 const uri = "mongodb+srv://musicTheory:GY1HZHC60eb2MKo5@cluster0.eg8k3.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -25,160 +139,71 @@ mongoose.connect(uri, {
 })
 .catch(err => console.log(err))
 
+//---------------------------------Registration and Login Functionality---------------------------------------------------------------------
+
+app.post('/createaccount', function(req, res){
+  response = {
+      usernameinfo : req.body.username,
+      emailinfo : req.body.email,
+      passwordinfo : req.body.password
+      };
 
 
-var TrackSchema = new mongoose.Schema({
-    artist: String,
-    duration: Number,
-    name : String,
-    id : String,
-    preview_url: String,
-    fileName: String
-    
+  console.log(response);  
 
-});
-
-
-var track = mongoose.model("tarck", TrackSchema);    // Adding to Database
-// track.create({
-//     artist : "Slipknot",
-//     name: "funeral",
-//     fileName : "aLiarsFuneral.mp3"
-    
-
-// }, function(error,data){
-//     if(error){
-//         console.log("An error while adding to Collection");
-//         console.log(error);
-//     }else{
-//         console.log("Data added sucessfully");
-//         console.log(data);
-//     }
-// });
-
-
-
-var AlbumSchema = new mongoose.Schema({
-    name: String,
-    type : String,
-    artist: String,
-    id : String,
-    images : String, 
-    uri : String   
-
-});
-
-var album = mongoose.model("album", AlbumSchema);    // Adding to Database
-// album.create({
-//     name : "a",
-//     artist: "Slipknot",
-//     images : "https://upload.wikimedia.org/wikipedia/en/1/18/Slipknot_-_We_Are_Not_Your_Kind.png"
-    
-
-// }, function(error,data){
-//     if(error){
-//         console.log("An error while adding to Collection");
-//         console.log(error);
-//     }else{
-//         console.log("Data added sucessfully");
-//         console.log(data);
-//     }
-// });
-
-// var ArtistSchema =  new mongoose.Schema({
-//     id : String,
-//     name: String,
-//     type : String,
-//     uri: String 
-// });
-
-
-
- 
-// var artist = mongoose.model("Artist", ArtistSchema);    // Adding to Database
-// artist.create({
-//     id : "1",
-//     name: "Slipkot",
-//     type : "Artist",
-//     uri: "" 
-
-// }, function(error,data){
-//     if(error){
-//         console.log("An error while adding to Collection");
-//         console.log(error);
-//     }else{
-//         console.log("Data added sucessfully");
-//         console.log(data);
-//     }
-// });
-
-
-album.findOne({ name: "all"}, function(error,data){     //Retrieving data
-    if(error){
-        console.log("problem finding data");
-    }else{
-        console.log("Here is all the data");
-        console.log(data);
-        da=data;
-    }
-});
-
-
-app.use(express.static(__dirname + '/views'));
-
-
-
-app.get('/',function(req,res){
-    album.findOne({ name: "We are not your kind"}, function(error,images){     //Retrieving data
-        if(error){
-            console.log("problem finding data");
-        }else{
-            
-
-            res.render("index.ejs",{
-                album1: images.images,
-                alum1name: images.name
+  UserModel.findOne({ email: response['emailinfo']} , function(err, existingUser){
+    if(existingUser == null){
+      var passwordHash = response['passwordinfo']
+      bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(passwordHash, salt, function(err, hash) {
+          console.log(hash)
+          const newUser = new UserModel({
+            username : response['usernameinfo'], 
+            password: hash,
+            email: response['emailinfo'],
+          });
         
-            });
-        }
+          newUser.save();
+          console.log('Registration successful');
+          res.redirect('/');
+        });
     });
-
-    
-
-});
-app.get('/search',function(req,res){
-    res.render("searchpage.ejs")
-});
-app.get('/FailedSearch',function(req,res){
-    res.render("FailedSearch.ejs")
-});
-app.get('/profile',function(req,res){
-    res.render("profilepage.ejs")
+    }
+    else if(err){
+      console.log(err);
+    }
+    else{
+      console.log('user already exists');
+    }
+  })
 });
 
-app.get('/playlists',function(req,res){
-    res.render("PlaylistPage.ejs")
-});
-app.get('/playlists/runningtomontana',function(req,res){
-    res.render("PlaylistTemplate.ejs")
-});
+app.post('/login', function(req, res){
+  response = {
+    email : req.body.loginemail,
+    passwordinfo : req.body.loginpassword
+  };
 
-app.get('/SearchPageGenre',function(req,res){
-    res.render("SearchPageGenre.ejs")
-});
+  console.log(response); 
 
-app.get('/signin',function(req, res) {
-    res.render("signin.ejs")
-});
+  UserModel.findOne({email : response["email"]} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with that email") 
+    }
+    else{
+      bcrypt.compare(response['passwordinfo'] , existingUser.password, function(err, result){
+        if(result){
+          console.log('youve been authenticated!')
+          res.redirect('/')
+        }
+        else{
+          console.log('bad login!')
+          res.redirect('/signin')
+        }
+      }) 
+     
+    }
+  })
+})
 
-
-// app.get('/bday.mp3',function(req, res) {
-//     res.sendFile(path.join(__dirname, 'bday.mp3'));
-// });
-
-
-app.get('/aLiarsFuneral.mp3',function(req, res) {
-    res.sendFile(path.join(__dirname, 'aLiarsFuneral.mp3'));
-});
-
-app.listen(PORT);
+app.listen(port);

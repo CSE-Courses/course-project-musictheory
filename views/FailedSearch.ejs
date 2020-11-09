@@ -34,17 +34,17 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Top Genres</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Hip Hop</a>
-            <a class="dropdown-item" href="#">Rock</a>
-            <a class="dropdown-item" href="#">See more...</a>
-          </div>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
+              <a class="dropdown-item" href="/searchPageGenre">Rock</a>
+              <a class="dropdown-item" href="/searchPageGenre">See more...</a>
+            </div>
         </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="artist-search-input form-control mr-sm-2" type="text" placeholder="Artist name"  name="artistName">
+        <button class="btn btn-secondary my-2 my-sm-0">Search</button>
       </form>
 
       <a class="navbar-brand" href="/signin">Sign In</a>

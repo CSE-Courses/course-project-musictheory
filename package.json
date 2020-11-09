@@ -2,9 +2,9 @@
   "name": "course-project-musictheory",
   "version": "1.0.0",
   "description": "web application for interactive music listening",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,14 +17,22 @@
   },
   "homepage": "https://github.com/UB-CSE/course-project-musictheory#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "click": "^0.1.0",
+    "connect": "^3.7.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "flash": "^1.1.0",
     "fs": "0.0.1-security",
+    "hbs": "^4.1.1",
     "howler": "^2.2.0",
-    "mongoose": "^5.10.9"
-  },
-  "engines": {
-    "node": "10.x"
+    "mongoose": "^5.10.9",
+    "nodemon": "^2.0.6",
+    "querystring": "^0.2.0",
+    "spotify-web-api-node": "^5.0.0"
   }
 }

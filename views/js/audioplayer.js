@@ -3,9 +3,9 @@ function playSong(songName){
     var songTitle = document.getElementById("song-title");
     var artistName = document.getElementById("artist-name");
 
-    playerHTML = '<source src="/aLiarsFuneral.mp3" type="audio/mp3">';
-    songTitleHTML = 'A liars Funeral';
-    artistNameHTML = 'Slipknot';
+    playerHTML = '<source src="\01-Battery.mp3" type="audio/mp3">';
+    songTitleHTML = 'Happy Birthday';
+    artistNameHTML = 'Someone I Guess';
     player.innerHTML = playerHTML;
     songTitle.innerHTML = songTitleHTML;
     artistName.innerHTML = artistNameHTML;

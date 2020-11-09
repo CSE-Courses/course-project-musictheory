@@ -45,16 +45,16 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Top Genres</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Hip Hop</a>
-            <a class="dropdown-item" href="#">Rock</a>
-            <a class="dropdown-item" href="#">See more...</a>
+            <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
+            <a class="dropdown-item" href="/searchPageGenre">Rock</a>
+            <a class="dropdown-item" href="/searchPageGenre">See more...</a>
           </div>
         </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="artist-search-input form-control mr-sm-2" type="text" placeholder="Artist name"  name="artistName">
+        <button class="btn btn-secondary my-2 my-sm-0">Search</button>
       </form>
 
       <a class="navbar-brand" href="/signin">Sign In</a>
@@ -86,7 +86,8 @@
   <div class="jumbotron">
     <h1>Welcome to MusicTheory!</h1>
     <p>Our webapp aims to provide a comfortable music listening experience to everyone!</p>
-    <button onclick="playSong('aLiarsFuneral.mp3')">Play A song!</button>
+    <button id="myButton">Click me!</button>
+    <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button>
   </div>
 
   <div class="row">
@@ -140,10 +141,10 @@
       <div class="card-deck">
         <div class="card">
 
-          <img class="card-img-top" src= <%= album1 %> alt="Card image">
+          <img class="card-img-top" src= <%= album1%> alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title"><%=alum1name%></h3></a>
-              <p class="card-text">Slipknot</p>
+            <a href="#" class="stretched-link"><h4 class="card-title"><%= name%></h3></a>
+              <p class="card-text">Lord Huron</p>
           </div>
         </div>
         <div class="card">
