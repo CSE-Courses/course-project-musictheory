@@ -29,9 +29,6 @@ const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
 const profileRoutes  = require('./routes/profileRoutes');
 const playlistTemplateRoutes  = require('./routes/playlistTemplateRoutes');
-var { response } = require('express');
-const User = require('./model/user');
-const { log } = require('console');
 
 
 app.set("views", path.join(__dirname,"/views/"));
