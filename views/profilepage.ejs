@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Music Theory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css'>
-<link rel="stylesheet" href="../css/profilepage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css'>
+  <link rel="stylesheet" href="./css/profilepage.css">
 </head>
 
 <body>
-<!-- partial:profilepage.partial.html -->
+<!-- partial:index.partial.html -->
 <div id="wrapper__account">
   <div class="row wrapper__account--top">
     <div class="col-sm-12">
@@ -17,14 +18,6 @@
       <div class="account__user">
         <h4>Welcome, Geoffrey</h4>
         <p id="free">Account Type : <span>Free</span></p>
-        
-           <!--D : Made small edit to link to Home and Search pages-->
-        <p id="links">
-           <a href="/">Home</a> &nbsp;
-           <a href="/search">Explore</a> 
-          </p>
-      </div>
-        
       </div>
     </div>
     
@@ -138,13 +131,65 @@
     </div>
   </div>
 </div>
+<div class="modal fade account-page" id="modal_upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close hidden-xs" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title" id="myModalLabel">Upload profile picture</h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 height-upload">
+            <input id="choose_file" type="file" name="choose_file" accept="image/*"/>
+            <label class="label-choose-file" for="choose_file"><a class="upload-photo"><i class="fa fa-plus-circle fa-2x"></i>&nbsp;Upload photo</a></label>
+          </div>
+          <div class="col-sm-6 height-upload">
+            <input id="take_photo" type="file" name="take_photo" accept="image/*"/>
+            <label class="label-choose-file" for="take_photo"><a class="take-photo"><i class="fa fa-camera fa-2x"></i>&nbsp;Take photo</a></label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer visible-xs-block"><a data-dismiss="modal">Cancel</a></div>
+    </div>
+  </div>
+</div>
+<div class="modal fade account-page" id="modal_crop_image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header"><a class="pull-left visible-xs" id="btnCancel" data-dismiss="modal" aria-label="Close">Cancel</a>
+        <h5 class="modal-title visible-xs-inline-block" id="myModalLabel">Upload profile picture</h5>
+        <h5 class="modal-title hidden-xs">Crop photo</h5><a class="pull-right visible-xs" id="btnSet" data-dismiss="modal" aria-label="Close">Set</a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="crop-container">
+              <div class="hidden-xs" id="drag__reposition"><i class="fa fa-arrows"></i><span> Drag to Reposition</span></div>
+              <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+              </div>
+              <div class="range__zoom--inner hidden-xs"><a id="btnZoomOut">-</a>
+                <input class="hidden-xs" id="range_zoom" type="range" min="0" max="9" value="0"/><a id="btnZoomIn">+</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer"><span class="visible-xs-inline-block">Move and Scale photo to fit</span>
+        <button class="btn btn-gray btn-sm hidden-xs" data-dismiss="modal" aria-label="Close">Cancel</button>
+        <button class="btn btn-base btn-sm hidden-xs" id="btnSet_desktop" data-dismiss="modal" aria-label="Close">Set image</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- partial -->
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 <script src='https://use.fontawesome.com/8decb1aa86.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js'></script>
-<script  src="../js/profilepage.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js'></script><script  src="./js/profilepage.js"></script>
 
 </body>
 </html>
