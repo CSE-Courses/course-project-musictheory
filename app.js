@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const mongoose =require('mongoose');
 const port = 3000;
 const app = express();
+const session = require('express-session')
 
 //define the modules we use
 const bcrypt = require('bcrypt')
@@ -14,6 +15,13 @@ const UserModel = require('./model/user')
 //initialize some of the modules we use
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+app.use(
+  session({
+  secret: "secretzz",
+  saveUninitialized: false,
+  resave: false
+  })
+  );
 var { response } = require('express');
 const User = require('./model/user');
 const { log } = require('console');
@@ -29,6 +37,9 @@ const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
 const profileRoutes  = require('./routes/profileRoutes');
 const playlistTemplateRoutes  = require('./routes/playlistTemplateRoutes');
+
+//global variable for sessions, not recommended for production
+var sess;
 
 
 app.set("views", path.join(__dirname,"/views/"));
@@ -194,6 +205,8 @@ app.post('/login', function(req, res){
       bcrypt.compare(response['passwordinfo'] , existingUser.password, function(err, result){
         if(result){
           console.log('youve been authenticated!')
+          sess = req.session;
+          sess.sessionusername = existingUser.username;
           res.redirect('/')
         }
         else{
