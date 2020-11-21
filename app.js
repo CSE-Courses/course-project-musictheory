@@ -207,6 +207,7 @@ app.post('/login', function(req, res){
           console.log('youve been authenticated!')
           sess = req.session;
           sess.sessionusername = existingUser.username;
+          console.log(sess.sessionusername)
           res.redirect('/')
         }
         else{

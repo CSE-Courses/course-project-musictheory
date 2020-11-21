@@ -2,11 +2,10 @@ const express= require("express");
 const router= express.Router();
 const session = require('express-session')
 
-var sess;
-
-
 router.get('/',function(req, res) {
-    if(session.username){
+    var tempsession = req.session
+    console.log(tempsession.sessionusername)
+    if(tempsession.sessionusername){
         res.redirect('/')
     }
     res.render("./signin.ejs")
