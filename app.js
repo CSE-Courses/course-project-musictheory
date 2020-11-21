@@ -62,14 +62,27 @@ app.use('/playlisttemplate',playlistTemplateRoutes);
 app.use(express.static(__dirname + '/views'));
 
 app.get('/',function(req,res){
-    const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
-    const b = "Master of Puppets"
-      res.render("index.ejs",{
-          album1: a ,
-          name : b
-  
-      });
-  
+  var thissession = req.session
+  const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
+  const b = "Master of Puppets"
+  if(thissession.sessionusername){
+    res.render("index.ejs",{
+      signedin: 'Profile',
+      signedinlink: '/profile',
+      logout: "Logout",
+      album1: a ,
+      name : b
+    });
+  }
+  else{
+    res.render("index.ejs",{
+      signedin: 'Sign In',
+      signedinlink: '/signin',
+      logout: "",
+      album1: a ,
+      name : b
+    });
+  }
   });
 
 
@@ -207,6 +220,7 @@ app.post('/login', function(req, res){
           console.log('youve been authenticated!')
           sess = req.session;
           sess.sessionusername = existingUser.username;
+          console.log('session username:')
           console.log(sess.sessionusername)
           res.redirect('/')
         }
@@ -219,5 +233,16 @@ app.post('/login', function(req, res){
     }
   })
 })
+
+app.get('/logout',(req,res) => {
+  req.session.destroy((err) => {
+      if(err) {
+          return console.log(err);
+      }
+      sess = req.session
+      res.redirect('/');
+  });
+
+});
 
 app.listen(port);
