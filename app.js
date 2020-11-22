@@ -62,10 +62,10 @@ app.use('/playlisttemplate',playlistTemplateRoutes);
 app.use(express.static(__dirname + '/views'));
 
 app.get('/',function(req,res){
-  var thissession = req.session
+  var tempsession = req.session
   const a = "songs\\Behemoth\\Behemoth - I Loved You at Your Darkest (2018)\\Behemoth.jpg"; 
   const b = "Master of Puppets"
-  if(thissession.sessionusername){
+  if(tempsession.sessionusername){
     res.render("index.ejs",{
       signedin: 'Profile',
       signedinlink: '/profile',
@@ -103,46 +103,115 @@ spotifyApi
 
 
   app.get("/artist-search", (req, res) => {
+    var tempsession = req.session;
     const { artistName } = req.query;
+    if(tempsession.sessionusername){
     spotifyApi
     .searchArtists(artistName)
     .then(data => {
       console.log('The received data from the API: ', data.body.artists.items);
       const {items} = data.body.artists;
       console.log(items[0].images);
-      res.render("artist-search-results.hbs", { artist: items })
-      
+      res.render("artist-search-results.hbs", { 
+        artist: items,
+        signedin: 'Profile',
+        signedinlink: '/profile',
+        logout: "Logout"
+       })
     })
     .catch(err => console.log('The error while searching artists occurred: ', err));
+    }
+    else{
+      spotifyApi
+      .searchArtists(artistName)
+      .then(data => {
+        console.log('The received data from the API: ', data.body.artists.items);
+        const {items} = data.body.artists;
+        console.log(items[0].images);
+        res.render("artist-search-results.hbs", { 
+          artist: items,
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+         })
+      })
+      .catch(err => console.log('The error while searching artists occurred: ', err));
+    }
+    
   });
   
   
   app.get("/albums/:artistId", (req, res) => {
+    var tempsession = req.session
      const {artistId} = req.params
      console.log(req.params)
-  
-     spotifyApi
-    .getArtistAlbums(artistId)
-    .then((data) => {
-      //const {album} = data.body;
-      const {items} = data.body
-      res.render("albums", {albums : items});
-        })
-  
-    .catch((err => console.log('The error while searching albums occurred: ', err))); 
+    
+     if(tempsession.sessionusername){
+      spotifyApi
+      .getArtistAlbums(artistId)
+      .then((data) => {
+        //const {album} = data.body;
+        const {items} = data.body
+        res.render("albums", {
+          albums : items,
+          signedin: 'Profile',
+          signedinlink: '/profile',
+          logout: "Logout"
+        });
+          })
+    
+      .catch((err => console.log('The error while searching albums occurred: ', err))); 
+     }
+     else{
+      spotifyApi
+      .getArtistAlbums(artistId)
+      .then((data) => {
+        //const {album} = data.body;
+        const {items} = data.body
+        res.render("albums", {
+          albums : items,
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+        });
+          })
+    
+      .catch((err => console.log('The error while searching albums occurred: ', err))); 
+     }
   
   }); 
   
   app.get("/tracks/:albumId", (req,res) =>{
-  const {albumId} = req.params;
-  spotifyApi
-  .getAlbumTracks(albumId)
-    .then((data) => {
-    const {items} = data.body;
-    res.render("tracks", { tracks : items})
+    var tempsesson = req.session
+    const {albumId} = req.params;
+    if(tempsesson.sessionusername){
+      spotifyApi
+    .getAlbumTracks(albumId)
+      .then((data) => {
+      const {items} = data.body;
+      res.render("tracks", { 
+        tracks : items,
+        signedin: 'Profile',
+        signedinlink: '/profile',
+        logout: "Logout"})
+      })
+      .catch((err => console.log('The error while searching tracks occurred: ', err))); 
+    }
+    else{
+      spotifyApi
+    .getAlbumTracks(albumId)
+      .then((data) => {
+      const {items} = data.body;
+      res.render("tracks", { 
+        tracks : items,
+        signedin: 'Sign In',
+        signedinlink: '/signin',
+        logout: ""})
+      })
+      .catch((err => console.log('The error while searching tracks occurred: ', err))); 
+    }
+    
     })
-    .catch((err => console.log('The error while searching tracks occurred: ', err))); 
-  })
 
 
 
@@ -173,14 +242,14 @@ app.post('/createaccount', function(req, res){
       };
 
 
-  console.log(response);  
+  //console.log(response);  
 
   UserModel.findOne({ email: response['emailinfo']} , function(err, existingUser){
     if(existingUser == null){
       var passwordHash = response['passwordinfo']
       bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(passwordHash, salt, function(err, hash) {
-          console.log(hash)
+          //console.log(hash)
           const newUser = new UserModel({
             username : response['usernameinfo'], 
             password: hash,
@@ -220,8 +289,8 @@ app.post('/login', function(req, res){
           console.log('youve been authenticated!')
           sess = req.session;
           sess.sessionusername = existingUser.username;
-          console.log('session username:')
-          console.log(sess.sessionusername)
+          //console.log('session username:')
+          //console.log(sess.sessionusername)
           res.redirect('/')
         }
         else{
