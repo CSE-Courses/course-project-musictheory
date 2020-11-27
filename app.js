@@ -78,19 +78,7 @@ spotifyApi
   .then(data => spotifyApi.setAccessToken(data.body['access_token']))
   .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
-  app.get("/Popular", (req, res) => {
 
-    
-    spotifyApi
-    .getPlaylist('37i9dQZF1DXcBWIGoYBM5M')
-    .then(data => {
-      console.log('Some information about this playlist', data.body);
-      res.render("popular.hbs")
-
-      
-    })
-    .catch(err => console.log('The error while searching artists occurred: ', err));
-  });
   
 
 
@@ -108,6 +96,28 @@ spotifyApi
     .catch(err => console.log('The error while searching artists occurred: ', err));
   });
   
+  app.get("/Popular", (req,res) => {
+
+    spotifyApi
+    .getPlaylistTracks('37i9dQZF1DXcBWIGoYBM5M',{    
+      offset: 1,
+      limit: 20,
+      fields: 'items'})
+    .then(data => {
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.name);
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.artists);
+      console.log('Some information about this playlist',data.body);
+      const {items} = data.body;
+
+  
+      
+    res.render("popular.hbs",{songs : items})
+
+      
+    })
+    .catch(err => console.log('The error while searching playlist occurred: ', err));
+    
+  });
   
   app.get("/albums/:artistId", (req, res) => {
      const {artistId} = req.params
