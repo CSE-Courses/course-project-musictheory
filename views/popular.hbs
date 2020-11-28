@@ -1,0 +1,16 @@
+<div class="songs">
+    {{#each songs}}
+    <li>{{this.track.name}} </li>  
+    {{#if this.track.preview_url}}
+    <br> 
+       <img src="{{this.track.album.images.2.url}}" alt="albumcover" style="width:124px; height:auto">
+        <audio controls>
+            <source src="{{this.track.preview_url}}" type="audio/mpeg"> 
+        </audio>
+        {{else}}
+        <p>No Preview available</p>
+    {{/if}}
+ 
+    
+    {{/each}}
+</div> 

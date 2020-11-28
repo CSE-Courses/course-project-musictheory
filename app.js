@@ -103,6 +103,9 @@ spotifyApi
   .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
 
+  
+
+
   app.get("/artist-search", (req, res) => {
     var tempsession = req.session;
     const { artistName } = req.query;
@@ -141,6 +144,52 @@ spotifyApi
     
   });
   
+  app.get("/Popular", (req,res) => {
+
+    spotifyApi
+    .getPlaylistTracks('37i9dQZF1DXcBWIGoYBM5M',{    
+      offset: 1,
+      limit: 20,
+      fields: 'items'})
+    .then(data => {
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.name);
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.artists);
+      console.log('Some information about this playlist',data.body);
+      const {items} = data.body;
+
+  
+      
+    res.render("popular.hbs",{songs : items})
+
+      
+    })
+    .catch(err => console.log('The error while searching playlist occurred: ', err));
+    
+  });
+
+  app.get("/SearchPageGenre/:id", (req,res) => {
+    const {id} = req.params
+
+    spotifyApi
+    .getPlaylistTracks(id,{    
+      offset: 1,
+      limit: 20,
+      fields: 'items'})
+    .then(data => {
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.name);
+      //console.log('Some information about this playlist', data.body.tracks.items[0].track.artists);
+      console.log('Some information about this playlist',data.body);
+      const {items} = data.body;
+
+  
+      
+    res.render("popular.hbs",{songs : items})
+
+      
+    })
+    .catch(err => console.log('The error while searching playlist occurred: ', err));
+    
+  });
   
   app.get("/albums/:artistId", (req, res) => {
     var tempsession = req.session
