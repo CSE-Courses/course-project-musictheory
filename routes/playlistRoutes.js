@@ -2,7 +2,21 @@ const express= require("express");
 const router= express.Router();
 
 router.get('/',function(req,res){
-    res.render("./PlaylistPage.ejs")
+    var tempsession = req.session
+    if(tempsession.sessionusername){
+        res.render("playlistPage.ejs",{
+            signedin: 'Profile',
+            signedinlink: '/profile',
+            logout: "Logout"
+          });
+    }
+    else{
+        res.render("playlistPage.ejs",{
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+        });
+      }   
 });
 
 
