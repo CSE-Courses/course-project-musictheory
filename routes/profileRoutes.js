@@ -11,7 +11,6 @@ router.get('/',function(req,res){
                 console.log("No profilepage/user with that email") 
               }
             else{
-                console.log(existingUser.username)
                 res.render("profilepage.ejs" , {
                     username: existingUser.username,
                     email: existingUser.email,

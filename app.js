@@ -355,6 +355,34 @@ app.post('/login', function(req, res){
   })
 })
 
+//---------------------Change user information fucntionality---------------------
+
+app.post('/changeuserinfo' , function(req, res){
+  response = {
+    newusername : req.body.changeusername,
+    newnumber : req.body.changephonenumber
+  };
+  sess = req.session
+  UserModel.findOne({email : sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      existingUser.username = response['newusername']
+      existingUser.phonenumber = response['newnumber']
+      existingUser.save()
+      res.redirect('/profile')
+    }
+  })
+})
+
+app.post('/changepassword' , function(req, res){
+  
+})
+
+
+//-----------------------Logout and destroy user session----------------------
 app.get('/logout',(req,res) => {
   req.session.destroy((err) => {
       if(err) {
