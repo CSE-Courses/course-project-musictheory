@@ -144,14 +144,16 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-6 height-upload" id="toremove">
-            <input id="choose_file" type="file" name="choose_file" accept="image/*"/>
-            <label class="label-choose-file" for="choose_file"><a class="upload-photo"><i class="fa fa-plus-circle fa-2x"></i>&nbsp;Upload photo</a></label>
-          </div>
-          <div class="col-sm-6 height-upload" id="toremove">
-            <input id="take_photo" type="file" name="take_photo" accept="image/*"/>
-            <label class="label-choose-file" for="take_photo"><a class="take-photo"><i class="fa fa-camera fa-2x"></i>&nbsp;Take photo</a></label>
-          </div>
+         <div style="text-align: center;">
+           <form action="/changepfp" method="POST">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <label>Link to picture</label>
+              <input class="form-control" name="pfplink"/>
+              <button type="submit">Change Image</button>
+            </div>
+           </form>
+         </div>
         </div>
       </div>
       <div class="modal-footer visible-xs-block"><a data-dismiss="modal">Cancel</a></div>

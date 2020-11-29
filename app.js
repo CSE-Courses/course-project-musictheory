@@ -415,6 +415,23 @@ app.post('/changepassword' , function(req, res){
   })
 })
 
+app.post("/changepfp" , function(req, res){
+  var sess = req.session
+  pfplink = req.body.pfplink
+  UserModel.findOne({email: sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      existingUser.pfp = pfplink
+      existingUser.save()
+      console.log("pfp changed")
+      res.redirect('/profile')
+    }
+  })
+
+})
 
 //-----------------------Logout and destroy user session----------------------
 app.get('/logout',(req,res) => {
