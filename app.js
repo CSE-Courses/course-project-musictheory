@@ -340,7 +340,6 @@ app.post('/login', function(req, res){
           sess = req.session;
           sess.sessionusername = existingUser.username;
           sess.sessionemail = existingUser.email;
-          console.log(sess.sessionemail)
           //console.log('session username:')
           //console.log(sess.sessionusername)
           res.redirect('/')
@@ -378,7 +377,42 @@ app.post('/changeuserinfo' , function(req, res){
 })
 
 app.post('/changepassword' , function(req, res){
-  
+  var sess = req.session
+  response = {
+    oldpassword : req.body.oldpassword,
+    newpassword : req.body.newpassword,
+    newpassconfirm : req.body.newpasswordconfirm
+  };
+  UserModel.findOne({email: sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      bcrypt.compare(response['oldpassword'] , existingUser.password, function(err, result){
+        if(result){
+          if(response["newpassword"] == response['newpassconfirm']){
+            bcrypt.genSalt(10, function(err, salt){
+              bcrypt.hash(response['newpassword'] , salt, function(err, hash){
+                existingUser.password = hash
+                existingUser.save()
+                console.log("password changed")
+                res.redirect('/')
+              })
+            })
+          }
+          else{
+            console.log("passwords do not match")
+            res.redirect('/profile')
+          }
+        }
+        else{
+          console.log("old password is incorrect")
+          res.redirect('/profile')
+        }
+      })
+    }
+  })
 })
 
 
