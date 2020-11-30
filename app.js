@@ -339,6 +339,7 @@ app.post('/login', function(req, res){
           console.log('youve been authenticated!')
           sess = req.session;
           sess.sessionusername = existingUser.username;
+          sess.sessionemail = existingUser.email;
           //console.log('session username:')
           //console.log(sess.sessionusername)
           res.redirect('/')
@@ -353,6 +354,86 @@ app.post('/login', function(req, res){
   })
 })
 
+//---------------------Change user information fucntionality---------------------
+
+app.post('/changeuserinfo' , function(req, res){
+  response = {
+    newusername : req.body.changeusername,
+    newnumber : req.body.changephonenumber
+  };
+  sess = req.session
+  UserModel.findOne({email : sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      existingUser.username = response['newusername']
+      existingUser.phonenumber = response['newnumber']
+      existingUser.save()
+      res.redirect('/profile')
+    }
+  })
+})
+
+app.post('/changepassword' , function(req, res){
+  var sess = req.session
+  response = {
+    oldpassword : req.body.oldpassword,
+    newpassword : req.body.newpassword,
+    newpassconfirm : req.body.newpasswordconfirm
+  };
+  UserModel.findOne({email: sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      bcrypt.compare(response['oldpassword'] , existingUser.password, function(err, result){
+        if(result){
+          if(response["newpassword"] == response['newpassconfirm']){
+            bcrypt.genSalt(10, function(err, salt){
+              bcrypt.hash(response['newpassword'] , salt, function(err, hash){
+                existingUser.password = hash
+                existingUser.save()
+                console.log("password changed")
+                res.redirect('/')
+              })
+            })
+          }
+          else{
+            console.log("passwords do not match")
+            res.redirect('/profile')
+          }
+        }
+        else{
+          console.log("old password is incorrect")
+          res.redirect('/profile')
+        }
+      })
+    }
+  })
+})
+
+app.post("/changepfp" , function(req, res){
+  var sess = req.session
+  pfplink = req.body.pfplink
+  UserModel.findOne({email: sess.sessionemail} , function(err, existingUser){
+    if(existingUser == null){
+      console.log("No user with the sessions email found in database")
+      res.redirect('/')
+    }
+    else{
+      existingUser.pfp = pfplink
+      existingUser.save()
+      console.log("pfp changed")
+      res.redirect('/profile')
+    }
+  })
+
+})
+
+//-----------------------Logout and destroy user session----------------------
 app.get('/logout',(req,res) => {
   req.session.destroy((err) => {
       if(err) {
