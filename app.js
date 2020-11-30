@@ -33,6 +33,7 @@ const hbs = require('hbs');
 //routes for our pages
 const searchRoutes= require('./routes/searchRoutes');
 const playlistRoutes  = require('./routes/playlistRoutes');
+const allSongsRoutes  = require('./routes/AllSongsRoutes');
 const failedSearchRoutes  = require('./routes/failedSearchRoutes');
 const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
@@ -57,6 +58,7 @@ app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
 app.use('/profile',profileRoutes);
 app.use('/playlisttemplate',playlistTemplateRoutes);
+app.use('/allSongs', allSongsRoutes);
 
 
 

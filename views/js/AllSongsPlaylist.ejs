@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <title>MusicTheory</title>
-  <meta charset="utf-8">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/audioplayer.css">
   <script src="../js/audioplayer.js"></script>
@@ -17,10 +15,30 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+}
+
+td, th {
+  border: 0px solid #333333;
+  border-bottom: 1px solid #aaaaaa;
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  background-color: #444444;
+}
+
+</style>
 </head>
-
-<body>
-
+<body style="background-color:#ededed;">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
       <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -51,7 +69,7 @@
             </div>
         </li>
       </ul>
-
+      
       <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
         <input class="artist-search-input form-control mr-sm-2" type="text" placeholder="Artist name"  name="artistName">
         <button class="btn btn-secondary my-2 my-sm-0">Search</button>
@@ -83,93 +101,18 @@
   </div>
   </nav>
 </body>
-
-  <div class="jumbotron">
-    <h1 style="position: absolute; left: 8.5%;">Playlists</h1>
-	<br><br>
-	<p style="position: absolute; left: 8.5%;">Search through playlists you have already created</p>
-	<br><br>
-	<form class="form-inline my-2 my-lg-0" style="position: absolute; margin-right: 25px; left: 8.5%;">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <a href="/search" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button></a>
-     </form>
-  </div>
-
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div>
-        <h1>Playlists Recently Listened to</h1>
-		<br>
-      </div>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/allSongs" class="stretched-link"><h4 class="card-title">All Songs</h3></a>
-              <p class="card-text">Public Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://i.redd.it/kpzuzx98ett11.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Working at the Chum Bucket</h3></a>
-              <p class="card-text">My Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://image.shutterstock.com/image-vector/tuna-fish-holding-can-260nw-282453410.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Cloudy with a Chance of Tuna Fish</h3></a>
-              <p class="card-text">My Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Running to Montana</h3></a>
-              <p class="card-text">Michie's Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">View All Playlists</h3>
-              <a href="/playlists" class="card-link">Click here!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-1"></div>
-  </div>
-  
-  <div class="row">
-	<div class="col-1"></div>
-    <div class="col-2">
-      <div>
-		<br>
-        <h1>Make a Playlist</h1>
-		<br>
-      </div>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://static.vecteezy.com/system/resources/previews/000/363/962/non_2x/vector-plus-sign-line-black-icon.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Create New Playlist</h3></a>
-          </div>
-        </div>
-      </div>
-    </div>
-	<div class="col-1"></div>
-  </div>
-
   <br>
-  <br>
+<img src="https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg" style="float: left; margin-right: 20px;" />
+<p style="color:#000000; font-family:verdana;">PLAYLIST</p>
+<p style="color:#000000; font-family:verdana; font-size:30px">All Songs</p>
+<p style="color:#000000; font-family:verdana;"></p>
+<p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
+<br>
+<br>
+<table>
+ 
+</table>
+<br><br><br><br><br>
 
-  <div>They said to put easter eggs in.</div>
-  <div>To improve the user experience.</div>
-  <div>This will be covered by the music player,</div>
-  <div>but it helps keep the albums above it.</div>
-
-
-
+</body>
 </html>
