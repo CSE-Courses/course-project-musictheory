@@ -65,11 +65,16 @@
 
 <ul>
     {{#each albums}}
-    <li> {{this.name}}</li>
-       <br> 
-       <img src="{{this.images.2.url}}" alt="albumcover" style="width:124px; height:auto">
-
-       <a href="/tracks/{{this.id}}">View tracks</a>
+    <br>
+    <li><h6 style="text-align:center; font-size: 24px;"><b>{{this.name}}</b></h6></li>
+      <br> 
+      <img src="{{this.images.2.url}}" alt="albumcover" style="width:180px; height:auto; display:block; margin-left:auto; margin-right:auto;">
+      <br>
+      <div style="text-align: center;">
+        <a align="middle;" style="width: 100%; display:block; font-size: 18px;" href="/tracks/{{this.id}}">View Tracks</a>
+      </div>
+      <br>
+      <p align="middle">________________</p>
     {{/each}}
     <br>
 </ul>
