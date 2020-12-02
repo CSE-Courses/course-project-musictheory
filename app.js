@@ -12,6 +12,7 @@ const session = require('express-session')
 //define the modules we use
 const bcrypt = require('bcryptjs')
 const UserModel = require('./model/user')
+const TrackModel = require("./model/tracks")
 
 //initialize some of the modules we use
 app.use(bodyParser.urlencoded({extended:false}));
@@ -33,7 +34,7 @@ const hbs = require('hbs');
 //routes for our pages
 const searchRoutes= require('./routes/searchRoutes');
 const playlistRoutes  = require('./routes/playlistRoutes');
-const allSongsRoutes  = require('./routes/AllSongsRoutes');
+//const allSongsRoutes  = require('./routes/AllSongsRoutes');
 const failedSearchRoutes  = require('./routes/failedSearchRoutes');
 const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
@@ -58,7 +59,7 @@ app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
 app.use('/profile',profileRoutes);
 app.use('/playlisttemplate',playlistTemplateRoutes);
-app.use('/allSongs', allSongsRoutes);
+//app.use('/allSongs', allSongsRoutes);
 
 
 
@@ -366,5 +367,26 @@ app.get('/logout',(req,res) => {
   });
 
 });
+
+//--------------------allSongsTest-----------------------
+app.get('/allSongs' , function(req, res){
+  const newTrack = new TrackModel({
+    song: "TEST",
+    artist: "testartist",
+    link: "https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f",
+    album: "wakeuptest"
+  })
+
+  newTrack.save()
+
+  TrackModel.findOne({song: "TEST"}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(data.song)
+    }
+  })
+})
 
 app.listen(port);
