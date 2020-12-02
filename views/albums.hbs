@@ -39,16 +39,10 @@
           <a class="nav-link" href="/playlists">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Popular Songs</a>
+          <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Top Genres</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Hip Hop</a>
-            <a class="dropdown-item" href="#">Rock</a>
-            <a class="dropdown-item" href="#">See more...</a>
-          </div>
+          <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
         </li>
       </ul>
 
@@ -68,13 +62,13 @@
     <br>
     <li><h6 style="text-align:center; font-size: 24px;"><b>{{this.name}}</b></h6></li>
       <br> 
-      <img src="{{this.images.2.url}}" alt="albumcover" style="width:180px; height:auto; display:block; margin-left:auto; margin-right:auto;">
+      <img src="{{this.images.2.url}}" alt="albumcover" style="width: 12%; height:auto; display:block; margin-left:auto; margin-right:auto;">
       <br>
       <div style="text-align: center;">
-        <a align="middle;" style="width: 100%; display:block; font-size: 18px;" href="/tracks/{{this.id}}">View Tracks</a>
+        <a align="middle;" style="width: 100%; display:block; font-size: 20px;" href="/tracks/{{this.id}}">View Tracks</a>
       </div>
       <br>
-      <p align="middle">________________</p>
+      <p align="middle">________________________</p>
     {{/each}}
     <br>
 </ul>
