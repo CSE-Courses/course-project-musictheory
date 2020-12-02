@@ -370,14 +370,48 @@ app.get('/logout',(req,res) => {
 
 //--------------------allSongsTest-----------------------
 app.get('/allSongs' , function(req, res){
-  const newTrack = new TrackModel({
-    song: "TEST",
-    artist: "testartist",
-    link: "https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f",
-    album: "wakeuptest"
-  })
+  var tempsession = req.session
 
-  newTrack.save()
+  let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
+
+  // const newTrack = new TrackModel({
+  //   song: "TEST",
+  //   artist: "testartist",
+  //   link: "https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f",
+  //   album: "wakeuptest"
+  // })
+
+  // newTrack.save()
+
+  if(tempsession.sessionusername){
+    res.render("AllSongsPlaylist.ejs",{
+      songs : 'song_list',
+        signedin: 'Profile',
+        signedinlink: '/profile',
+        logout: "Logout"
+      });
+}
+
+else{
+
+  //TrackModel.find({song: 'Wake Up with Jazz'}, (error,data) => {
+    //if(error){
+      //console.log(error)
+    //}else{
+      //console.log(data)
+    //}
+  //})
+
+    res.render("AllSongsPlaylist.ejs",{
+      'songs' : song_list,
+      signedin: 'Sign In',
+      signedinlink: '/signin',
+      logout: ""
+    });
+    
+   
+
+
 
   TrackModel.findOne({song: "TEST"}, function(err, data){
     if(err){
@@ -387,6 +421,11 @@ app.get('/allSongs' , function(req, res){
       console.log(data.song)
     }
   })
+
+}
+
 })
+
+
 
 app.listen(port);
