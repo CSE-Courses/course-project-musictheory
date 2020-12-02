@@ -372,55 +372,55 @@ app.get('/logout',(req,res) => {
 app.get('/allSongs' , function(req, res){
   var tempsession = req.session
 
-  let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
-
-  // const newTrack = new TrackModel({
-  //   song: "TEST",
-  //   artist: "testartist",
-  //   link: "https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f",
-  //   album: "wakeuptest"
-  // })
-
-  // newTrack.save()
+   let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
 
   if(tempsession.sessionusername){
-    res.render("AllSongsPlaylist.ejs",{
-      songs : 'song_list',
-        signedin: 'Profile',
-        signedinlink: '/profile',
-        logout: "Logout"
-      });
+    
+
+
+      
+    TrackModel.find({}, function(err, song_list){
+      if(err){
+        console.log(err)
+      }
+      else{
+        res.render("AllSongsPlaylist.ejs",{
+            'songs' : song_list,
+            signedin: 'Profile',
+            signedinlink: '/profile',
+            logout: "Logout"
+          });
+      }
+    })
+
+
 }
 
 else{
 
-  //TrackModel.find({song: 'Wake Up with Jazz'}, (error,data) => {
-    //if(error){
-      //console.log(error)
-    //}else{
-      //console.log(data)
-    //}
-  //})
+    TrackModel.find({}, function(err, song_list){
+      if(err){
+        console.log(err)
+      }
+      else{
 
-    res.render("AllSongsPlaylist.ejs",{
-      'songs' : song_list,
-      signedin: 'Sign In',
-      signedinlink: '/signin',
-      logout: ""
-    });
+        res.render("AllSongsPlaylist.ejs",{
+          'songs' : song_list,
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+        });
+      }
+    })
     
-   
-
-
-
-  TrackModel.findOne({song: "TEST"}, function(err, data){
-    if(err){
-      console.log(err)
-    }
-    else{
-      console.log(data.song)
-    }
-  })
+  // TrackModel.find({})(function(err, songs_list){
+  //   if(err){
+  //     console.log(err)
+  //   }
+  //   else{
+  //     console.log(songs_list)
+  //   }
+  // })
 
 }
 
