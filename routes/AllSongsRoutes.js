@@ -50,13 +50,14 @@ router.get('/',function(req, res) {
           console.log(data)
         }
       })
-
+ 
         res.render("AllSongsPlaylist.ejs",{
           'songs' : song_list,
           signedin: 'Sign In',
           signedinlink: '/signin',
           logout: ""
         });
+        
       } 
 });
 

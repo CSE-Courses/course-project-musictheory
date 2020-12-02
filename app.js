@@ -13,6 +13,8 @@ const session = require('express-session')
 const bcrypt = require('bcryptjs')
 const UserModel = require('./model/user')
 const TrackModel = require("./model/tracks")
+const PlaylistModel = require('./model/playlist')
+
 
 //initialize some of the modules we use
 app.use(bodyParser.urlencoded({extended:false}));
@@ -33,7 +35,8 @@ const hbs = require('hbs');
 
 //routes for our pages
 const searchRoutes= require('./routes/searchRoutes');
-const playlistRoutes  = require('./routes/playlistRoutes');
+//Adding Playlists into app, removing router
+//const playlistRoutes  = require('./routes/playlistRoutes');
 //const allSongsRoutes  = require('./routes/AllSongsRoutes');
 const failedSearchRoutes  = require('./routes/failedSearchRoutes');
 const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
@@ -53,7 +56,7 @@ app.set('view engine', 'hbs');
 
 //binding our routes to our URLs
 app.use('/search',searchRoutes);
-app.use('/playlists',playlistRoutes);
+//app.use('/playlists',playlistRoutes);
 app.use('/failedSearch',failedSearchRoutes);
 app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
@@ -368,16 +371,69 @@ app.get('/logout',(req,res) => {
 
 });
 
-//--------------------allSongsTest-----------------------
-app.get('/allSongs' , function(req, res){
+//-------------------playlist routing--------------------
+app.get('/playlists',function(req,res){
   var tempsession = req.session
+
+
+  const newPlaylist = new PlaylistModel({
+    name: "allSongs",
+    cover: "",
+    songs: [
+     {
+        "song":"Crush The Industry",
+        "album":"Dethalbum III",
+        "artist":"Metalocalypse:Dethklok",
+        "link":"https://p.scdn.co/mp3-preview/ecf3dda38271454c6c23b9112b657e13a87b35af?cid=9343127d9efd4b1a92df981900ff6e5f" 
+      },
+    {
+      "song":"Wake Up with Jazz",
+      "artist":"Jazz Morning Playlist",
+      "album":"None",
+      "link":"https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f"
+    }
+
+    ]
+  })
+
+  newPlaylist.save()
+
+  PlaylistModel.findOne({name: "allSongs"}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(data.songs)
+    }
+  })
+
+
+
+
+  if(tempsession.sessionusername){
+      res.render("playlistPage.ejs",{
+          signedin: 'Profile',
+          signedinlink: '/profile',
+          logout: "Logout"
+        });
+  }
+  else{
+      res.render("playlistPage.ejs",{
+        signedin: 'Sign In',
+        signedinlink: '/signin',
+        logout: ""
+      });
+    }   
+});
+//--------------------allSongsTest-----------------------
+app.get(/playlist/ , function(req, res){
+  var tempsession = req.session
+  console.log(req._parsedOriginalUrl._raw.substring(10));
 
    let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
 
   if(tempsession.sessionusername){
     
-
-
       
     TrackModel.find({}, function(err, song_list){
       if(err){
