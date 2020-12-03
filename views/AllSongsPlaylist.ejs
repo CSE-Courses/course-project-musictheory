@@ -128,7 +128,9 @@ tr {
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Add to Liked Songs</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+      <% uPlaylist.forEach(function(list){ %> 
+        <a class="dropdown-item" href="#">Add to <%= list %></a>
+        <% }); %>
       </div>
     </div>
   </td>

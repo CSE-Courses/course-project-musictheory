@@ -410,11 +410,13 @@ app.get(/playlist/ , function(req, res){
 
     console.log(tempsession.sessionusername);
 
+    let userPlay = "";
+
     UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
       if(err){
         console.log(err)}
       else{
-        let userPlay = data.uPlaylist;
+        userPlay = data.uPlaylist;
         console.log(userPlay); 
       } 
     })
@@ -428,6 +430,7 @@ app.get(/playlist/ , function(req, res){
       console.log(song_list)
      
       res.render("AllSongsPlaylist.ejs",{
+        'uPlaylist' : userPlay,
         'cover' : data.cover,
         'title' : data.title,
         'songs' : song_list,
