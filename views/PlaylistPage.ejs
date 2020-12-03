@@ -63,8 +63,10 @@
     </div>
   </nav>
 
+<!-- Navbar deleted ----------------------------------->
 
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
+
+  <!-- <nav class="navbar fixed-bottom navbar-light bg-dark">
     <div class="col-1">
       <h4 style="color: white; text-align: center;">Previous</h2>
     </div>
@@ -81,7 +83,7 @@
           Your browser dose not Support the audio Tag
       </audio>
   </div>
-  </nav>
+  </nav> -->
 </body>
 
   <div class="jumbotron">
@@ -103,40 +105,18 @@
 		<br>
       </div>
       <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/allSongs" class="stretched-link"><h4 class="card-title">All Songs</h3></a>
-              <p class="card-text">Public Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://i.redd.it/kpzuzx98ett11.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Working at the Chum Bucket</h3></a>
-              <p class="card-text">My Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://image.shutterstock.com/image-vector/tuna-fish-holding-can-260nw-282453410.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Cloudy with a Chance of Tuna Fish</h3></a>
-              <p class="card-text">My Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Running to Montana</h3></a>
-              <p class="card-text">Michie's Playlist</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">View All Playlists</h3>
-              <a href="/playlists" class="card-link">Click here!</a>
-          </div>
-        </div>
+        <!-- First will always be All Songs -->
+        <% playData.forEach(function(list){ %>
+            <div class="card">
+              <img class="card-img-top" src="<%- list.cover %>" alt="Card image">
+              <div class="card-body text-center">
+                <a href="/playlist/<%= list.name %>" class="stretched-link"><h4 class="card-title"><%= list.title %></h3></a>
+                  <p class="card-text"><%= list.status %></p>
+              </div>
+            </div>
+
+            <% }); %>
+
       </div>
     </div>
     <div class="col-1"></div>
@@ -165,10 +145,12 @@
   <br>
   <br>
 
+  <!-- Removed easter egg :(-->
+<!-- 
   <div>They said to put easter eggs in.</div>
   <div>To improve the user experience.</div>
   <div>This will be covered by the music player,</div>
-  <div>but it helps keep the albums above it.</div>
+  <div>but it helps keep the albums above it.</div> -->
 
 
 

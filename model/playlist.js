@@ -5,7 +5,8 @@ const PlaylistSchema = new Schema({
     name: String,
     songs: Array,
     cover: String,
-    title: String
+    title: String,
+    status: String
 
 });
 

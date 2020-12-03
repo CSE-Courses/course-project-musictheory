@@ -398,25 +398,36 @@ app.get('/playlists',function(req,res){
 
   // newPlaylist.save()
 
-  if(tempsession.sessionusername){
-      res.render("playlistPage.ejs",{
-          signedin: 'Profile',
-          signedinlink: '/profile',
-          logout: "Logout"
+  PlaylistModel.find({}, function(err, playData){
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(playData)
+      if(tempsession.sessionusername){
+        res.render("playlistPage.ejs",{
+            'playData': playData,
+            signedin: 'Profile',
+            signedinlink: '/profile',
+            logout: "Logout"
+          });
+    }
+    else{
+        res.render("playlistPage.ejs",{
+          'playData': playData,
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
         });
-  }
-  else{
-      res.render("playlistPage.ejs",{
-        signedin: 'Sign In',
-        signedinlink: '/signin',
-        logout: ""
-      });
-    }   
+      }
+    }
+  })   
 });
 //--------------------allSongsTest-----------------------
 app.get(/playlist/ , function(req, res){
   var tempsession = req.session
   var playId = req._parsedOriginalUrl._raw.substring(10);
+  console.log(playId);
 
   // let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
 
