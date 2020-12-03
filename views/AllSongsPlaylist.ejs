@@ -122,7 +122,16 @@ tr {
 
   <% songs.forEach(function(song){ %>
   <tr>
-    <td><button>+</button></td>
+    <td><div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       +
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Add to Liked Songs</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </td>
       <td><%= song.artist %></td>
       <td><%= song.album %></td>
       <td><%= song.song %></td>

@@ -6,6 +6,7 @@ var UserSchema =  new Schema({
     username : String,
     password: String,
     email : String,
+    uPlaylist : Array
     //pfp: String, 
     //phonenumber: String,
     //albums: [album]
