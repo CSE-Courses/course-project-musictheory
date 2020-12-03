@@ -102,9 +102,10 @@ tr {
   </nav> -->
 </body>
   <br>
-<img src="https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg" style="float: left; margin-right: 20px;" />
+  <!-- bookmark -->
+<img src=<%= cover %> style="float: left; margin-right: 20px;" />
 <p style="color:#000000; font-family:verdana;">PLAYLIST</p>
-<p style="color:#000000; font-family:verdana; font-size:30px">All Songs</p>
+<p style="color:#000000; font-family:verdana; font-size:30px"><%= title %></p>
 <p style="color:#000000; font-family:verdana;"></p>
 <p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
 <br>
@@ -126,7 +127,7 @@ tr {
       <td><%= song.album %></td>
       <td><%= song.song %></td>
       <td><audio controls>
-        <source src="https://p.scdn.co/mp3-preview/ac271d32306bfa13e387d25ae1e57d195b186574?cid&#x3D;9343127d9efd4b1a92df981900ff6e5f" type="audio/mpeg">
+        <source src=<%= song.link %> type="audio/mpeg">
       </audio></td>
     </tr>
     <% }); %>

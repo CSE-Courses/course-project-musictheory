@@ -376,39 +376,27 @@ app.get('/playlists',function(req,res){
   var tempsession = req.session
 
 
-  const newPlaylist = new PlaylistModel({
-    name: "allSongs",
-    cover: "",
-    songs: [
-     {
-        "song":"Crush The Industry",
-        "album":"Dethalbum III",
-        "artist":"Metalocalypse:Dethklok",
-        "link":"https://p.scdn.co/mp3-preview/ecf3dda38271454c6c23b9112b657e13a87b35af?cid=9343127d9efd4b1a92df981900ff6e5f" 
-      },
-    {
-      "song":"Wake Up with Jazz",
-      "artist":"Jazz Morning Playlist",
-      "album":"None",
-      "link":"https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f"
-    }
+  // const newPlaylist = new PlaylistModel({
+  //   name: "allSongs",
+  //   cover: "none",
+  //   songs: [
+  //    {
+  //       "song":"Crush The Industry",
+  //       "album":"Dethalbum III",
+  //       "artist":"Metalocalypse:Dethklok",
+  //       "link":"https://p.scdn.co/mp3-preview/ecf3dda38271454c6c23b9112b657e13a87b35af?cid=9343127d9efd4b1a92df981900ff6e5f" 
+  //     },
+  //   {
+  //     "song":"Wake Up with Jazz",
+  //     "artist":"Jazz Morning Playlist",
+  //     "album":"None",
+  //     "link":"https://p.scdn.co/mp3-preview/e832d9cdd9946254b5da9782bac0dd7f45204683?cid=9343127d9efd4b1a92df981900ff6e5f"
+  //   }
 
-    ]
-  })
+  //   ]
+  // })
 
-  newPlaylist.save()
-
-  PlaylistModel.findOne({name: "allSongs"}, function(err, data){
-    if(err){
-      console.log(err)
-    }
-    else{
-      console.log(data.songs)
-    }
-  })
-
-
-
+  // newPlaylist.save()
 
   if(tempsession.sessionusername){
       res.render("playlistPage.ejs",{
@@ -428,46 +416,74 @@ app.get('/playlists',function(req,res){
 //--------------------allSongsTest-----------------------
 app.get(/playlist/ , function(req, res){
   var tempsession = req.session
-  console.log(req._parsedOriginalUrl._raw.substring(10));
+  var playId = req._parsedOriginalUrl._raw.substring(10);
 
-   let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
+  // let song_list = [{'_artist':'Earth Wind and Fire', '_album' : 'idk', '_song' : 'September'}, {'_artist':'Fear', '_album':'thisalbum', '_song':'escape'}]
 
   if(tempsession.sessionusername){
     
       
-    TrackModel.find({}, function(err, song_list){
-      if(err){
-        console.log(err)
-      }
-      else{
-        res.render("AllSongsPlaylist.ejs",{
-            'songs' : song_list,
-            signedin: 'Profile',
-            signedinlink: '/profile',
-            logout: "Logout"
-          });
-      }
-    })
+    // TrackModel.find({}, function(err, song_list){
+    //   if(err){
+    //     console.log(err)
+    //   }
+    //   else{
+        
+    //   }
+    // })
+
+    
+  PlaylistModel.findOne({name: playId}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      let song_list = data.songs;
+      console.log(song_list)
+      res.render("AllSongsPlaylist.ejs",{
+        'songs' : song_list,
+        signedin: 'Profile',
+        signedinlink: '/profile',
+        logout: "Logout"
+      });
+    }
+  })
 
 
 }
 
 else{
 
-    TrackModel.find({}, function(err, song_list){
-      if(err){
-        console.log(err)
-      }
-      else{
+    // TrackModel.find({}, function(err, song_list){
+    //   if(err){
+    //     console.log(err)
+    //   }
+    //   else{
 
-        res.render("AllSongsPlaylist.ejs",{
-          'songs' : song_list,
-          signedin: 'Sign In',
-          signedinlink: '/signin',
-          logout: ""
-        });
-      }
-    })
+    
+  PlaylistModel.findOne({name: playId}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      let song_list = data.songs;
+      console.log(song_list)
+      // title is the name of the playlist displayed over EJS
+      // name is whats used in the url to change the page
+      res.render("AllSongsPlaylist.ejs",{
+        'cover' : data.cover,
+        'title' : data.title,
+        'songs' : song_list,
+        signedin: 'Sign In',
+        signedinlink: '/signin',
+        logout: ""
+      });
+    }
+  })
+
+       
+    //   }
+    // })
     
   // TrackModel.find({})(function(err, songs_list){
   //   if(err){

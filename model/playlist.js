@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const PlaylistSchema = new Schema({
     name: String,
     songs: Array,
-    cover: String
+    cover: String,
+    title: String
 
 });
 
