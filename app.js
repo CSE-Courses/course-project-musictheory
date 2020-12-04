@@ -311,6 +311,8 @@ app.post('/createaccount', function(req, res){
             username : response['usernameinfo'], 
             password: hash,
             email: response['emailinfo'],
+            uPlaylist: ['Liked Songs'],
+            likedSongs: [] 
           });
         
           newUser.save();
