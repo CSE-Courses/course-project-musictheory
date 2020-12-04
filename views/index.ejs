@@ -56,33 +56,13 @@
 
     </div>
   </nav>
-
-
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Previous</h2>
-    </div>
-    <div class="col-2">
-      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
-      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
-    </div>
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Next</h2>
-    </div>
-    <div class="container-audio col-7">
-      <audio controls autoplay loop id="player">
-          <source src="" type="audio/mp3">
-          Your browser does not Support the audio Tag
-      </audio>
-  </div>
-  </nav>
 </body>
 
   <div class="jumbotron">
     <h1>Welcome to MusicTheory!</h1>
     <p>Our webapp aims to provide a comfortable music listening experience to everyone!</p>
     <!--<button id="myButton">Click me!</button>-->
-    <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button>
+    <!-- <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button> -->
   </div>
 
   <div class="row">
@@ -116,12 +96,6 @@
             <a href="#" class="stretched-link"><h4 class="card-title">Playlist 4</h3></a>
           </div>
         </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">See more...</h3>
-              <a href="/playlists" class="card-link">Click here!</a>
-          </div>
-        </div>
       </div>
     </div>
     <div class="col-1"></div>
@@ -136,48 +110,38 @@
       <div class="card-deck">
         <div class="card">
 
-          <img class="card-img-top" src= <%= album1%> alt="Card image">
+          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/e/e5/Strange_Trails_cover.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title"><%= name%></h3></a>
+            <a href="/tracks/3yoNZlqerJnsnMN5EDwwBS" class="stretched-link"><h4 class="card-title">Strange Trails</h3></a>
               <p class="card-text">Lord Huron</p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/The_life_of_pablo_alternate.jpg/220px-The_life_of_pablo_alternate.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Real Friends ft. Ty Dolla $ign</h3></a>
+            <a href="/tracks/7gsWAHLeT0w7es6FofOXk1" class="stretched-link"><h4 class="card-title">The Life Of Pablo</h3></a>
               <p class="card-text">Kanye West</p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Vampire_Weekend_Horchata.jpg/220px-Vampire_Weekend_Horchata.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Horchata</h3></a>
+            <a href="/tracks/23dMwCv6redn6pcyliSlGk" class="stretched-link"><h4 class="card-title">Contra</h3></a>
               <p class="card-text">Vampire Weekend</p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">The Black Market</h3></a>
+            <a href="/tracks/4z7RSGcwYogm79x32CwERj" class="stretched-link"><h4 class="card-title">The Black Market</h3></a>
               <p class="card-text">Rise Against</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">See more...</h3>
-              <a href="#" class="card-link">Click here!</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-1"></div>
   </div>
-
-  <div>They said to put easter eggs in.</div>
-  <div>To improve the user experience.</div>
-  <div>This will be covered by the music player,</div>
-  <div>but it helps keep the albums above it.</div>
+  <br><br><br><br>
 
 
 
