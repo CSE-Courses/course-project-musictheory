@@ -71,6 +71,7 @@ app.get('/',function(req,res){
       signedin: 'Profile',
       signedinlink: '/profile',
       logout: "Logout",
+      username: tempsession.sessionusername,
       album1: a ,
       name : b
     });
@@ -80,6 +81,7 @@ app.get('/',function(req,res){
       signedin: 'Sign In',
       signedinlink: '/signin',
       logout: "",
+      username: "",
       album1: a ,
       name : b
     });
