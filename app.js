@@ -145,6 +145,7 @@ spotifyApi
   });
   
   app.get("/Popular", (req,res) => {
+    var tempsession = req.session
 
     spotifyApi
     .getPlaylistTracks('37i9dQZF1DXcBWIGoYBM5M',{    
@@ -158,8 +159,18 @@ spotifyApi
       const {items} = data.body;
 
   
-      
-    res.render("popular.hbs",{songs : items})
+      if(tempsession.sessionusername){
+        res.render("popular.hbs",{songs : items,
+        signedin: "Profile",
+        signedinlink: '/profile',
+        logout: "Logout"})
+      }
+      else{
+        res.render("popular.hbs",{songs : items,
+        signedin: "Sign In",
+        signedinlink: '/signin',
+        logout: ""})
+      }
 
       
     })
