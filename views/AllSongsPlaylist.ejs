@@ -127,16 +127,15 @@ tr {
        +
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Add to Liked Songs</a>
       <% uPlaylist.forEach(function(list){ %> 
         <a class="dropdown-item" href="#">Add to <%= list %></a>
         <% }); %>
       </div>
     </div>
   </td>
+      <td><%= song.song %></td>
       <td><%= song.artist %></td>
       <td><%= song.album %></td>
-      <td><%= song.song %></td>
       <td><audio controls>
         <source src=<%= song.link %> type="audio/mpeg">
       </audio></td>

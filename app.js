@@ -456,6 +456,7 @@ else{
       // title is the name of the playlist displayed over EJS
       // name is whats used in the url to change the page
       res.render("AllSongsPlaylist.ejs",{
+        'uPlaylist' : [],
         'cover' : data.cover,
         'title' : data.title,
         'songs' : song_list,
