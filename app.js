@@ -16,6 +16,8 @@ const TrackModel = require("./model/tracks")
 const PlaylistModel = require('./model/playlist')
 
 
+
+
 //initialize some of the modules we use
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -336,6 +338,8 @@ app.post('/login', function(req, res){
     passwordinfo : req.body.loginpassword
   };
 
+
+
   console.log(response); 
 
   UserModel.findOne({email : response["email"]} , function(err, existingUser){
@@ -402,7 +406,61 @@ app.get('/playlists',function(req,res){
     }
   })   
 });
-//--------------------allSongsTest-----------------------
+//--------------------Functionality of Individual Playlist Pages-----------------------
+app.post(/playlist/, function(req, res){
+  let body = req.body.addSong;
+  //console.log(body.toString())
+  var bodyString = body.toString();
+  var bodyArr = bodyString.split(',');
+  var playList = bodyArr[0];
+  var title = bodyArr[1];
+  var artist = bodyArr[2];
+  var album = bodyArr[3];
+  var link = bodyArr[4];
+
+
+  //Create song object with params from the song specified
+
+  const newEntry = new TrackModel({
+    album: album,
+    artist : artist,
+    link : link,
+    song: title
+  });
+
+  console.log(newEntry);
+  console.log(playList.toString());
+
+
+  // Add to playlist with the name specified
+
+  if(playList != "Liked Songs"){
+  
+  PlaylistModel.findOne({title: playList.toString()}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      let song_list = data.songs;
+      song_list.push(newEntry);
+      console.log(song_list);
+      data.save();
+    }
+  })
+  }
+
+  else{
+    
+  }
+
+  //Redirecting
+
+  res.redirect('back');
+
+
+});
+
+
 app.get(/playlist/ , function(req, res){
   var tempsession = req.session
   var playId = req._parsedOriginalUrl._raw.substring(10);
@@ -470,7 +528,7 @@ else{
   })
 }
 
-})
+});
 
 
 

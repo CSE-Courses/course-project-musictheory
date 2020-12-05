@@ -128,7 +128,14 @@ tr {
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <% uPlaylist.forEach(function(list){ %> 
-        <a class="dropdown-item" href="#">Add to <%= list %></a>
+        <!-- list referring to name -->
+        <!-- <a class="dropdown-item" href="#">Add to <%= list %></a> -->
+        <a class= "dropdown-item">
+        <form action="" method="post">
+          <button type="submit" name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
+      </form>
+    </a>      
+        <!-- post request a list and song object here -->
         <% }); %>
       </div>
     </div>
