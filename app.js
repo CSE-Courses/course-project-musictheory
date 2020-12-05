@@ -449,8 +449,30 @@ app.post(/playlist/, function(req, res){
   })
   }
 
+  //Adding to a specific user's liked songs by accessing their array
+
   else{
-    
+
+    var tempsession = req.session;
+   // let userPlay = "";
+    let song_list = "";
+  
+    UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+      if(err){
+        console.log(err)}
+      else{
+       // userPlay = data.uPlaylist;
+        song_list = data.likedSongs;
+       // console.log(userPlay); 
+        console.log("======================== Liked Songs =======================")
+        song_list.push(newEntry);
+        console.log(song_list);
+        data.save();
+ 
+    } 
+  })
+
+
   }
 
   //Redirecting
@@ -460,6 +482,37 @@ app.post(/playlist/, function(req, res){
 
 });
 
+app.get('/playlist/likedSongs', function(req, res){
+
+  var tempsession = req.session;
+  let userPlay = "";
+  let song_list = "";
+
+  UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+    if(err){
+      console.log(err)}
+    else{
+      userPlay = data.uPlaylist;
+      song_list = data.likedSongs;
+      console.log(userPlay); 
+      console.log("======================== Liked Songs =======================")
+      console.log(song_list); 
+   
+
+  res.render("LikedSongs.ejs",{
+    'uPlaylist' : userPlay,
+    'cover' : 'https://i.ibb.co/7RtWw8y/Screenshot-2020-12-04-205629.jpg',
+    'title' : 'Liked Songs',
+    'songs' : song_list,
+    signedin: 'Profile',
+    signedinlink: '/profile',
+    logout: "Logout"
+  });
+
+} 
+})
+
+});
 
 app.get(/playlist/ , function(req, res){
   var tempsession = req.session
