@@ -5,9 +5,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/audioplayer.css">
   <script src="../js/audioplayer.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  <script
+  src="http://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
@@ -15,6 +19,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.6/bootstrap-growl.min.js" integrity="sha512-KgI7fghDFHr4D+sJIDQGZLpNCmDmlQHuISbPeIwHd7iJCU20FtL5+l7mD2aMr6NUVnaDua1lEg4tTOVe/XiYBw==" crossorigin="anonymous"></script>
 
 
 <style>
@@ -127,16 +132,72 @@ tr {
        +
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% uPlaylist.forEach(function(list){ %> 
-        <!-- list referring to name -->
-        <!-- <a class="dropdown-item" href="#">Add to <%= list %></a> -->
-        <a class= "dropdown-item">
-        <form action="" method="post">
-          <button type="submit" name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
-      </form>
-    </a>      
-        <!-- post request a list and song object here -->
-        <% }); %>
+        <% uPlaylist.forEach(function(list){ %> 
+          <!-- list referring to name -->
+          <!-- <a class="dropdown-item" href="#">Add to <%= list %></a> -->
+          <a class= "dropdown-item">
+          <!-- <form action="" method="post"> -->
+            <button type="submit" onclick="modifyPlaylist($(this).val());"name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
+        <!-- </form> -->
+        <!-- Add similar code to liked songs later -->
+        <script>
+         function modifyPlaylist(t) {
+           let body = t;
+           var bodyString = body.toString();
+            var bodyArr = bodyString.split(',');
+            var playList = bodyArr[0];
+            var title = bodyArr[1];
+            var artist = bodyArr[2];
+            var album = bodyArr[3];
+            var link = bodyArr[4];
+  
+              alert(title + ' has been added to ' + playList)
+              console.log('============AJAX DATA=============')
+              console.log(playList)
+              console.log(title)
+              console.log(artist)
+              console.log(album)
+              console.log(link)
+  
+              var addition = {
+                _playList: playList,
+                _album: album,
+                _artist : artist,
+                _link : link,
+                _song: title
+              }
+  
+              
+  
+              $.ajax({
+                  type: 'post',
+                  url: '/send_save',
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  success: function(data) {
+                   console.log(JSON.stringify(addition))
+                   console.log('process success');
+                 },
+                  data: JSON.stringify(addition)
+                  // complete: function() {
+                  //   //called when complete
+                  //   console.log('process complete');
+                  // },
+  
+                //   success: function(data) {
+                //     console.log(data);
+                //     console.log('process success');
+                //  },
+  
+                //   error: function() {
+                //     console.log('process error');
+                //   },
+                });
+          }
+        </script>
+      </a>      
+          <!-- post request a list and song object here -->
+          <% }); %>
       </div>
     </div>
   </td>

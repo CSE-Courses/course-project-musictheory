@@ -406,6 +406,76 @@ app.get('/playlists',function(req,res){
     }
   })   
 });
+
+//--------Testing AJAX --------
+
+app.post('/send_save', function(req, res) {
+  res.contentType('json');
+  console.log('==========Responding to AJAX==========')
+  console.log(req.body)
+  let body = req.body;
+  var playList = body._playList;
+  var album = body._album;
+  var artist = body._artist;
+  var link = body._link;
+  var song = body._song;
+
+  console.log('==========Variables for New Track==========')
+  console.log(playList, album, artist, link, song)
+
+
+  const newEntry = new TrackModel({
+    album: album,
+    artist : artist,
+    link : link,
+    song: song
+  });
+
+
+  if(playList != "Liked Songs"){
+  
+    PlaylistModel.findOne({title: playList.toString()}, function(err, data){
+      if(err){
+        console.log(err)
+      }
+      else{
+        let song_list = data.songs;
+        song_list.push(newEntry);
+        console.log(song_list);
+        data.save();
+      }
+    })
+    }
+  
+    //Adding to a specific user's liked songs by accessing their array
+  
+    else{
+  
+      var tempsession = req.session;
+     // let userPlay = "";
+      let song_list = "";
+    
+      UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+        if(err){
+          console.log(err)}
+        else{
+         // userPlay = data.uPlaylist;
+          song_list = data.likedSongs;
+         // console.log(userPlay); 
+          console.log("======================== Liked Songs =======================")
+          song_list.push(newEntry);
+          console.log(song_list);
+          data.save();
+   
+      } 
+
+    })
+  }
+  // res.send({ some: JSON.stringify({response:'json'})
+});
+// });
+
+
 //--------------------Functionality of Individual Playlist Pages-----------------------
 app.post(/playlist/, function(req, res){
   let body = req.body.addSong;
