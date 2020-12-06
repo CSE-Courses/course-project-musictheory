@@ -636,29 +636,29 @@ app.get(/playlist/ , function(req, res){
       else{
         userPlay = data.uPlaylist;
         console.log(userPlay); 
+
+        PlaylistModel.findOne({name: playId}, function(err, data){
+          if(err){
+            console.log(err)
+          }
+          else{
+            let song_list = data.songs;
+            console.log(song_list)
+           
+            res.render("AllSongsPlaylist.ejs",{
+              uPlaylist : userPlay,
+              'cover' : data.cover,
+              'title' : data.title,
+              'songs' : song_list,
+              signedin: 'Profile',
+              signedinlink: '/profile',
+              logout: "Logout"
+            });
+          }
+        })      
+
       } 
     })
-
-  PlaylistModel.findOne({name: playId}, function(err, data){
-    if(err){
-      console.log(err)
-    }
-    else{
-      let song_list = data.songs;
-      console.log(song_list)
-     
-      res.render("AllSongsPlaylist.ejs",{
-        uPlaylist : userPlay,
-        'cover' : data.cover,
-        'title' : data.title,
-        'songs' : song_list,
-        signedin: 'Profile',
-        signedinlink: '/profile',
-        logout: "Logout"
-      });
-    }
-  })
-
 
 }
 
