@@ -605,7 +605,7 @@ app.get('/playlist/likedSongs', function(req, res){
    
 
   res.render("LikedSongs.ejs",{
-    'uPlaylist' : userPlay,
+    uPlaylist : userPlay,
     'cover' : 'https://i.ibb.co/7RtWw8y/Screenshot-2020-12-04-205629.jpg',
     'title' : 'Liked Songs',
     'songs' : song_list,
@@ -648,7 +648,7 @@ app.get(/playlist/ , function(req, res){
       console.log(song_list)
      
       res.render("AllSongsPlaylist.ejs",{
-        'uPlaylist' : userPlay,
+        uPlaylist : userPlay,
         'cover' : data.cover,
         'title' : data.title,
         'songs' : song_list,
@@ -674,7 +674,7 @@ else{
       // title is the name of the playlist displayed over EJS
       // name is whats used in the url to change the page
       res.render("AllSongsPlaylist.ejs",{
-        'uPlaylist' : [],
+        uPlaylist : [],
         'cover' : data.cover,
         'title' : data.title,
         'songs' : song_list,
