@@ -628,7 +628,7 @@ app.get(/playlist/ , function(req, res){
 
     console.log(tempsession.sessionusername);
 
-    let userPlay = "";
+    var userPlay = "";
 
     UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
       if(err){
