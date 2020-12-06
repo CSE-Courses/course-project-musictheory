@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/audioplayer.css">
   <script src="../js/audioplayer.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  <script
+  src="http://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
@@ -138,30 +139,44 @@
       <div>
 		<br>
         <!-- <h1>Make a Playlist</h1> -->
-		<br>
+    <br>
+    
+    <% if(signedin == 'Profile'){ %> 
       </div class= "create a playlist">
       <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">CREATE A PLAYLIST</button>
 
+      <form id="create-play-form" action="/notif/newplaylist/" method="POST">
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Create a Playlist</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="form-group">
+                  <label for="inputPlaylist">Playlist Name</label>
+                  <input type="text" class="form-control" id="inputPlaylist1" name="name" aria-describedby="playlistHelp" placeholder="Enter name">
+                </div>
+                <button type="submit" id="buttonSubmit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
+    <% } %> 
+
+      <!-- <script>
+        $(document).ready(function(){
+          $('#buttonSubmit').click(function(){
+            var databack = $("#exampleModal #inputPlaylist1").val().trim();
+            console.log(databack);
+          });
+        });
+    </script> -->
 
       <!-- <div class="card-deck">
         <div class="card">

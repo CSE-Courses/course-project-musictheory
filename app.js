@@ -407,6 +407,15 @@ app.get('/playlists',function(req,res){
   })   
 });
 
+
+app.post('/notif/newplaylist/', function(req, res) {
+
+  console.log('==========Responding to PLAYLIST CREATION==========')
+  console.log(req.body.name);
+  res.redirect('back');
+
+});
+
 //--------Testing AJAX --------
 
 app.post('/send_save', function(req, res) {
@@ -477,7 +486,7 @@ app.post('/send_save', function(req, res) {
 
 
 //--------------------Functionality of Individual Playlist Pages-----------------------
-app.post(/playlist/, function(req, res){
+app.post(/playlists/, function(req, res){
   let body = req.body.addSong;
   //console.log(body.toString())
   var bodyString = body.toString();
