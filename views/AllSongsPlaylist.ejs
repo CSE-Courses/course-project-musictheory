@@ -124,6 +124,8 @@ tr {
     <th></th>
   </tr>
 
+  <% if(songs != null){ %> 
+
   <% songs.forEach(function(song){ %>
   <tr>
     <td><div class="dropdown">
@@ -208,6 +210,9 @@ tr {
       </audio></td>
     </tr>
     <% }); %>
+
+    <% } %>
+
 
 </table>
 <br><br><br><br><br>
