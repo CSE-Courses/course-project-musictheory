@@ -388,7 +388,7 @@ app.get('/playlists',function(req,res){
     else{
       console.log(playData)
     if(tempsession.sessionusername){
-        res.render("playlistPage.ejs",{
+        res.render("PlaylistPage.ejs",{
             playData: playData,
             signedin: 'Profile',
             signedinlink: '/profile',
@@ -396,7 +396,7 @@ app.get('/playlists',function(req,res){
           });
     }
     else{
-        res.render("playlistPage.ejs",{
+        res.render("PlaylistPage.ejs",{
           playData: playData,
           signedin: 'Sign In',
           signedinlink: '/signin',
