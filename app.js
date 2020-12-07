@@ -460,77 +460,8 @@ app.post(/notif/, function(req, res) {
 
 });
 
-//--------Testing AJAX --------
-
-app.post('/send_save', function(req, res) {
-  res.contentType('json');
-  console.log('==========Responding to AJAX==========')
-  console.log(req.body)
-  let body = req.body;
-  var playList = body._playList;
-  var album = body._album;
-  var artist = body._artist;
-  var link = body._link;
-  var song = body._song;
-
-  console.log('==========Variables for New Track==========')
-  console.log(playList, album, artist, link, song)
-
-
-  const newEntry = new TrackModel({
-    album: album,
-    artist : artist,
-    link : link,
-    song: song
-  });
-
-
-  if(playList != "Liked Songs"){
-  
-    PlaylistModel.findOne({title: playList.toString()}, function(err, data){
-      if(err){
-        console.log(err)
-      }
-      else{
-        let song_list = data.songs;
-        song_list.push(newEntry);
-        console.log(song_list);
-        data.save();
-      }
-    })
-    }
-  
-    //Adding to a specific user's liked songs by accessing their array
-  
-    else{
-  
-      var tempsession = req.session;
-     // let userPlay = "";
-      let song_list = "";
-    
-      UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
-        if(err){
-          console.log(err)}
-        else{
-         // userPlay = data.uPlaylist;
-          song_list = data.likedSongs;
-         // console.log(userPlay); 
-          console.log("======================== Liked Songs =======================")
-          song_list.push(newEntry);
-          console.log(song_list);
-          data.save();
-   
-      } 
-
-    })
-  }
-  // res.send({ some: JSON.stringify({response:'json'})
-});
-// });
-
-
 //--------------------Functionality of Individual Playlist Pages-----------------------
-app.post(/playlists/, function(req, res){
+app.post(/playlist/, function(req, res){
   let body = req.body.addSong;
   //console.log(body.toString())
   var bodyString = body.toString();
@@ -549,42 +480,7 @@ app.post(/playlists/, function(req, res){
     artist : artist,
     link : link,
     song: title
-  });
-  //Adding Profile Picture Psuedo 
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-  
-      var reader = new FileReader();
-  
-      reader.onload = function(e) {
-        $('.image-upload-wrap').hide();
-  
-        $('.file-upload-image').attr('src', e.target.result);
-        $('.file-upload-content').show();
-  
-        $('.image-title').html(input.files[0].name);
-      };
-  
-      reader.readAsDataURL(input.files[0]);
-  
-    } else {
-      removeUpload();
-    }
-  }
-  
-  function removeUpload() {
-    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-    $('.file-upload-content').hide();
-    $('.image-upload-wrap').show();
-  }
-  $('.image-upload-wrap').bind('dragover', function () {
-      $('.image-upload-wrap').addClass('image-dropping');
-    });
-    $('.image-upload-wrap').bind('dragleave', function () {
-      $('.image-upload-wrap').removeClass('image-dropping');
-  });
-
-  ///
+  })
 
   console.log(newEntry);
   console.log(playList.toString());
@@ -639,6 +535,44 @@ app.post(/playlists/, function(req, res){
 
 
 });
+
+app.post(/playlists/, function(req, res){
+    //Adding Profile Picture Psuedo 
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+    
+        var reader = new FileReader();
+    
+        reader.onload = function(e) {
+          $('.image-upload-wrap').hide();
+    
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
+    
+          $('.image-title').html(input.files[0].name);
+        };
+    
+        reader.readAsDataURL(input.files[0]);
+    
+      } else {
+        removeUpload();
+      }
+    }
+    
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+      });
+      $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
+  
+    ///
+})
 
 app.get('/playlist/likedSongs', function(req, res){
 
