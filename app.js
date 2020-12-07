@@ -555,6 +555,31 @@ app.post(/notif/, function(req, res) {
 
 });
 
+
+app.post("/changeplaylistpic/:name" , function(req, res){
+  const playlistName = req.params.name
+  playlistpic = req.body.playlistpiclink
+  console.log('testbreak')
+  console.log(playlistName)
+  PlaylistModel.findOne({title: playlistName}, function(err, existngPlaylist){
+    if(err){
+      console.log(err)
+    }
+    else{
+      if(existngPlaylist.owner == req.session.sessionusername){
+        existngPlaylist.cover = playlistpic
+        existngPlaylist.save()
+        res.redirect('/playlists')
+      }
+      else{
+        console.log("you dont own that playlist")
+        res.redirect('/')
+      }
+    }
+  })
+})
+
+
 //--------------------Functionality of Individual Playlist Pages-----------------------
 app.post(/playlist/, function(req, res){
   let body = req.body.addSong;
@@ -796,7 +821,6 @@ else{
 
 
 });
-
 
 
 app.listen(port);

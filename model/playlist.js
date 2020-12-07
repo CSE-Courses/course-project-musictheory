@@ -8,8 +8,7 @@ const PlaylistSchema = new Schema({
     title: String,
     status: String,
     owner: String,
-    collaborators: Array
-
+    collaborators: Array,
 });
 
 const playlists = mongoose.model("Playlist", PlaylistSchema);
