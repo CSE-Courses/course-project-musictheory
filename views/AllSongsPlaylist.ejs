@@ -125,7 +125,9 @@ tr {
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
       <% userList.forEach(function(user){ %> 
         <% if(user != owner){ %>
+          <a class= "dropdown-item">
       <button class="dropdown-item" type="button"><%- user %></button>
+         </a>
         <% } %> 
       <% }); %>
     </div>
