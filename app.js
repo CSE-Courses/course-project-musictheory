@@ -702,11 +702,22 @@ app.get(/playlist/ , function(req, res){
           else{
             let song_list = data.songs;
             console.log(song_list)
-           
+
+            UserModel.find({}, function(err, allUsers){
+
+           let userList = [];
+
+           allUsers.forEach(function(user){
+            userList.push(user.username)
+           })
+
+           console.log(userList);
+
             res.render("AllSongsPlaylist.ejs",{
               uPlaylist : userPlay,
               'owner' : data.owner,
               'currentUser': tempsession.sessionusername,
+              'userList': userList,
               'cover' : data.cover,
               'title' : data.title,
               'songs' : song_list,
@@ -714,6 +725,8 @@ app.get(/playlist/ , function(req, res){
               signedinlink: '/profile',
               logout: "Logout"
             });
+
+          });
           }
         })      
 

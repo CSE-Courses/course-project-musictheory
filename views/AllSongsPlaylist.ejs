@@ -123,9 +123,9 @@ tr {
       Add a Collaborator
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item" type="button">Action</button>
-      <button class="dropdown-item" type="button">Another action</button>
-      <button class="dropdown-item" type="button">Something else here</button>
+      <% userList.forEach(function(user){ %> 
+      <button class="dropdown-item" type="button"><%- user %></button>
+      <% }); %>
     </div>
   </div>
   <% } %> 
