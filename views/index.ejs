@@ -41,14 +41,14 @@
         <li class="nav-item">
           <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
           
             
             
             
           </div>
-        </li>
+        </li> -->
       </ul>
 
       <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
@@ -62,8 +62,8 @@
     </div>
   </nav>
 
-
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
+<!-- Deleted nav bar -->
+  <!-- <nav class="navbar fixed-bottom navbar-light bg-dark">
     <div class="col-1">
       <h4 style="color: white; text-align: center;">Previous</h2>
     </div>
@@ -80,109 +80,115 @@
           Your browser dose not Support the audio Tag
       </audio>
   </div>
-  </nav>
+  </nav> -->
 </body>
 
   <div class="jumbotron">
     <h1>Welcome to MusicTheory!</h1>
     <p>Our webapp aims to provide a comfortable music listening experience to everyone!</p>
     <!--<button id="myButton">Click me!</button>-->
-    <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button>
+    <!-- <button onclick="playSong('01-Battery.mp3')">Play Happy Birthday!</button> -->
   </div>
 
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div>
-        <h1>Your Playlists</h1>
+</body>
+
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div>
+  <br><br>
+      <h1>Genres</h1>
+  <br>
+    </div>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/originals/f8/6c/b7/f86cb7c45ae3afc8d990e5a90ae08b09.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/37i9dQZF1DX48TTZL62Yht" class="stretched-link"><h4 class="card-title">Hip Hop</h3></a>
+        </div>
       </div>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/41cc4b37210415.5738dba522f25.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 1</h3></a>
-          </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/originals/15/77/e1/1577e162a5bd4bf1779e865d99ac926c.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/37i9dQZF1DWXRqgorJj26U" class="stretched-link"><h4 class="card-title">Rock</h3></a>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="http://images.8tracks.com/cover/i/008/648/695/large-5305.jpg?rect=0,83,500,500&q=98&fm=jpg&fit=max" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 2</h3></a>
-          </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/originals/26/eb/e9/26ebe9788b358c734a2851048d05b12c.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/3ZgmfR6lsnCwdffZUan8EA" class="stretched-link"><h4 class="card-title">Pop</h3></a>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://i.pinimg.com/736x/a9/a4/08/a9a408e24aae6f7dfe0e42cf56d53619.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 3</h3></a>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/58df0840-9ad7-47cf-aeb2-fac355fb02f7/d96vs8t-17e32299-584d-40f7-a6fd-175ac7183828.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi81OGRmMDg0MC05YWQ3LTQ3Y2YtYWViMi1mYWMzNTVmYjAyZjcvZDk2dnM4dC0xN2UzMjI5OS01ODRkLTQwZjctYTZmZC0xNzVhYzcxODM4MjgucG5nIn1dXX0.y1UeX_teXA4lINCNbguNS0mPamkqkzhsjhs5ZTmBgqg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Playlist 4</h3></a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">See more...</h3>
-              <a href="/playlists" class="card-link">Click here!</a>
-          </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://roughstock-production.s3.amazonaws.com/2017/10/LukeBryan-WhatMakesYouCountry-Cover-2017-610.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/37i9dQZF1DX1lVhptIYRda" class="stretched-link"><h4 class="card-title">Country</h3></a>
         </div>
       </div>
     </div>
-    <div class="col-1"></div>
   </div>
+  <div class="col-1"></div>
+</div>
 
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div>
-        <h1>Favorited Albums</h1>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://library.wustl.edu/wp-content/uploads/2016/02/mghl_visual.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/37i9dQZF1DWWEJlAGA9gs0" class="stretched-link"><h4 class="card-title">Classical</h3></a>
+        </div>
       </div>
-      <div class="card-deck">
-        <div class="card">
-
-          <img class="card-img-top" src= <%= album1%> alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title"><%= name%></h3></a>
-              <p class="card-text">Lord Huron</p>
-          </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/236x/22/6d/eb/226deb099ebab5d1a7831e2eece63f4d.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/37i9dQZF1DWWOaP4H0w5b0" class="stretched-link"><h4 class="card-title">Metal</h3></a>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/The_life_of_pablo_alternate.jpg/220px-The_life_of_pablo_alternate.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Real Friends ft. Ty Dolla $ign</h3></a>
-              <p class="card-text">Kanye West</p>
-          </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://cdn.music-artworks.com/wp-content/uploads/2020/04/NOVA-min.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/2AMSyBkXMTXMhIs7Co5MPq" class="stretched-link"><h4 class="card-title">EDM</h3></a>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Vampire_Weekend_Horchata.jpg/220px-Vampire_Weekend_Horchata.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Horchata</h3></a>
-              <p class="card-text">Vampire Weekend</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">The Black Market</h3></a>
-              <p class="card-text">Rise Against</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class="card-title">See more...</h3>
-              <a href="#" class="card-link">Click here!</a>
-          </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/236x/16/26/c7/1626c7d97b42693bec45d4dde196128c--lp-covers-music-covers.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/05Hd48jdQIz3s8WRrvGnzf" class="stretched-link"><h4 class="card-title">Jazz</h3></a>
         </div>
       </div>
     </div>
-    <div class="col-1"></div>
   </div>
+  <div class="col-1"></div>
+</div>
 
-  <div>They said to put easter eggs in.</div>
-  <div>To improve the user experience.</div>
-  <div>This will be covered by the music player,</div>
-  <div>but it helps keep the albums above it.</div>
+  <div class="row">
+  <div class="col-1"></div>
+  <div class="col-5">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://i.pinimg.com/236x/bc/83/54/bc8354d7b0655f22278b37011e3c6037--buddy-guy-blues-rock.jpg" alt="Card image">
+        <div class="card-body text-center">
+          <a href="SearchPageGenre/4zNKkcW6QS0NExoQ6bYGcE?" class="stretched-link"><h4 class="card-title">Blues</h3></a>
+        </div>
+      </div>
+  <div class="card">
+        <div class="card-body text-center">
+    <br><br><br><br><br>
+          <h4 class="card-title">See more...</h3>
+            <a href="/playlists" class="card-link">Click here!</a>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+
+<br>
+<br>
 
 
 
