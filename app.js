@@ -444,7 +444,9 @@ app.post(/notif/, function(req, res) {
         songs: [],
         cover: 'https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg',
         title: playlistName,
-        status: ownership
+        status: ownership,
+        owner: username,
+        collab: []
       });
 
       newEntry.save(function(err, doc) {
@@ -703,6 +705,8 @@ app.get(/playlist/ , function(req, res){
            
             res.render("AllSongsPlaylist.ejs",{
               uPlaylist : userPlay,
+              'owner' : data.owner,
+              'currentUser': tempsession.sessionusername,
               'cover' : data.cover,
               'title' : data.title,
               'songs' : song_list,

@@ -112,7 +112,26 @@ tr {
 <p style="color:#000000; font-family:verdana; font-size:30px"><%= title %></p>
 <p style="color:#000000; font-family:verdana;"></p>
 <p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
-<br>
+  <br>
+
+  <% if(title != "All Songs"){ %> 
+    <!--If youre the owner  -->
+    <% if(owner == currentUser){ %>
+    <!-- COLLAB MENU -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Add a Collaborator
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button">Action</button>
+      <button class="dropdown-item" type="button">Another action</button>
+      <button class="dropdown-item" type="button">Something else here</button>
+    </div>
+  </div>
+  <% } %> 
+<% } %> 
+
+
 <br>
 <table>
 
@@ -123,6 +142,7 @@ tr {
     <th>Album</th>
     <th></th>
   </tr>
+
 
   <% if(songs != null){ %> 
 
