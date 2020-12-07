@@ -27,18 +27,15 @@ table {
   width: 100%;
   color: white;
 }
-
 td, th {
   border: 0px solid #333333;
   border-bottom: 1px solid #aaaaaa;
   text-align: left;
   padding: 8px;
 }
-
 tr {
   background-color: #444444;
 }
-
 </style>
 </head>
 <body style="background-color:#ededed;">
@@ -112,8 +109,7 @@ tr {
 <p style="color:#000000; font-family:verdana; font-size:30px"><%= title %></p>
 <p style="color:#000000; font-family:verdana;"></p>
 <p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
-  <br>
-
+<br>
 <br>
 <table>
 
@@ -124,9 +120,6 @@ tr {
     <th>Album</th>
     <th></th>
   </tr>
-
-
-  <% if(songs != null){ %> 
 
   <% songs.forEach(function(song){ %>
   <tr>
@@ -153,7 +146,6 @@ tr {
           var artist = bodyArr[2];
           var album = bodyArr[3];
           var link = bodyArr[4];
-
             alert(title + ' has been added to ' + playList)
             console.log('============AJAX DATA=============')
             console.log(playList)
@@ -161,7 +153,6 @@ tr {
             console.log(artist)
             console.log(album)
             console.log(link)
-
             var addition = {
               _playList: playList,
               _album: album,
@@ -169,9 +160,7 @@ tr {
               _link : link,
               _song: title
             }
-
             
-
             $.ajax({
                 type: 'post',
                 url: '/send_save',
@@ -186,12 +175,10 @@ tr {
                 //   //called when complete
                 //   console.log('process complete');
                 // },
-
               //   success: function(data) {
               //     console.log(data);
               //     console.log('process success');
               //  },
-
               //   error: function() {
               //     console.log('process error');
               //   },
@@ -212,9 +199,6 @@ tr {
       </audio></td>
     </tr>
     <% }); %>
-
-    <% } %>
-
 
 </table>
 <br><br><br><br><br>
