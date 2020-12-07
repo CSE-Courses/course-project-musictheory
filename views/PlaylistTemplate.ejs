@@ -57,16 +57,10 @@ tr {
           <a class="nav-link" href="/playlists">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Popular Songs</a>
+          <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Top Genres</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
-              <a class="dropdown-item" href="/searchPageGenre">Rock</a>
-              <a class="dropdown-item" href="/searchPageGenre">See more...</a>
-            </div>
+          <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
         </li>
       </ul>
       
@@ -79,26 +73,6 @@ tr {
       <a class="navbar-brand" href='/logout'><%= logout %></a>
 
     </div>
-  </nav>
-
-
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Previous</h2>
-    </div>
-    <div class="col-2">
-      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
-      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
-    </div>
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Next</h2>
-    </div>
-    <div class="container-audio col-7">
-      <audio controls autoplay loop id="player">
-          <source src="" type="audio/mp3">
-          Your browser dose not Support the audio Tag
-      </audio>
-  </div>
   </nav>
 </body>
   <br>

@@ -16,7 +16,7 @@
     <div class="col-sm-12">
       <h4 class="account-panel"> <i class="fa fa-cog"></i> Account Panel</h4>
       <div class="account__user">
-        <h4>Welcome, Geoffrey</h4>
+        <h4>Welcome, <%= username %></h4>
         <p id="free">Account Type : <span>Free</span></p>
       </div>
     </div>
@@ -32,11 +32,11 @@
     <div class="container line-vertical" id="line-vertical">
       <h4 class="text-profile">Profile</h4>
       <div class="col-sm-5">
-        <form class="row">
+        <form class="row" action="/changeuserinfo" method="POST">
           <div class="col-sm-12">
             <div class="form-group">
-              <label>Full Name</label>
-              <input class="form-control" type="text" placeholder="Your full name..." value="Geoffrey Wang"/>
+              <label>Username</label>
+              <input class="form-control" type="text" name="changeusername" value=<%= username %>>
             </div>
             <div class="form-group">
               <label>Phone number</label>
@@ -50,14 +50,18 @@
                 </div>
                 <div class="col-xs-8 col-phone--right">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Your phone number..." value="6462868109"/><small class="pull-right">Example: (+1)XXXXXXXXXX</small>
+                    <input class="form-control" type="text" placeholder="Your phone number..." name="changephonenumber" value=<%= number %>><small class="pull-right">Example: (+1)XXXXXXXXXX</small>
                   </div>
                 </div>
               </div>
             </div>
             <div class="form-group has-error">
               <label>Email Address</label>
-              <input class="form-control" type="email" disabled="disabled" value="gwang25@buffalo.edu"/>
+              <input class="form-control" type="email" disabled="disabled" value=<%= email %>>
+            </div>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-base btn-md" id="save_changed">Save changes</button>
             </div>
           </div>
         </form>
@@ -71,7 +75,7 @@
             <div class="row">
               <div class="col-xs-6 col-sm-8 col-md-6 col-lg-5">
                 <div class="form-group"><a id="img_profile">
-                    <div class="img-profile" style="background-image: url('https://raw.githubusercontent.com/UB-CSE/course-project-musictheory/accountpage-geoffrey/images/profile%20pic.jpg')" data-toggle="modal" data-target="#modal_upload"></div>
+                    <div class="img-profile" style="background-image: url(<%= pfp %>)" data-toggle="modal" data-target="#modal_upload"></div>
                     <div class="camera-icon" data-toggle="modal" data-target="#modal_upload"><i class="fa fa-camera fa-lg"></i><span class="hidden-xs">&nbsp;&nbsp;Upload image</span></div></a></div>
               </div>
               <div class="col-xs-6 col-sm-4 col-md-4 col-lg-5 bottom-column col-phone--right control-upload" style="display: none">
@@ -87,7 +91,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center save-change-container">
-            <button class="btn btn-base btn-md" id="save_changed">Save changes</button>
+            
           </div>
         </div>
       </div>
@@ -96,7 +100,7 @@
     <div class="container">
           <h4 class="text-profile">Password</h4> 
           <div class="col-sm-6">
-            <form class="row">
+            <form class="row" action="/changepassword" method="POST">
               <div class="col-sm-12">
                 <div class="form-group" id="show_old_password">
                   <label>Password</label><a class="btn-change-password pull-right">
@@ -108,19 +112,19 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Old Password</label>
-                <input class="form-control" id="old_password" type="password"/>
+                <input class="form-control" id="old_password" type="password" name="oldpassword"/>
               </div>
               <div class="form-group">
                 <label>New Password</label>
-                <input class="form-control" type="password"/>
+                <input class="form-control" type="password" name="newpassword"/>
               </div>
               <div class="form-group">
                 <label>Confirm Password</label>
-                <input class="form-control" type="password"/>
+                <input class="form-control" type="password" name="newpasswordconfirm"/>
               </div>
             </div>
             <div class="col-sm-8 col-md-9">
-              <div class="form-group text-right"><a class="btn btn-base btn-block" id="save_new_password">Save new password</a></div>
+              <div class="form-group text-right"><button class="btn btn-base btn-block" id="save_new_password">Save new password</button></div>
             </div>
             <div class="col-sm-4 col-md-3 no-padding-left">
               <div class="form-group text-right"><a class="btn btn-gray btn-block" id="cancel">Cancel</a></div>
@@ -140,14 +144,16 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-6 height-upload">
-            <input id="choose_file" type="file" name="choose_file" accept="image/*"/>
-            <label class="label-choose-file" for="choose_file"><a class="upload-photo"><i class="fa fa-plus-circle fa-2x"></i>&nbsp;Upload photo</a></label>
-          </div>
-          <div class="col-sm-6 height-upload">
-            <input id="take_photo" type="file" name="take_photo" accept="image/*"/>
-            <label class="label-choose-file" for="take_photo"><a class="take-photo"><i class="fa fa-camera fa-2x"></i>&nbsp;Take photo</a></label>
-          </div>
+         <div style="text-align: center;">
+           <form action="/changepfp" method="POST">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <label>Link to picture</label>
+              <input class="form-control" name="pfplink"/>
+              <button type="submit">Change Image</button>
+            </div>
+           </form>
+         </div>
         </div>
       </div>
       <div class="modal-footer visible-xs-block"><a data-dismiss="modal">Cancel</a></div>

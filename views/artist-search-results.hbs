@@ -39,16 +39,10 @@
           <a class="nav-link" href="/playlists">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Popular Songs</a>
+          <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Top Genres</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Hip Hop</a>
-            <a class="dropdown-item" href="#">Rock</a>
-            <a class="dropdown-item" href="#">See more...</a>
-          </div>
+          <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
         </li>
       </ul>
 
@@ -56,7 +50,7 @@
         <input class="artist-search-input form-control mr-sm-2" type="text" placeholder="Artist name"  name="artistName">
         <button class="btn btn-secondary my-2 my-sm-0">Search</button>
       </form>
-      <a class="navbar-brand" href={{ signedinlin }}>{{ signedin }}</a>
+      <a class="navbar-brand" href={{ signedinlink }}>{{ signedin }}</a>
       <a class="navbar-brand" href='/logout'>{{ logout }}</a>
 
     </div>
@@ -64,38 +58,26 @@
 
 <div class="artists">
     {{#each artist}}
-    <li>{{this.name}}
+
+    {{!-- <h1 style="position: absolute; left: 8.5%;">Search</h1> --}}
+
+    <li><h6 style="text-align:center; font-size: 28px;"><b>{{this.name}}</b></h6>
         <br>
         {{#if this.images}}
-        <img src={{this.images.0.url}} alt="{{this.name}}" style="max-width: 10%; height:auto">
+        <img src={{this.images.0.url}} alt="{{this.name}}" style="max-width: 17%; height:auto; display:block; margin-left: auto; margin-right: auto;">
 
         {{else}}
         <img src="" alt="">
         {{/if}}
         <br>
-        <a href="/albums/{{this.id}}">View Albums</a>
+        <div style="text-align: center;">
+          <a align="middle;" style="width: 100%; display:block; font-size: 24px;" href="/albums/{{this.id}}">View Albums</a>
+        </div>
+        <br>
+        <p align="middle">_________________________________</p>
     </li>
     {{/each}}
 </div> 
-
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Previous</h2>
-    </div>
-    <div class="col-2">
-      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
-      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
-    </div>
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Next</h2>
-    </div>
-    <div class="container-audio col-7">
-      <audio controls autoplay loop id="player">
-          <source src="" type="audio/mp3">
-          Your browser dose not Support the audio Tag
-      </audio>
-  </div>
-  </nav>
 </body>
 
 </html>
