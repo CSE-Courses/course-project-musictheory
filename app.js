@@ -434,13 +434,12 @@ app.post(/notif/, function(req, res) {
   } 
 })
 
+    var linkstr = playlistName.replace(" ", "+");
 
-  bcrypt.genSalt(2, function(err, salt) {
-    bcrypt.hash(playlistName, salt, function(err, hash) {
-      console.log(hash)
+      console.log(linkstr)
 
       const newEntry = new PlaylistModel({
-        name: hash,
+        name: linkstr,
         songs: [],
         cover: 'https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg',
         title: playlistName,
@@ -453,10 +452,6 @@ app.post(/notif/, function(req, res) {
         if (err) return console.error(err);
         console.log("Document inserted succussfully!");
       });
-
-    });
-  });
-
 
 
 
@@ -680,60 +675,68 @@ app.get('/playlist/likedSongs', function(req, res){
 app.get(/playlist/ , function(req, res){
   var tempsession = req.session
   var playId = req._parsedOriginalUrl._raw.substring(10);
-  console.log(playId);
 
-  if(tempsession.sessionusername){
+
+  console.log("=========PLAY ID=============")
+  console.log(playId);
+  console.log("=========PLAY ID END=============")
 
     console.log(tempsession.sessionusername);
+
+    if(playId != "css/audioplayer.css" && playId != "js/audioplayer.js") {
+
+    if(tempsession.sessionusername){
 
     var userPlay = "";
 
     UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
-      if(err){
+    if(err){
         console.log(err)}
-      else{
+    else{
         userPlay = data.uPlaylist;
         console.log(userPlay); 
 
-        PlaylistModel.findOne({name: playId}, function(err, data){
-          if(err){
-            console.log(err)
-          }
-          else{
-            let song_list = data.songs;
-            console.log(song_list)
+          PlaylistModel.findOne({name: playId}, function(err, data){
+            if(err){
+              console.log(err)
+            }
+            else{
+              let song_list = data.songs;
+              console.log(song_list)
 
-            UserModel.find({}, function(err, allUsers){
+              UserModel.find({}, function(err, allUsers){
 
-           let userList = [];
+            let userList = [];
 
-           allUsers.forEach(function(user){
-            userList.push(user.username)
-           })
+            allUsers.forEach(function(user){
+              userList.push(user.username)
+            })
 
-           console.log(userList);
+            console.log(userList);
 
-            res.render("AllSongsPlaylist.ejs",{
-              uPlaylist : userPlay,
-              'owner' : data.owner,
-              'currentUser': tempsession.sessionusername,
-              'userList': userList,
-              'cover' : data.cover,
-              'title' : data.title,
-              'songs' : song_list,
-              signedin: 'Profile',
-              signedinlink: '/profile',
-              logout: "Logout"
+              res.render("AllSongsPlaylist.ejs",{
+                uPlaylist : userPlay,
+                'owner' : data.owner,
+                'currentUser': tempsession.sessionusername,
+                'userList': userList,
+                'cover' : data.cover,
+                'title' : data.title,
+                'songs' : song_list,
+                signedin: 'Profile',
+                signedinlink: '/profile',
+                logout: "Logout"
+              });
+
             });
-
-          });
-          }
-        })      
+            }
+          })      
 
       } 
     })
 
-}
+  }
+
+
 
 else{
     
@@ -758,6 +761,10 @@ else{
     }
   })
 }
+
+}
+
+
 
 });
 
