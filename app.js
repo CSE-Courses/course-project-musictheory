@@ -384,6 +384,7 @@ app.post('/changeuserinfo' , function(req, res){
       existingUser.username = response['newusername']
       existingUser.phonenumber = response['newnumber']
       existingUser.save()
+      req.session.sessionusername = response['newusername']
       res.redirect('/profile')
     }
   })
