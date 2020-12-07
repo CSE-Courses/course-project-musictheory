@@ -114,28 +114,6 @@ tr {
 <p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
   <br>
 
- <% if(title != "All Songs"){ %> 
-    <!--If youre the owner  -->
-    <% if(owner == currentUser){ %>
-    <!-- COLLAB MENU -->
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="collabButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Add a Collaborator
-    </button>
-    <div class="dropdown-menu" aria-labelledby="collabButton">
-      <% userList.forEach(function(user){ %> 
-        <% if(user != owner){ %>
-          <a class= "dropdown-item">
-            <button type="button"><%- user %></button>
-               </a>
-        <% } %> 
-      <% }); %>
-    </div>
-  </div>
-  <% } %> 
-<% } %>  
-
-
 <br>
 <table>
 
