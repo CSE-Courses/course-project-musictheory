@@ -19,7 +19,6 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
 table {
@@ -115,7 +114,7 @@ tr {
 <p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
   <br>
 
-  <% if(title != "All Songs"){ %> 
+ <% if(title != "All Songs"){ %> 
     <!--If youre the owner  -->
     <% if(owner == currentUser){ %>
     <!-- COLLAB MENU -->
@@ -127,14 +126,14 @@ tr {
       <% userList.forEach(function(user){ %> 
         <% if(user != owner){ %>
           <a class= "dropdown-item">
-      <button type="submit"><%- user %></button>
-         </a>
+            <button type="button"><%- user %></button>
+               </a>
         <% } %> 
       <% }); %>
     </div>
   </div>
   <% } %> 
-<% } %> 
+<% } %>  
 
 
 <br>
