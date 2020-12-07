@@ -119,10 +119,10 @@ tr {
     <% if(owner == currentUser){ %>
     <!-- COLLAB MENU -->
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="collabButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Add a Collaborator
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <div class="dropdown-menu" aria-labelledby="collabButton">
       <% userList.forEach(function(user){ %> 
         <% if(user != owner){ %>
           <a class= "dropdown-item">
