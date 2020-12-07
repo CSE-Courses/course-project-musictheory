@@ -392,7 +392,8 @@ app.get('/playlists',function(req,res){
             playData: playData,
             signedin: 'Profile',
             signedinlink: '/profile',
-            logout: "Logout"
+            logout: "Logout",
+            username: tempsession.sessionusername
           });
     }
     else{
@@ -408,10 +409,56 @@ app.get('/playlists',function(req,res){
 });
 
 
-app.post('/notif/newplaylist/', function(req, res) {
+app.post(/notif/, function(req, res) {
+  console.log('==========PLAYLIST POST USERNAME==========')
+  var username = req._parsedOriginalUrl._raw.substring(19);
+  console.log(req._parsedOriginalUrl._raw.substring(19));
+  console.log('==========PLAYLIST POST PLAYLIST NAME==========')
+  var playlistName = req.body.name;
+  console.log(playlistName);
+  var ownership = username.concat("'s Playlist")
+  console.log('==========OWNERSHIP============')
+  console.log(ownership);
 
-  console.log('==========Responding to PLAYLIST CREATION==========')
-  console.log(req.body.name);
+  console.log('==========Hashed Playlist Name==========')
+
+  UserModel.findOne({username: username}, function(err, data){
+    if(err){
+      console.log(err)}
+    else{
+      all_lists = data.uPlaylist;
+      console.log("========================Adding to User's current Playlists=======================")
+      all_lists.push(playlistName);
+      console.log(all_lists);
+      data.save();
+  } 
+})
+
+
+  bcrypt.genSalt(2, function(err, salt) {
+    bcrypt.hash(playlistName, salt, function(err, hash) {
+      console.log(hash)
+
+      const newEntry = new PlaylistModel({
+        name: hash,
+        songs: [],
+        cover: 'https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg',
+        title: playlistName,
+        status: ownership
+      });
+
+      newEntry.save(function(err, doc) {
+        if (err) return console.error(err);
+        console.log("Document inserted succussfully!");
+      });
+
+    });
+  });
+
+
+
+
+
   res.redirect('back');
 
 });
