@@ -100,11 +100,17 @@ tr {
 </body>
   <br>
   <!-- bookmark -->
-<img src=<%= cover %> style="float: left; margin-right: 20px;" />
+<img style="float: left; margin-right: 20px; height: 150px; width: 150px;" src=<%= cover %>/>
 <p style="color:#000000; font-family:verdana;">PLAYLIST</p>
 <p style="color:#000000; font-family:verdana; font-size:30px"><%= title %></p>
-<p style="color:#000000; font-family:verdana;"></p>
-<p style="color:#DCDCDC; font-family:verdana;"><button>Play |></button></p>
+<form method="POST" action="/changeplaylistpic/<%= title %>">
+  <div class="input-group mb-3" style="width: 50%">
+    <input type="text" class="form-control" placeholder="Playlist Cover Image" aria-label="Recipient's username" aria-describedby="basic-addon2" name="playlistpiclink">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Update Picture</button>
+    </div>
+  </div>
+</form>
 <br>
 <br>
 <table>
