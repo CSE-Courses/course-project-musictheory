@@ -12,6 +12,11 @@ const session = require('express-session')
 //define the modules we use
 const bcrypt = require('bcryptjs')
 const UserModel = require('./model/user')
+const TrackModel = require("./model/tracks")
+const PlaylistModel = require('./model/playlist')
+
+
+
 
 //initialize some of the modules we use
 app.use(bodyParser.urlencoded({extended:false}));
@@ -32,7 +37,9 @@ const hbs = require('hbs');
 
 //routes for our pages
 const searchRoutes= require('./routes/searchRoutes');
-const playlistRoutes  = require('./routes/playlistRoutes');
+//Adding Playlists into app, removing router
+//const playlistRoutes  = require('./routes/playlistRoutes');
+//const allSongsRoutes  = require('./routes/AllSongsRoutes');
 const failedSearchRoutes  = require('./routes/failedSearchRoutes');
 const searchPageGenreRoutes  = require('./routes/searchPageGenreRoutes');
 const signinRoutes  = require('./routes/signinRoutes');
@@ -51,12 +58,13 @@ app.set('view engine', 'hbs');
 
 //binding our routes to our URLs
 app.use('/search',searchRoutes);
-app.use('/playlists',playlistRoutes);
+//app.use('/playlists',playlistRoutes);
 app.use('/failedSearch',failedSearchRoutes);
 app.use('/searchPageGenre',searchPageGenreRoutes);
 app.use('/signin',signinRoutes);
 app.use('/profile',profileRoutes);
 app.use('/playlisttemplate',playlistTemplateRoutes);
+//app.use('/allSongs', allSongsRoutes);
 
 
 
@@ -87,6 +95,7 @@ app.get('/',function(req,res){
     });
   }
   });
+
 
 
 // -----------------SpotifyAPI --------------------------------------------------------------------
@@ -317,6 +326,8 @@ app.post('/createaccount', function(req, res){
             username : response['usernameinfo'], 
             password: hash,
             email: response['emailinfo'],
+            uPlaylist: ['Liked Songs'],
+            likedSongs: [] 
           });
         
           newUser.save();
@@ -339,6 +350,8 @@ app.post('/login', function(req, res){
     email : req.body.loginemail,
     passwordinfo : req.body.loginpassword
   };
+
+
 
   console.log(response); 
 
@@ -458,5 +471,332 @@ app.get('/logout',(req,res) => {
   });
 
 });
+
+//-------------------playlist routing--------------------
+app.get('/playlists',function(req,res){
+  var tempsession = req.session
+
+  PlaylistModel.find({}, function(err, playData){
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(playData)
+    if(tempsession.sessionusername){
+        res.render("PlaylistPage.ejs",{
+            playData: playData,
+            signedin: 'Profile',
+            signedinlink: '/profile',
+            logout: "Logout",
+            username: tempsession.sessionusername
+          });
+    }
+    else{
+        res.render("PlaylistPage.ejs",{
+          playData: playData,
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+        });
+      }
+    }
+  })   
+});
+
+
+app.post(/notif/, function(req, res) {
+  console.log('==========PLAYLIST POST USERNAME==========')
+  var username = req._parsedOriginalUrl._raw.substring(19);
+  console.log(req._parsedOriginalUrl._raw.substring(19));
+  console.log('==========PLAYLIST POST PLAYLIST NAME==========')
+  var playlistName = req.body.name;
+  console.log(playlistName);
+  var ownership = username.concat("'s Playlist")
+  console.log('==========OWNERSHIP============')
+  console.log(ownership);
+
+  console.log('==========Hashed Playlist Name==========')
+
+  UserModel.findOne({username: username}, function(err, data){
+    if(err){
+      console.log(err)}
+    else{
+      all_lists = data.uPlaylist;
+      console.log("========================Adding to User's current Playlists=======================")
+      all_lists.push(playlistName);
+      console.log(all_lists);
+      data.save();
+  } 
+})
+
+      var linkstr = playlistName.split(' ').join('+');
+
+      console.log(linkstr)
+
+      const newEntry = new PlaylistModel({
+        name: linkstr,
+        songs: [],
+        cover: 'https://i.ibb.co/9Z3mQBJ/35-DEE189-7770-45-DD-BBCF-540499-B199-DD-png.jpg',
+        title: playlistName,
+        status: ownership,
+        owner: username,
+        collab: []
+      });
+
+      newEntry.save(function(err, doc) {
+        if (err) return console.error(err);
+        console.log("Document inserted succussfully!");
+      });
+
+
+
+
+  res.redirect('back');
+
+});
+
+//--------------------Functionality of Individual Playlist Pages-----------------------
+app.post(/playlist/, function(req, res){
+  let body = req.body.addSong;
+  //console.log(body.toString())
+  var bodyString = body.toString();
+  var bodyArr = bodyString.split(',');
+  var playList = bodyArr[0];
+  var title = bodyArr[1];
+  var artist = bodyArr[2];
+  var album = bodyArr[3];
+  var link = bodyArr[4];
+
+
+  //Create song object with params from the song specified
+
+  const newEntry = new TrackModel({
+    album: album,
+    artist : artist,
+    link : link,
+    song: title
+  })
+
+  console.log(newEntry);
+  console.log(playList.toString());
+
+
+  // Add to playlist with the name specified
+
+  if(playList != "Liked Songs"){
+  
+  PlaylistModel.findOne({title: playList.toString()}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      let song_list = data.songs;
+      song_list.push(newEntry);
+      console.log(song_list);
+      data.save();
+    }
+  })
+  }
+
+  //Adding to a specific user's liked songs by accessing their array
+
+  else{
+
+    var tempsession = req.session;
+   // let userPlay = "";
+    let song_list = "";
+  
+    UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+      if(err){
+        console.log(err)}
+      else{
+       // userPlay = data.uPlaylist;
+        song_list = data.likedSongs;
+       // console.log(userPlay); 
+        console.log("======================== Liked Songs =======================")
+        song_list.push(newEntry);
+        console.log(song_list);
+        data.save();
+ 
+    } 
+  })
+
+
+  }
+
+  //Redirecting
+
+  res.redirect('back');
+
+
+});
+
+app.post(/playlists/, function(req, res){
+    //Adding Profile Picture Psuedo 
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+    
+        var reader = new FileReader();
+    
+        reader.onload = function(e) {
+          $('.image-upload-wrap').hide();
+    
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
+    
+          $('.image-title').html(input.files[0].name);
+        };
+    
+        reader.readAsDataURL(input.files[0]);
+    
+      } else {
+        removeUpload();
+      }
+    }
+    
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+      });
+      $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
+  
+    ///
+})
+
+app.get('/playlist/likedSongs', function(req, res){
+
+  var tempsession = req.session;
+  let userPlay = "";
+  let song_list = "";
+
+  UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+    if(err){
+      console.log(err)}
+    else{
+      userPlay = data.uPlaylist;
+      song_list = data.likedSongs;
+      console.log(userPlay); 
+      console.log("======================== Liked Songs =======================")
+      console.log(song_list); 
+   
+
+  res.render("LikedSongs.ejs",{
+    uPlaylist : userPlay,
+    'cover' : 'https://i.ibb.co/7RtWw8y/Screenshot-2020-12-04-205629.jpg',
+    'title' : 'Liked Songs',
+    'songs' : song_list,
+    signedin: 'Profile',
+    signedinlink: '/profile',
+    logout: "Logout"
+  });
+
+} 
+})
+
+});
+
+app.get(/playlist/ , function(req, res){
+  var tempsession = req.session
+  var playId = req._parsedOriginalUrl._raw.substring(10);
+
+
+  console.log("=========PLAY ID=============")
+  console.log(playId);
+  console.log("=========PLAY ID END=============")
+
+    console.log(tempsession.sessionusername);
+
+    if(playId != "css/audioplayer.css" && playId != "js/audioplayer.js") {
+
+    if(tempsession.sessionusername){
+
+    var userPlay = "";
+
+    UserModel.findOne({username: tempsession.sessionusername}, function(err, data){
+    if(err){
+        console.log(err)}
+    else{
+        userPlay = data.uPlaylist;
+        console.log(userPlay); 
+
+          PlaylistModel.findOne({name: playId}, function(err, data){
+            if(err){
+              console.log(err)
+            }
+            else{
+              let song_list = data.songs;
+              console.log(song_list)
+
+              UserModel.find({}, function(err, allUsers){
+
+            let userList = [];
+
+            allUsers.forEach(function(user){
+              userList.push(user.username)
+            })
+
+            console.log(userList);
+
+              res.render("AllSongsPlaylist.ejs",{
+                uPlaylist : userPlay,
+                'owner' : data.owner,
+                'currentUser': tempsession.sessionusername,
+                'userList': userList,
+                'cover' : data.cover,
+                'title' : data.title,
+                'songs' : song_list,
+                signedin: 'Profile',
+                signedinlink: '/profile',
+                logout: "Logout"
+              });
+
+            });
+            }
+          })      
+
+      } 
+    })
+
+  }
+
+
+
+else{
+    
+  PlaylistModel.findOne({name: playId}, function(err, data){
+    if(err){
+      console.log(err)
+    }
+    else{
+      let song_list = data.songs;
+      console.log(song_list)
+      // title is the name of the playlist displayed over EJS
+      // name is whats used in the url to change the page
+      res.render("AllSongsPlaylist.ejs",{
+        uPlaylist : [],
+        'cover' : data.cover,
+        'title' : data.title,
+        'songs' : song_list,
+        signedin: 'Sign In',
+        signedinlink: '/signin',
+        logout: ""
+      });
+    }
+  })
+}
+
+}
+
+
+
+});
+
+
 
 app.listen(port);

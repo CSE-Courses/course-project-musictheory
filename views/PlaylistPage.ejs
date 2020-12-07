@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/audioplayer.css">
   <script src="../js/audioplayer.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  <script
+  src="http://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
@@ -41,9 +42,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
-        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
+              <a class="dropdown-item" href="/searchPageGenre">Rock</a>
+              <a class="dropdown-item" href="/searchPageGenre">See more...</a>
+            </div>
+        </li> -->
       </ul>
 
       <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
@@ -56,6 +63,28 @@
 
     </div>
   </nav>
+
+<!-- Navbar deleted ----------------------------------->
+
+
+  <!-- <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+          Your browser dose not Support the audio Tag
+      </audio>
+  </div>
+  </nav> -->
 </body>
 
   <div class="jumbotron">
@@ -71,39 +100,128 @@
 		<br>
       </div>
       <div class="card-deck">
+        <!-- First will always be All Songs, Unless User is signed in -->
+        <% if(signedin == "Profile") { %>
         <div class="card">
-          <img class="card-img-top" src="https://i.redd.it/kpzuzx98ett11.jpg" alt="Card image">
+          <img class="card-img-top" src="https://i.ibb.co/7RtWw8y/Screenshot-2020-12-04-205629.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Working at the Chum Bucket</h3></a>
+            <a href="/playlist/likedSongs" class="stretched-link"><h4 class="card-title">Liked Songs</h3></a>
               <p class="card-text">My Playlist</p>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://image.shutterstock.com/image-vector/tuna-fish-holding-can-260nw-282453410.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Cloudy with a Chance of Tuna Fish</h3></a>
-              <p class="card-text">My Playlist</p>
-          </div>
+      <% } %>
+
+        <% playData.forEach(function(list){ %>
+            <div class="card">
+              <img class="card-img-top" src="<%- list.cover %>" alt="Card image">
+              <div class="card-body text-center">
+                <a href="/playlist/<%= list.name %>" class="stretched-link"><h4 class="card-title"><%= list.title %></h3></a>
+                  <p class="card-text"><%= list.status %></p>
+              </div>
+            </div>
+
+            <% }); %>
+
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  
+  <div class="row">
+	<div class="col-1"></div>
+    <div class="col-2">
+      <div>
+		<br>
+        <!-- <h1>Make a Playlist</h1> -->
+    <br>
+    
+    <% if(signedin == 'Profile'){ %> 
+          
+           <!-- Modal -->
+           <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Create a Playlist</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 -->
+
+                  <form id="create-play-form" action="/notif/newplaylist/<%- username %>" method="POST">
+                    <div class="form-group">
+                      <label for="inputPlaylist">Create a Playlist</label>
+                      <input type="text" class="form-control" id="inputPlaylist1" name="name" aria-describedby="playlistHelp" placeholder="Enter name">
+                    </div>
+                    <button type="submit" id="buttonSubmit" class="btn btn-primary">Submit</button>
+                  </form>
+
+
+<!-- 
+                </div>
+              
+
+              </div>
+            </div>
+          </div> -->
+ 
+
+
+      <!-- <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">CREATE A PLAYLIST</button> -->
+
+ 
+
+      <!-- <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/7/78/Riseagainsttheblackmarket.jpg" alt="Card image">
-          <div class="card-body text-center">
-            <a href="/playlisttemplate" class="stretched-link"><h4 class="card-title">Running to Montana</h3></a>
-              <p class="card-text">Michie's Playlist</p>
-          </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form> -->
+
+    <% } %> 
+
+      <!-- <script>
+        $(document).ready(function(){
+          $('#buttonSubmit').click(function(){
+            var databack = $("#exampleModal #inputPlaylist1").val().trim();
+            console.log(databack);
+          });
+        });
+    </script> -->
+
+      <!-- <div class="card-deck">
         <div class="card">
           <img class="card-img-top" src="https://static.vecteezy.com/system/resources/previews/000/363/962/non_2x/vector-plus-sign-line-black-icon.jpg" alt="Card image">
           <div class="card-body text-center">
             <a href="#" class="stretched-link"><h4 class="card-title">Create New Playlist</h3></a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="col-1"></div>
   </div>
 
-  <br><br><br><br>
+  <br>
+  <br>
+
+  <!-- Removed easter egg :(-->
+<!-- 
+  <div>They said to put easter eggs in.</div>
+  <div>To improve the user experience.</div>
+  <div>This will be covered by the music player,</div>
+  <div>but it helps keep the albums above it.</div> -->
 
 
 
