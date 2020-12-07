@@ -62,7 +62,7 @@ tr {
           <a class="nav-link" href="/playlists">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Popular Songs</a>
+          <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -118,7 +118,7 @@ tr {
 <table>
 
   <tr>
-  	<th>Plus Button</th>
+  	<th>Add</th>
     <th>Title</th>
     <th>Artist</th>
     <th>Album</th>
@@ -126,89 +126,34 @@ tr {
   </tr>
 
   <% songs.forEach(function(song){ %>
-  <tr>
-    <td><div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       +
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <tr>
+      <td><div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         +
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <% uPlaylist.forEach(function(list){ %> 
           <!-- list referring to name -->
           <!-- <a class="dropdown-item" href="#">Add to <%= list %></a> -->
           <a class= "dropdown-item">
-          <!-- <form action="" method="post"> -->
-            <button type="submit" onclick="modifyPlaylist($(this).val());"name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
-        <!-- </form> -->
-        <!-- Add similar code to liked songs later -->
-        <script>
-         function modifyPlaylist(t) {
-           let body = t;
-           var bodyString = body.toString();
-            var bodyArr = bodyString.split(',');
-            var playList = bodyArr[0];
-            var title = bodyArr[1];
-            var artist = bodyArr[2];
-            var album = bodyArr[3];
-            var link = bodyArr[4];
-  
-              alert(title + ' has been added to ' + playList)
-              console.log('============AJAX DATA=============')
-              console.log(playList)
-              console.log(title)
-              console.log(artist)
-              console.log(album)
-              console.log(link)
-  
-              var addition = {
-                _playList: playList,
-                _album: album,
-                _artist : artist,
-                _link : link,
-                _song: title
-              }
-  
-              
-  
-              $.ajax({
-                  type: 'post',
-                  url: '/send_save',
-                  dataType: 'json',
-                  contentType: 'application/json',
-                  success: function(data) {
-                   console.log(JSON.stringify(addition))
-                   console.log('process success');
-                 },
-                  data: JSON.stringify(addition)
-                  // complete: function() {
-                  //   //called when complete
-                  //   console.log('process complete');
-                  // },
-  
-                //   success: function(data) {
-                //     console.log(data);
-                //     console.log('process success');
-                //  },
-  
-                //   error: function() {
-                //     console.log('process error');
-                //   },
-                });
-          }
-        </script>
+          <form action="" method="post">
+            <button type="submit" name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
+        </form>
       </a>      
           <!-- post request a list and song object here -->
           <% }); %>
+        </div>
       </div>
-    </div>
-  </td>
-      <td><%= song.song %></td>
-      <td><%= song.artist %></td>
-      <td><%= song.album %></td>
-      <td><audio controls>
-        <source src=<%= song.link %> type="audio/mpeg">
-      </audio></td>
-    </tr>
-    <% }); %>
+    </td>
+        <td><%= song.song %></td>
+        <td><%= song.artist %></td>
+        <td><%= song.album %></td>
+        <td><audio controls>
+          <source src=<%= song.link %> type="audio/mpeg">
+        </audio></td>
+      </tr>
+      <% }); %>
+  
 
 </table>
 <br><br><br><br><br>
