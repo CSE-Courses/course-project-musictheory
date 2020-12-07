@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/audioplayer.css">
+  <script src="../js/audioplayer.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+}
+td, th {
+  border: 0px solid #333333;
+  border-bottom: 1px solid #aaaaaa;
+  text-align: left;
+  padding: 8px;
+}
+tr {
+  background-color: #444444;
+}
+</style>
+</head>
+<body style="background-color:#ededed;">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="https://i.imgur.com/klb48sZ.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MusicTheory
+    </a>
+    <!--D: Navbar now collapses into buttons when window is minimized-->
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/playlists">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Popular Songs</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Top Genres</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
+              <a class="dropdown-item" href="/searchPageGenre">Rock</a>
+              <a class="dropdown-item" href="/searchPageGenre">See more...</a>
+            </div>
+        </li> -->
+      </ul>
+      
+      <form id="artist-search" action="/artist-search" method="GET" class="form-inline my-2 my-lg-0" style="margin-right: 25px;">
+        <input class="artist-search-input form-control mr-sm-2" type="text" placeholder="Artist name"  name="artistName">
+        <button class="btn btn-secondary my-2 my-sm-0">Search</button>
+      </form>
+
+      <a class="navbar-brand" href= <%= signedinlink %>><%= signedin %></a>
+      <a class="navbar-brand" href='/logout'><%= logout %></a>
+
+    </div>
+  </nav>
+
+<!-- 
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Previous</h2>
+    </div>
+    <div class="col-2">
+      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
+      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
+    </div>
+    <div class="col-1">
+      <h4 style="color: white; text-align: center;">Next</h2>
+    </div>
+    <div class="container-audio col-7">
+      <audio controls autoplay loop id="player">
+          <source src="" type="audio/mp3">
+            <source src="https://p.scdn.co/mp3-preview/ac271d32306bfa13e387d25ae1e57d195b186574?cid&#x3D;9343127d9efd4b1a92df981900ff6e5f" type="audio/mpeg">
+          </audio>
+  </div>
+  </nav> -->
+</body>
+  <br>
+  <!-- bookmark -->
+<img style="float: left; margin-right: 20px; height: 150px; width: 150px;" src=<%= cover %>/>
+<p style="color:#000000; font-family:verdana;">PLAYLIST</p>
+<p style="color:#000000; font-family:verdana; font-size:30px"><%= title %></p>
+<form method="POST" action="/changeplaylistpic/<%= title %>">
+  <div class="input-group mb-3" style="width: 50%">
+    <input type="text" class="form-control" placeholder="Playlist Cover Image" aria-label="Recipient's username" aria-describedby="basic-addon2" name="playlistpiclink">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Update Picture</button>
+    </div>
+  </div>
+</form>
+<br>
+<br>
+<table>
+
+  <tr>
+  	<th>Plus Button</th>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Album</th>
+    <th></th>
+  </tr>
+
+  <% songs.forEach(function(song){ %>
+  <tr>
+    <td><div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       +
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <% uPlaylist.forEach(function(list){ %> 
+        <!-- list referring to name -->
+        <!-- <a class="dropdown-item" href="#">Add to <%= list %></a> -->
+        <a class= "dropdown-item">
+        <form action="" method="post">
+          <button type="submit" name="addSong" value="<%- list %>,<%- song.song %>,<%- song.artist %>,<%- song.album %>,<%- song.link %>" >Add to <%= list %></button>
+      </form>
+    </a>      
+        <!-- post request a list and song object here -->
+        <% }); %>
+      </div>
+    </div>
+  </td>
+      <td><%= song.song %></td>
+      <td><%= song.artist %></td>
+      <td><%= song.album %></td>
+      <td><audio controls>
+        <source src=<%= song.link %> type="audio/mpeg">
+      </audio></td>
+    </tr>
+    <% }); %>
+
+</table>
+<br><br><br><br><br>
+
+</body>
+</html>

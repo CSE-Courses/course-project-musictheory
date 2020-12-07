@@ -39,16 +39,10 @@
           <a class="nav-link" href="/playlists">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Popular Songs</a>
+          <a class="nav-link" href="/Popular">Popular Songs</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Top Genres</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/searchPageGenre">Hip Hop</a>
-              <a class="dropdown-item" href="/searchPageGenre">Rock</a>
-              <a class="dropdown-item" href="/searchPageGenre">See more...</a>
-            </div>
+          <a class="nav-link " href="/searchPageGenre" >Top Genres</a>
         </li>
       </ul>
 
@@ -57,29 +51,10 @@
         <button class="btn btn-secondary my-2 my-sm-0">Search</button>
       </form>
 
-      <a class="navbar-brand" href="/signin">Sign In</a>
+      <a class="navbar-brand" href= <%= signedinlink %>><%= signedin %></a>
+      <a class="navbar-brand" href='/logout'><%= logout %></a>
 
     </div>
-  </nav>
-
-
-  <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Previous</h2>
-    </div>
-    <div class="col-2">
-      <h2 id="song-title" style="color: white; text-align: center;">No Song Selected</h2>
-      <h3 id="artist-name" style="color: white; text-align: center;"></h3>
-    </div>
-    <div class="col-1">
-      <h4 style="color: white; text-align: center;">Next</h2>
-    </div>
-    <div class="container-audio col-7">
-      <audio controls autoplay loop id="player">
-          <source src="" type="audio/mp3">
-          Your browser dose not Support the audio Tag
-      </audio>
-  </div>
   </nav>
 </body>
 
@@ -96,25 +71,25 @@
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/originals/f8/6c/b7/f86cb7c45ae3afc8d990e5a90ae08b09.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Hip Hop</h3></a>
+            <a href="SearchPageGenre/37i9dQZF1DX48TTZL62Yht" class="stretched-link"><h4 class="card-title">Hip Hop</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/originals/15/77/e1/1577e162a5bd4bf1779e865d99ac926c.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Rock</h3></a>
+            <a href="SearchPageGenre/37i9dQZF1DWXRqgorJj26U" class="stretched-link"><h4 class="card-title">Rock</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/originals/26/eb/e9/26ebe9788b358c734a2851048d05b12c.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Pop</h3></a>
+            <a href="SearchPageGenre/3ZgmfR6lsnCwdffZUan8EA" class="stretched-link"><h4 class="card-title">Pop</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://roughstock-production.s3.amazonaws.com/2017/10/LukeBryan-WhatMakesYouCountry-Cover-2017-610.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Country</h3></a>
+            <a href="SearchPageGenre/37i9dQZF1DX1lVhptIYRda" class="stretched-link"><h4 class="card-title">Country</h3></a>
           </div>
         </div>
       </div>
@@ -129,25 +104,25 @@
         <div class="card">
           <img class="card-img-top" src="https://library.wustl.edu/wp-content/uploads/2016/02/mghl_visual.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Classical</h3></a>
+            <a href="SearchPageGenre/37i9dQZF1DWWEJlAGA9gs0" class="stretched-link"><h4 class="card-title">Classical</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/236x/22/6d/eb/226deb099ebab5d1a7831e2eece63f4d.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Metal</h3></a>
+            <a href="SearchPageGenre/37i9dQZF1DWWOaP4H0w5b0" class="stretched-link"><h4 class="card-title">Metal</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://cdn.music-artworks.com/wp-content/uploads/2020/04/NOVA-min.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">EDM</h3></a>
+            <a href="SearchPageGenre/2AMSyBkXMTXMhIs7Co5MPq" class="stretched-link"><h4 class="card-title">EDM</h3></a>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/236x/16/26/c7/1626c7d97b42693bec45d4dde196128c--lp-covers-music-covers.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Jazz</h3></a>
+            <a href="SearchPageGenre/05Hd48jdQIz3s8WRrvGnzf" class="stretched-link"><h4 class="card-title">Jazz</h3></a>
           </div>
         </div>
       </div>
@@ -162,14 +137,14 @@
         <div class="card">
           <img class="card-img-top" src="https://i.pinimg.com/236x/bc/83/54/bc8354d7b0655f22278b37011e3c6037--buddy-guy-blues-rock.jpg" alt="Card image">
           <div class="card-body text-center">
-            <a href="#" class="stretched-link"><h4 class="card-title">Blues</h3></a>
+            <a href="SearchPageGenre/4zNKkcW6QS0NExoQ6bYGcE?" class="stretched-link"><h4 class="card-title">Blues</h3></a>
           </div>
         </div>
 		<div class="card">
           <div class="card-body text-center">
 		  <br><br><br><br><br>
-            <h4 class="card-title">See more...</h3>
-              <a href="/playlists" class="card-link">Click here!</a>
+            <h4 class="card-title">Any Genre</h3>
+              <a href="/Popular" class="card-link">Click here!</a>
           </div>
         </div>
 		
@@ -178,13 +153,7 @@
     <div class="col-1"></div>
   </div>
 
-  <br>
-  <br>
-
-  <div>They said to put easter eggs in.</div>
-  <div>To improve the user experience.</div>
-  <div>This will be covered by the music player,</div>
-  <div>but it helps keep the albums above it.</div>
+<br><br><br><br>
 
 
 

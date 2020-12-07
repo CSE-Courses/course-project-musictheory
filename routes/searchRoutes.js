@@ -6,7 +6,21 @@ const { model } = require("../model/album");
 
 
 router.get('/',function(req,res){
-    res.render("./searchpage.ejs")
+    var tempsession = req.session
+    if(tempsession.sessionusername){
+        res.render("searchpage.ejs",{
+            signedin: 'Profile',
+            signedinlink: '/profile',
+            logout: "Logout"
+          });
+    }
+    else{
+        res.render("searchpage.ejs",{
+          signedin: 'Sign In',
+          signedinlink: '/signin',
+          logout: ""
+        });
+      }   
 });
 
 

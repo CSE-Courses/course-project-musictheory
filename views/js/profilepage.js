@@ -63,7 +63,7 @@ $(window).load(function() {
    {
       thumbBox: '.thumbBox',
       spinner: '.spinner',
-      imgSrc: 'http://www.9t.com/wp-content/themes/9t/image/mascot.png'
+      imgSrc: 'https://imgur.com/rzFlo8u'
    }
 
    var cropper = $('.imageBox').cropbox(options);
@@ -115,7 +115,7 @@ $(window).load(function() {
    $('#btn_remove_image').on('click', function() {
       if(confirm('Your are sure DEL my image profile ?')) {
          $('.control-upload').hide();
-         $('.img-profile').css({"background-image": "url('http://www.9t.com/wp-content/themes/9t/image/mascot.png')"});
+         $('.img-profile').css({"background-image": "url('https://imgur.com/rzFlo8u')"});
       }
    })
 });
