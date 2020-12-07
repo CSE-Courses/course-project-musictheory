@@ -434,7 +434,7 @@ app.post(/notif/, function(req, res) {
   } 
 })
 
-    var linkstr = playlistName.replace(" ", "+");
+      var linkstr = playlistName.split(' ').join('+');
 
       console.log(linkstr)
 
